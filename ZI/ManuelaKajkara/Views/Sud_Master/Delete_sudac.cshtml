@@ -1,0 +1,48 @@
+﻿@model Sudac
+
+@{
+    ViewBag.Title = "Obriši";
+}
+
+<h2>Obriši</h2>
+
+<h3>Jeste li sigurni da želite ovog obrisati suca?</h3>
+<div>
+    <h4>Sudac</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.JMBG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JMBG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prezime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prezime)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Obriši suca" class="btn btn-default" /> |
+            @Html.ActionLink("Povratak na popis", "Index", new { page = ViewBag.CurrentPage })
+        </div>
+    }
+</div>

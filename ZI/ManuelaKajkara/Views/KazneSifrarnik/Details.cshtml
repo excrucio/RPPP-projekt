@@ -1,0 +1,26 @@
+﻿@model DAL.EF.VrstaKazne
+
+@{
+    ViewBag.Title = "Detalji";
+}
+
+<h2>Detalji</h2>
+
+<div>
+    <h4>Vrsta Kazne</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NazivVrste)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NazivVrste)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Uredi", "Edit", new { id = Model.SifraVrste }) |
+    @Html.ActionLink("Nazad", "Index")
+</p>

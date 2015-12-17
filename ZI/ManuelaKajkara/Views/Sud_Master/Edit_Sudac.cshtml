@@ -1,0 +1,72 @@
+﻿@model DAL.EF.Sud
+
+@{
+    ViewBag.Title = "Uredi";
+}
+
+<h2>Uredi</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Sud</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.IDSuda)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Naziv, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Naziv)
+                @Html.ValidationMessage("Naziv", "Naziv nije ispravno unesen!")
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.UlicaIKucniBr, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UlicaIKucniBr)
+                @*@Html.ValidationMessageFor(model => model.UlicaIKucniBr)*@
+                @Html.ValidationMessage("UlicaIKucniBr", "Adresa nije ispravno unesena!")
+
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PBr, "PBr", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("PBr", String.Empty)
+                @Html.ValidationMessageFor(model => model.PBr)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Kategorija, "Kategorija", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Kategorija", String.Empty)
+                @Html.ValidationMessageFor(model => model.Kategorija)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nadredeni, "Nadredeni", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Nadredeni", String.Empty)
+                @Html.ValidationMessageFor(model => model.Nadredeni)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

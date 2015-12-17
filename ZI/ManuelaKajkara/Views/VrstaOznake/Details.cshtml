@@ -1,0 +1,31 @@
+﻿@model VrstaOznake
+
+@{
+    ViewBag.Title = "Detalji";
+}
+
+<h2>Detalji</h2>
+
+<div>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SifraOznake)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SifraOznake)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Opis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Opis)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Uredi", "Edit", new { id = Model.SifraOznake }) |
+    @Html.ActionLink("Povratak", "Index")
+</p>

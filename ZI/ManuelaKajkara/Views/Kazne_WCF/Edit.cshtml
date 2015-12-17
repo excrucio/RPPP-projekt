@@ -1,0 +1,62 @@
+﻿@model Kazna
+
+@{
+    ViewBag.Title = "Uredi";
+}
+
+<h2>Uredi</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Kazna</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.IDKazne, "IDKazne")
+
+        <div class="form-group" style="display:none;">
+            @Html.LabelFor(model => model.IDPresude, "Presuda", new { @class = "control-label col-md-2" })
+            <div class="col-md-10" >
+                @Html.DropDownList("IDPresude")
+            </div>
+        </div>
+
+        @Html.HiddenFor(model => model.IDOsobe, "IDOsobe")
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Vrsta, "Vrsta", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Vrsta", String.Empty)
+                @Html.ValidationMessage("Vrsta", "Neispravan unos!")
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Iznos, "Iznos", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Iznos)
+                @Html.ValidationMessage("Iznos", "Neispravan unos!")
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Opis, "Opis", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Opis)
+                @Html.ValidationMessage("Opis", "Opis je obaveezan!")
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Spremi" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Odustani", "Index")
+</div>

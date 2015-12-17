@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:13289/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:13289/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:13289/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/UgovoriKlase" />
+      <xsd:import schemaLocation="http://localhost:13289/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/ManuelaKajkara" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IFirmaServis_PopisSudova_InputMessage">
+    <wsdl:part name="parameters" element="tns:PopisSudova" />
+  </wsdl:message>
+  <wsdl:message name="IFirmaServis_PopisSudova_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PopisSudovaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFirmaServis_DohvatiJedan_InputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiJedan" />
+  </wsdl:message>
+  <wsdl:message name="IFirmaServis_DohvatiJedan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiJedanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFirmaServis_PopisKategorija_InputMessage">
+    <wsdl:part name="parameters" element="tns:PopisKategorija" />
+  </wsdl:message>
+  <wsdl:message name="IFirmaServis_PopisKategorija_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PopisKategorijaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFirmaServis_PopisMjesta_InputMessage">
+    <wsdl:part name="parameters" element="tns:PopisMjesta" />
+  </wsdl:message>
+  <wsdl:message name="IFirmaServis_PopisMjesta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PopisMjestaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFirmaServis_ObrisiSud_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiSud" />
+  </wsdl:message>
+  <wsdl:message name="IFirmaServis_ObrisiSud_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiSudResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFirmaServis_DodajNoviSud_InputMessage">
+    <wsdl:part name="parameters" element="tns:DodajNoviSud" />
+  </wsdl:message>
+  <wsdl:message name="IFirmaServis_DodajNoviSud_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DodajNoviSudResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFirmaServis_UrediSud_InputMessage">
+    <wsdl:part name="parameters" element="tns:UrediSud" />
+  </wsdl:message>
+  <wsdl:message name="IFirmaServis_UrediSud_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UrediSudResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFirmaServis_DajSveFizickeOsobe_InputMessage">
+    <wsdl:part name="parameters" element="tns:DajSveFizickeOsobe" />
+  </wsdl:message>
+  <wsdl:message name="IFirmaServis_DajSveFizickeOsobe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DajSveFizickeOsobeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFirmaServis_DajFizickuOsobu_InputMessage">
+    <wsdl:part name="parameters" element="tns:DajFizickuOsobu" />
+  </wsdl:message>
+  <wsdl:message name="IFirmaServis_DajFizickuOsobu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DajFizickuOsobuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFirmaServis_UnesiFizickuOsobu_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnesiFizickuOsobu" />
+  </wsdl:message>
+  <wsdl:message name="IFirmaServis_UnesiFizickuOsobu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnesiFizickuOsobuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFirmaServis_PromijeniFizickuOsobu_InputMessage">
+    <wsdl:part name="parameters" element="tns:PromijeniFizickuOsobu" />
+  </wsdl:message>
+  <wsdl:message name="IFirmaServis_PromijeniFizickuOsobu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PromijeniFizickuOsobuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFirmaServis_ObrisiFizickuOsobu_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiFizickuOsobu" />
+  </wsdl:message>
+  <wsdl:message name="IFirmaServis_ObrisiFizickuOsobu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiFizickuOsobuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFirmaServis_DajSveKazne_InputMessage">
+    <wsdl:part name="parameters" element="tns:DajSveKazne" />
+  </wsdl:message>
+  <wsdl:message name="IFirmaServis_DajSveKazne_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DajSveKazneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFirmaServis_DajKaznu_InputMessage">
+    <wsdl:part name="parameters" element="tns:DajKaznu" />
+  </wsdl:message>
+  <wsdl:message name="IFirmaServis_DajKaznu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DajKaznuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFirmaServis_UnesiKaznu_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnesiKaznu" />
+  </wsdl:message>
+  <wsdl:message name="IFirmaServis_UnesiKaznu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnesiKaznuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFirmaServis_PromijeniKaznu_InputMessage">
+    <wsdl:part name="parameters" element="tns:PromijeniKaznu" />
+  </wsdl:message>
+  <wsdl:message name="IFirmaServis_PromijeniKaznu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PromijeniKaznuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFirmaServis_ObrisiKaznu_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiKaznu" />
+  </wsdl:message>
+  <wsdl:message name="IFirmaServis_ObrisiKaznu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiKaznuResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IFirmaServis">
+    <wsdl:operation name="PopisSudova">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFirmaServis/PopisSudova" message="tns:IFirmaServis_PopisSudova_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFirmaServis/PopisSudovaResponse" message="tns:IFirmaServis_PopisSudova_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiJedan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFirmaServis/DohvatiJedan" message="tns:IFirmaServis_DohvatiJedan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFirmaServis/DohvatiJedanResponse" message="tns:IFirmaServis_DohvatiJedan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PopisKategorija">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFirmaServis/PopisKategorija" message="tns:IFirmaServis_PopisKategorija_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFirmaServis/PopisKategorijaResponse" message="tns:IFirmaServis_PopisKategorija_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PopisMjesta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFirmaServis/PopisMjesta" message="tns:IFirmaServis_PopisMjesta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFirmaServis/PopisMjestaResponse" message="tns:IFirmaServis_PopisMjesta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiSud">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFirmaServis/ObrisiSud" message="tns:IFirmaServis_ObrisiSud_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFirmaServis/ObrisiSudResponse" message="tns:IFirmaServis_ObrisiSud_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DodajNoviSud">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFirmaServis/DodajNoviSud" message="tns:IFirmaServis_DodajNoviSud_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFirmaServis/DodajNoviSudResponse" message="tns:IFirmaServis_DodajNoviSud_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UrediSud">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFirmaServis/UrediSud" message="tns:IFirmaServis_UrediSud_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFirmaServis/UrediSudResponse" message="tns:IFirmaServis_UrediSud_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DajSveFizickeOsobe">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFirmaServis/DajSveFizickeOsobe" message="tns:IFirmaServis_DajSveFizickeOsobe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFirmaServis/DajSveFizickeOsobeResponse" message="tns:IFirmaServis_DajSveFizickeOsobe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DajFizickuOsobu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFirmaServis/DajFizickuOsobu" message="tns:IFirmaServis_DajFizickuOsobu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFirmaServis/DajFizickuOsobuResponse" message="tns:IFirmaServis_DajFizickuOsobu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnesiFizickuOsobu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFirmaServis/UnesiFizickuOsobu" message="tns:IFirmaServis_UnesiFizickuOsobu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFirmaServis/UnesiFizickuOsobuResponse" message="tns:IFirmaServis_UnesiFizickuOsobu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PromijeniFizickuOsobu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFirmaServis/PromijeniFizickuOsobu" message="tns:IFirmaServis_PromijeniFizickuOsobu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFirmaServis/PromijeniFizickuOsobuResponse" message="tns:IFirmaServis_PromijeniFizickuOsobu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiFizickuOsobu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFirmaServis/ObrisiFizickuOsobu" message="tns:IFirmaServis_ObrisiFizickuOsobu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFirmaServis/ObrisiFizickuOsobuResponse" message="tns:IFirmaServis_ObrisiFizickuOsobu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DajSveKazne">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFirmaServis/DajSveKazne" message="tns:IFirmaServis_DajSveKazne_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFirmaServis/DajSveKazneResponse" message="tns:IFirmaServis_DajSveKazne_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DajKaznu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFirmaServis/DajKaznu" message="tns:IFirmaServis_DajKaznu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFirmaServis/DajKaznuResponse" message="tns:IFirmaServis_DajKaznu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnesiKaznu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFirmaServis/UnesiKaznu" message="tns:IFirmaServis_UnesiKaznu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFirmaServis/UnesiKaznuResponse" message="tns:IFirmaServis_UnesiKaznu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PromijeniKaznu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFirmaServis/PromijeniKaznu" message="tns:IFirmaServis_PromijeniKaznu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFirmaServis/PromijeniKaznuResponse" message="tns:IFirmaServis_PromijeniKaznu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiKaznu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFirmaServis/ObrisiKaznu" message="tns:IFirmaServis_ObrisiKaznu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFirmaServis/ObrisiKaznuResponse" message="tns:IFirmaServis_ObrisiKaznu_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IFirmaServis" type="tns:IFirmaServis">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PopisSudova">
+      <soap:operation soapAction="http://tempuri.org/IFirmaServis/PopisSudova" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiJedan">
+      <soap:operation soapAction="http://tempuri.org/IFirmaServis/DohvatiJedan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopisKategorija">
+      <soap:operation soapAction="http://tempuri.org/IFirmaServis/PopisKategorija" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopisMjesta">
+      <soap:operation soapAction="http://tempuri.org/IFirmaServis/PopisMjesta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiSud">
+      <soap:operation soapAction="http://tempuri.org/IFirmaServis/ObrisiSud" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DodajNoviSud">
+      <soap:operation soapAction="http://tempuri.org/IFirmaServis/DodajNoviSud" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UrediSud">
+      <soap:operation soapAction="http://tempuri.org/IFirmaServis/UrediSud" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DajSveFizickeOsobe">
+      <soap:operation soapAction="http://tempuri.org/IFirmaServis/DajSveFizickeOsobe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DajFizickuOsobu">
+      <soap:operation soapAction="http://tempuri.org/IFirmaServis/DajFizickuOsobu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnesiFizickuOsobu">
+      <soap:operation soapAction="http://tempuri.org/IFirmaServis/UnesiFizickuOsobu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PromijeniFizickuOsobu">
+      <soap:operation soapAction="http://tempuri.org/IFirmaServis/PromijeniFizickuOsobu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiFizickuOsobu">
+      <soap:operation soapAction="http://tempuri.org/IFirmaServis/ObrisiFizickuOsobu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DajSveKazne">
+      <soap:operation soapAction="http://tempuri.org/IFirmaServis/DajSveKazne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DajKaznu">
+      <soap:operation soapAction="http://tempuri.org/IFirmaServis/DajKaznu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnesiKaznu">
+      <soap:operation soapAction="http://tempuri.org/IFirmaServis/UnesiKaznu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PromijeniKaznu">
+      <soap:operation soapAction="http://tempuri.org/IFirmaServis/PromijeniKaznu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiKaznu">
+      <soap:operation soapAction="http://tempuri.org/IFirmaServis/ObrisiKaznu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IFirmaServis" binding="tns:BasicHttpBinding_IFirmaServis">
+      <soap:address location="http://localhost:13289/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

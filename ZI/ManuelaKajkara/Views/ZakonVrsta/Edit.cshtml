@@ -1,0 +1,41 @@
+﻿@model RazinaZakona
+
+@{
+    ViewBag.Title = "Uredi razinu zakona";
+}
+
+<h2>Uredi razinu zakona</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.IDRazine)
+
+        <div class="form-group">
+            @Html.LabelForModel("Naziv razine", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Naziv)
+                @Html.ValidationMessage("Naziv", "Naziv razine je obavezan!")
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Spremi" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Povratak", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

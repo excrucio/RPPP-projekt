@@ -1,0 +1,60 @@
+﻿@model ManuelaKajkara.Models.Sudovi_list
+@using ManuelaKajkara.HtmlHelpers
+
+@{
+    ViewBag.Title = "Slijedi popis svih sudova u Republici Hrvatskoj: ";
+}
+
+<head>
+    @Scripts.Render("~/bundles/jquery")
+</head>
+
+<div>
+    @if (TempData["pogreskaBrisanja"] != null)
+    {
+        <div class="validation-summary-errors">@TempData["pogreskaBrisanja"]</div>
+    }
+</div>
+
+<h3>@ViewBag.Title</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.ActionLink("ID", "Main", new { sort = 1, page = Model.PagingInfo.CurrentPage })</th>
+            <th>@Html.ActionLink("Naziv", "Main", new { sort = 2, page = Model.PagingInfo.CurrentPage })</th>
+            <th>@Html.ActionLink("Adresa", "Main", new { sort = 3, page = Model.PagingInfo.CurrentPage })</th>
+            <th>@Html.ActionLink("PBr", "Main", new { sort = 4, page = Model.PagingInfo.CurrentPage })</th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.SudList)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.naziv</td>
+                <td>@item.adresa</td>
+                <td>@item.pbr</td>
+                <td>@Html.ActionLink("  Ažuriraj  ", "Edit", new { id = item.ID, page = Model.PagingInfo.CurrentPage }) |
+                    @Html.ActionLink("  Detalji  ", "Details", new { id = item.ID, page = Model.PagingInfo.CurrentPage }) |
+                    @Html.ActionLink("  Obriši  ", "Delete", new { id = item.ID, page = Model.PagingInfo.CurrentPage })
+                </td>
+                @*<td>
+                            @using (Html.BeginForm("Delete", "Mjesto", new { id = item.IdMjesta, page = Model.PagingInfo.CurrentPage, sort = Model.PagingInfo.Sort }))
+                            {
+                                <input type="submit" value="Obriši" class="delete" />
+                            }
+                    </td>*@
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="pager">
+    @Html.PageLinks(Model.PagingInfo, (p, s) => Url.Action("Main", new { page = p }))
+</div>
+
+<h5>@Html.ActionLink("  Dodaj novi  ", "Create")</h5>
+<h5>@Html.ActionLink("  Pretraži  ", "Search")</h5>

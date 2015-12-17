@@ -1,0 +1,171 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.tekst
+{
+border: thin solid black;
+padding: 2px;
+border-spacing : 0px;
+margin: 0px;
+text-align: left;
+}
+
+.tekst tbody tr:nth-child(2n+1) {
+  background-color: aliceblue;
+}
+
+.tekst tbody tr:nth-child(2n) {
+  background-color: lightblue;
+}
+
+.tekst thead tr {
+  background-color: navy;
+  color: white;
+}
+
+
+DIV.pager { text-align:left; border-top: 2px solid silver;
+padding: .5em 0 0 0; margin-top: 1em; }
+DIV.pager A { font-size: 1.1em; color: #666; text-decoration: none;
+padding: 0 .4em 0 .4em; }
+DIV.pager A:hover { background-color: Silver; }
+DIV.pager A.selected { background-color: #353535; color: White; }
+
+/*.div_class 
+{
+    margin-top:100px;
+}*/
+
+	 
+	#nav {
+	    /*margin: 50px;*/
+	    z-index: 10;
+	    display: block;
+	}
+	 
+	#nav li { float: left; }
+	#nav li:hover { position: relative }
+	 
+	#nav li:hover > a {
+	    background: #021A1A;
+	 
+	    box-shadow: 5px 5px 25px #000;
+	    -moz-box-shadow: 5px 5px 25px #000;
+	    -webkit-box-shadow: 5px 5px 25px #000;
+	 
+	    border-radius: 10px;
+	    -moz-border-radius: 10px;
+	    -webkit-border-radius: 10px;
+	}
+	 
+	#nav li.sub:hover > a {
+	    border-radius: 10px 10px 0 0;
+	    -moz-border-radius: 10px 10px 0 0;
+	    -webkit-border-radius: 10px 10px 0 0;
+	}
+	 
+	#nav li a {
+	    /*color: #fff;*/
+        color: #999;
+	    /*font-weight: bold;*/
+	    text-decoration: none;
+	    padding: 15px;
+	    display: block;
+	}
+	#nav li a:hover { 
+        background-color: #021A1A;
+	}
+	 
+	#nav li ul {
+	    background: #fff;
+	    margin-top: -2px;
+	    display: none;
+	}
+	#nav li:hover ul {
+	    display:block;
+	    position:absolute;
+	}
+	 
+	#nav li ul {
+	    background: rgba(255,255,255,1);
+	    padding: 10px 5px;
+	 
+	    box-shadow: 5px 5px 25px #000;
+         -moz-box-shadow: 5px 5px 25px #000;
+       -webkit-box-shadow: 5px 5px 25px #000;
+	 
+	    border-radius: 0px 15px 15px 15px;
+	    -moz-border-radius: 0px 15px 15px 15px;
+	    -webkit-border-radius: 0px 5px 5px 5px;
+	}
+	#nav li ul li a, #nav li ul li a:hover {
+	    background: white;
+	    color: #000;
+	    width: 150px;
+	    font-size: 0.95em;
+	    font-weight: normal;
+        width: 200px;
+	}
+	#nav li ul li a:hover { 
+        font-weight: bold;
+        text-decoration: none;
+	    box-shadow: none;
+	    -moz-box-shadow: none;
+	    -webkit-box-shadow: none;
+	 
+	    border-radius: 0;
+	    -moz-border-radius: 0;
+	    -webkit-border-radius: 0;
+	}
+
+       
+    ul {
+            list-style-type: none;
+            width: auto;
+        }
+  
+    .blank_row
+{
+    height: 20px !important; /* Overwrite any previous rules */
+    background-color: #FFFFFF;
+}  

@@ -1,0 +1,71 @@
+﻿@model ManuelaKajkara.Models.Vijece
+
+
+@{
+    ViewBag.Title = "Detalji";
+}
+
+<h2>Detalji</h2>
+
+<div>
+    <h4>Sudska vijeća</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <b>ID vijeća</b>        
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDVijeca)
+        </dd>
+
+    </dl>
+
+    <dl class="dl-horizontal">
+        <dt>
+            <b>Ime</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ime)
+        </dd>
+
+    </dl>
+
+    <dl class="dl-horizontal">
+        <dt>
+            <b>Prezime</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prezime)
+        </dd>
+
+    </dl>
+
+    <dl class="dl-horizontal">
+        <dt>
+            <b>Presjedavatelj</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.presjedavatelj)
+        </dd>
+
+    </dl>
+
+    <dl class="dl-horizontal">
+        <dt>
+            <b>Naziv procesa</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nazivProcesa)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Uredi", "Edit", new { id = Model.IDSuca }) |
+    @Html.ActionLink("Povratak na popis", "Index")
+</p>

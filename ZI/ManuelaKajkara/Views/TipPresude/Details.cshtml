@@ -1,0 +1,26 @@
+﻿@model DAL.EF.TipPresude
+
+@{
+    ViewBag.Title = "Detalji";
+}
+
+<h2>Detalji</h2>
+
+<div>
+    <h4>Tip presude</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Naziv tipa
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NazivTipa)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Uredi", "Edit", new { id = Model.SifraTipa }) |
+    @Html.ActionLink("Odustani", "Index")
+</p>

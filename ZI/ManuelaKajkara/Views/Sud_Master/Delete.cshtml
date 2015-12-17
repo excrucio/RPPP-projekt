@@ -1,0 +1,48 @@
+﻿@model Sud
+
+@{
+    ViewBag.Title = "Obriši";
+}
+
+<h2>Obriši</h2>
+
+<h3>Jeste li sigurni da želite izbrisati ovaj sud?</h3>
+<div>
+    <h4>Sud</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <p>Naziv</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.naziv)
+        </dd>
+
+        <dt>
+            <p>Adresa</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.adresa)
+        </dd>
+
+        <dt>
+            <p>Pbr</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pbr)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Obriši" class="btn btn-default" /> |
+            @Html.ActionLink("Povratak na popis", "Index")
+        </div>
+    }
+</div>

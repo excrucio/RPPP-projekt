@@ -1,0 +1,33 @@
+﻿@model IEnumerable<RazinaZakona>
+
+@{
+    ViewBag.Title = "Razine zakona";
+}
+
+<h2>Razine zakona</h2>
+
+<p>
+    @Html.ActionLink("Dodaj novu", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Razina zakona
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Naziv)
+        </td>
+        <td>
+            @Html.ActionLink("Uredi", "Edit", new { id=item.IDRazine }) |
+            @Html.ActionLink("Detalji", "Details", new { id=item.IDRazine }) |
+            @Html.ActionLink("Obriši", "Delete", new { id=item.IDRazine })
+        </td>
+    </tr>
+}
+
+</table>

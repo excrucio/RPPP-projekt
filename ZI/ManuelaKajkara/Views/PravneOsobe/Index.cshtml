@@ -1,0 +1,63 @@
+﻿@model IEnumerable<PravnaOsoba>
+
+@{
+    ViewBag.Title = "Pravne osobe";
+}
+
+<h2>Pravne osobe</h2>
+
+<p>
+    @Html.ActionLink("Dodaj novu", "Create")
+    @using (Html.BeginForm("Index","PravneOsobe",FormMethod.Get))
+    {
+    <p>
+        Naziv: @Html.TextBox("Pretraga") <input type="submit" value="Pretraži" />
+    </p>
+    }
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("Naziv", "Index", new { sortOrder = ViewBag.NazivSort })
+        </th>
+        <th>
+            Matični broj
+        </th>
+        <th>
+            OIB
+        </th>
+        <th>
+            Adresa
+        </th>
+        <th>
+            @Html.ActionLink("Mjesto", "Index", new { sortOrder = ViewBag.MjestoSort })
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Naziv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OIB)
+        </td>
+        <td>
+            @Html.DisplayFor(model => item.Adresa)
+        </td>
+        <td>
+            @Html.DisplayFor(model => item.Mjesto)
+        </td>
+        <td>
+            @Html.ActionLink("Uredi", "Edit", new { id=item.IDOsobe }) |
+            @Html.ActionLink("Obriši", "Delete", new { id=item.IDOsobe })
+        </td>
+    </tr>
+}
+
+</table>

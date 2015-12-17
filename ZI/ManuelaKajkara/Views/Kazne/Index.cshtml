@@ -1,0 +1,69 @@
+﻿@model ManuelaKajkara.Models.Osobe_lista
+@using ManuelaKajkara.HtmlHelpers
+
+@{
+    ViewBag.Title = "Kazne";
+}
+<p>
+    @Html.ActionLink("Kazni novu osobu", "Kazni")
+</p>
+
+<h2>@Model.osoba.ImePrezime</h2>
+
+<div>
+    <table class="table">
+        <tr><td>Ime Oca: @Model.osoba.ImeOca </td></tr>
+        <tr><td> JMBG: @Model.osoba.JMBG </td><td> Adresa: @Model.osoba.Adresa </td>
+        </tr>
+<tr> <td>Datum rođenja: @Model.osoba.DatumRod.Day-@Model.osoba.DatumRod.Month-@Model.osoba.DatumRod.Year </td></tr>
+</table>
+</div>
+
+<p>
+    @Html.ActionLink("Dodaj kaznu", "DodajKaznu", new { id = Model.osoba.IDOsobe}) | @Html.ActionLink("Uredi", "Uredi", new { id = Model.osoba.IDOsobe })
+</p>
+
+<div class="pager">
+    @Html.PageLinks(Model.PagingInfo, (p, s) => Url.Action("Index", new { page = p }))
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            Vrsta kazne
+        </th>
+        <th>
+            Vrsta presude
+        </th>
+        <th>
+            Iznos
+        </th>
+        <th>
+            Opis
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.kazne) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Naziv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Presuda)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Iznos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Opis)
+        </td>
+        <td>
+            @Html.ActionLink("Uredi", "Edit", new { idKazne=item.IDKazne }) |
+            @Html.ActionLink("Detalji", "Details", new { id=item.IDKazne }) |
+            @Html.ActionLink("Obriši", "Delete", new { id=item.IDKazne })
+        </td>
+    </tr>
+}
+
+</table>

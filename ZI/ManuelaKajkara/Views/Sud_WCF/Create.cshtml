@@ -1,0 +1,46 @@
+﻿@model ManuelaKajkara.ServiceReference1.Sud
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Dodaj novi: </h2>
+
+<span class="error">@ViewData["Pogreska"]</span>
+
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            @*<td colspan="2">@Html.ValidationSummary()</td>*@
+        </tr>
+        <tr>
+            <td>Naziv:</td>
+            <td>@Html.EditorFor(m => m.Naziv)</td>
+            <td>@Html.ValidationMessage("Naziv", "Nedozvoljen format unosa.")</td>
+        </tr>
+        <tr>
+            <td>Adresa:</td>
+            <td>@Html.EditorFor(m => m.Adresa)</td>
+            <td>@Html.ValidationMessage("Adresa", "Nedozvoljen format unosa.")</td>
+        </tr>
+        <tr>
+            <td>PBr</td>
+            <td>@Html.DropDownListFor(m => m.PBr, ((IEnumerable<ManuelaKajkara.ServiceReference1.Mjesto>)ViewBag.Mjesta).OrderBy(d => d.naziv).Select(d => new SelectListItem { Text = d.naziv, Value = d.pbr.ToString() }))</td>
+            <td>@Html.ValidationMessage("PBr", "*")</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Kategorija</td>
+            @*<td>@Html.DropDownListFor(m => m.kategorija, ((IEnumerable<Kategorija>)ViewBag.Kategorija).OrderBy(d => d.naziv).Select(d => new SelectListItem { Text = d.naziv, Value = d.id.ToString()}))</td>*@
+            <td>@Html.DropDownListFor(n => n.kategorija, ((IEnumerable<ManuelaKajkara.ServiceReference1.Kategorija>)ViewBag.Kategorije).OrderBy(a => a.id).Select(a => new SelectListItem { Text = a.naziv, Value = a.id.ToString() }))</td>
+            <td>@Html.ValidationMessage("Kategorija", "*")</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Spremi" /></td>
+            <td>@Html.ActionLink("Odustani", "Index", new { page = ViewBag.CurrentPage, sort = ViewBag.Sort })</td>
+            <td></td>
+        </tr>
+    </table>
+}
+

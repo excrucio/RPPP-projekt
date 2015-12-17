@@ -1,0 +1,158 @@
+﻿@model ManuelaKajkara.Models.SudMaster_list
+
+@{
+    ViewBag.Title = "Uredi";
+}
+
+<h2>Uredi</h2>
+
+<div class="validation-summary-errors">@ViewBag.Error_save</div>
+<div class="validation-summary-errors">@ViewBag.Error_save1</div>
+<div class="validation-summary-errors">@ViewBag.Error_save2</div>
+<div class="validation-summary-errors">@ViewBag.Error_save3</div>
+
+@using (Html.BeginForm("Edit", "Sud_Master", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Sud</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.sud.ID)
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.sud.naziv, new { @class = "control-label col-md-2" })*@
+            <b class="control-label col-md-2">Naziv</b>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.sud.naziv)
+                @Html.ValidationMessage("sud.naziv", "Naziv nije ispravno unesen!")
+                
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.sud.adresa, new { @class = "control-label col-md-2" })*@
+            <b class="control-label col-md-2">Adresa</b>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.sud.adresa)
+                @Html.ValidationMessage("sud.adresa", "Adresa nije ispravno unesena!")
+
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.sud.pbr, "PBr", new { @class = "control-label col-md-2" })*@
+            <b class="control-label col-md-2">Mjesto</b>
+            <div class="col-md-10">
+                @*@Html.DropDownList("PBr", String.Empty)*@
+                @Html.DropDownListFor(m => m.sud.pbr, ((IEnumerable<Mjesto>)ViewBag.Mjesta).OrderBy(d => d.naziv).Select(d => new SelectListItem { Text = d.naziv, Value = d.pbr.ToString() }))
+                <li>@Html.ActionLink("Mjesto", "Index", "Mjesto")</li>
+                @Html.ValidationMessageFor(model => model.sud.pbr)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.sud.kategorija, "Kategorija", new { @class = "control-label col-md-2" })*@
+            <b class="control-label col-md-2">Kategorija</b>
+            <div class="col-md-10">
+                @*@Html.DropDownList("Kategorija", String.Empty)*@
+                @Html.DropDownListFor(n => n.sud.kategorija, ((IEnumerable<Kategorija>)ViewBag.Kategorije).OrderBy(a => a.id).Select(a => new SelectListItem { Text = a.naziv, Value = a.id.ToString() }))
+                <li>@Html.ActionLink("Kategorija", "Index", "Kategorija")</li>
+                @Html.ValidationMessageFor(model => model.sud.kategorija)
+            </div>
+        </div>
+    </div>
+
+    <table class="table">
+        <tr>
+            <th>
+                @*<p>JMBG</p>*@
+                <p>Sudac</p>
+            </th>
+            <th>
+                @*<p>Ime</p>*@
+            </th>
+            <th>
+                @*<p>Prezime</p>*@
+            </th>
+            <th>
+            </th>
+        </tr>
+        @*@{
+            int i = 0;
+            foreach (var item in Model.suci)
+            {
+                i++;
+                <tr>
+                    <td>
+                        @Html.EditorFor(modelItem => item.JMBG)
+                    </td>
+
+                    <td>
+                        @Html.EditorFor(modelItem => item.ime)
+                    </td>
+
+                    <td>
+                        @Html.EditorFor(modelItem => item.prezime)
+                    </td>
+                    <td>
+                        Obriši suca: @Html.CheckBox("BrisiSuca[" + i + "]")
+                    </td>
+                </tr>
+
+            }*@
+
+        @for (int j = 0; j < Model.suci.Count(); j++)
+        {
+            <tr>
+                @*<td>
+                        @Html.HiddenFor(modelItem => modelItem.suci[j].IDOsobe)
+                        @Html.EditorFor(modelItem => modelItem.suci[j].JMBG)
+                    </td>
+
+                    <td>
+                        @Html.EditorFor(modelItem => modelItem.suci[j].ime)
+                    </td>
+
+                    <td>
+                        @Html.EditorFor(modelItem => modelItem.suci[j].prezime)
+                    </td>*@
+                <td>
+
+                <td>
+                    @Html.DropDownListFor(m => m.suci[j].IDOsobe, ((IEnumerable<Sudac>)ViewBag.popisSudaca2).
+                                                OrderBy(d => d.ime).
+                                                Select(d => new SelectListItem { Text = d.ime + " " + d.prezime + ", " + d.JMBG, Value = d.IDOsobe.ToString(), Selected = (Model.suci[j].IDOsobe == d.IDOsobe) }))
+                </td>
+
+                <td>
+                    Obriši suca: @Html.CheckBox("BrisiSuca[" + j + "]")
+                </td>
+
+
+            </tr>
+
+        }
+        <tr class="blank_row">
+            <td colspan="5"></td>
+        </tr>
+
+    </table>
+    using (Html.BeginForm("Edit", "Sud_Master", new { id = Model.sud.ID, page = Model.PagingInfo.CurrentPage}))
+    {
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Spremi" class="btn btn-default" />
+                @Html.ActionLink("Povratak na popis", "Index", new { page = Model.PagingInfo.CurrentPage })
+            </div>
+            <div>
+
+            </div>
+
+        </div>
+
+    }
+}
+

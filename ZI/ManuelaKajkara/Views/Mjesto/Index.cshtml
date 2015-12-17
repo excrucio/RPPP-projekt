@@ -1,0 +1,43 @@
+﻿@model ManuelaKajkara.Models.Mjesto_list
+
+@{
+    ViewBag.Title = "Mjesta";
+}
+
+<h2>Mjesta</h2>
+
+<p>
+    @Html.ActionLink("Dodaj novo", "Create")
+</p>
+
+<div>
+    @if (TempData["pogreskaBrisanja"] != null)
+    {
+        <div class="validation-summary-errors">@TempData["pogreskaBrisanja"]</div>
+    }
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.SudList)*@
+            <p>Mjesto</p>
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.MjestoList)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.naziv)
+            </td>
+            <td>
+                @Html.ActionLink("Uredi", "Edit", new { id = item.pbr }) |
+                @Html.ActionLink("Detalji", "Details", new { id = item.pbr }) |
+                @Html.ActionLink("Obriši", "Delete", new { id = item.pbr })
+            </td>
+        </tr>
+    }
+
+</table>

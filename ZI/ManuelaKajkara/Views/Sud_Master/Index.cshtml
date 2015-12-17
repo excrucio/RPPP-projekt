@@ -1,0 +1,127 @@
+﻿@model ManuelaKajkara.Models.SudMaster_list
+@using ManuelaKajkara.HtmlHelpers
+
+@{
+    ViewBag.Title = "Sudovi";
+}
+
+<head>
+    @Scripts.Render("~/bundles/jquery")
+</head>
+
+<h2>Sudovi u Republici Hrvatskoj</h2>
+
+<div>
+    @if (TempData["pogreskaBrisanja"] != null)
+    {
+        <div class="validation-summary-errors">@TempData["pogreskaBrisanja"]</div>
+    }
+</div>
+
+<div class="pager">
+    @Html.PageLinks(Model.PagingInfo, (p, s) => Url.Action("Index", new { page = p }))
+</div>
+
+<div>
+    @Html.ActionLink("Dodaj novi", "Create") |
+    @Html.ActionLink("Uredi", "Edit", new { id = Model.sud.ID, page = Model.PagingInfo.CurrentPage }) |
+    @Html.ActionLink("Obriši", "Delete", new { id = Model.sud.ID })
+</div>
+
+<div class="validation-summary-errors">@ViewBag.Error_save</div>
+
+<table class="table">
+    <tr>
+        <td><p>Naziv</p></td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.sud.naziv)
+        </td>
+    </tr>
+
+    <tr>
+        <td><p>Adresa</p></td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.sud.adresa)
+        </td>
+    </tr>
+
+    @*<tr>
+        <td><p>Kategorija</p></td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.sud.kategorija)
+        </td>
+    </tr>*@
+
+    <tr>
+        <td><p>PBr</p></td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.sud.pbr), 
+            @ViewBag.Mjesto_naziv
+        </td>
+    </tr>
+
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+</table>
+
+
+<table class="table">
+<tr>
+    <th>
+        <p>JMBG</p>
+    </th>
+    <th>
+        <p>Ime</p>
+    </th>
+    <th>
+        <p>Prezime</p>
+    </th>
+</tr>
+
+@foreach (var item in Model.suci)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.JMBG)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.ime)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.prezime)
+        </td>
+        <td>
+            @*@Html.ActionLink("Uredi", "Edit", new { id = item.IDOsobe }) |*@
+            @*@Html.ActionLink("Detalji", "Details", new { id = item.IDOsobe }) |*@
+            @Html.ActionLink("Obriši", "Delete_sudac", new { id = item.IDOsobe, page = Model.PagingInfo.CurrentPage })
+        </td>
+    </tr>
+}
+
+@using (Html.BeginForm("InsertSudac", "Sud_Master", new { page = Model.PagingInfo.CurrentPage, id = Model.sud.ID }))
+{
+    <tr class="blank_row">
+       <td colspan="5"></td>
+    </tr>
+        <tr>
+
+        <td><b>Dodaj novog suca: </b></td>
+        <td></td>
+        <td>@*@Html.DropDownListFor("idOsobe", ((IEnumerable<Sudac>)ViewBag.Suci).OrderBy(d => d.prezime).
+                Select(d => new SelectListItem { Text =d.JMBG+", "+ d.ime +" " + d.prezime, Value = d.IDOsobe.ToString() }))</td>*@
+            @Html.DropDownList("idOsobe", ((IEnumerable<Sudac>)ViewBag.Suci).OrderBy(d => d.prezime).
+             Select(d => new SelectListItem { Text = d.JMBG + ", " + d.ime + " " + d.prezime, Value = d.IDOsobe.ToString() })) </td>
+        <td> <input type="submit" value="Dodaj" class="btn btn-default" /></td> 
+        
+   </tr>
+    
+}
+</table>
+<p>* Dodavanjem novog suca koji već ima sud na kojem radi, brišete ga s istog! *</p>
+

@@ -1,0 +1,16 @@
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaPresuda\bin\Debug\FormaPresuda.exe.config
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaPresuda\bin\Debug\FormaPresuda.exe
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaPresuda\bin\Debug\FormaPresuda.pdb
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaPresuda\obj\Debug\FormaPresuda (Josip).csprojResolveAssemblyReference.cache
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaPresuda\obj\Debug\FormaPresuda.PretrazivanjePresude.resources
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaPresuda\obj\Debug\FormaPresuda.UnosPresude.resources
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaPresuda\obj\Debug\FormaPresuda.Properties.Resources.resources
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaPresuda\obj\Debug\FormaPresuda (Josip).csproj.GenerateResource.Cache
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaPresuda\obj\Debug\FormaPresuda.exe
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaPresuda\obj\Debug\FormaPresuda.pdb
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaPresuda\bin\Debug\bazaF.exe
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaPresuda\bin\Debug\EntityFramework.dll
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaPresuda\bin\Debug\EntityFramework.SqlServer.dll
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaPresuda\bin\Debug\bazaF.pdb
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaPresuda\bin\Debug\EntityFramework.xml
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaPresuda\bin\Debug\EntityFramework.SqlServer.xml

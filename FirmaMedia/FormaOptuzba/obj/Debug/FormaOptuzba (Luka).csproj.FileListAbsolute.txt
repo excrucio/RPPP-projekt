@@ -1,0 +1,16 @@
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaOptuzba\bin\Debug\FormaOptuzba.exe.config
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaOptuzba\bin\Debug\FormaOptuzba.exe
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaOptuzba\bin\Debug\FormaOptuzba.pdb
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaOptuzba\bin\Debug\bazaF.exe
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaOptuzba\bin\Debug\EntityFramework.dll
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaOptuzba\bin\Debug\EntityFramework.SqlServer.dll
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaOptuzba\bin\Debug\Microsoft.Data.Entity.Design.Extensibility.dll
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaOptuzba\bin\Debug\bazaF.pdb
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaOptuzba\bin\Debug\EntityFramework.xml
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaOptuzba\bin\Debug\EntityFramework.SqlServer.xml
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaOptuzba\obj\Debug\FormaOptuzba (Luka).csprojResolveAssemblyReference.cache
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaOptuzba\obj\Debug\FormaOptuzba.Optuzba.resources
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaOptuzba\obj\Debug\FormaOptuzba.Properties.Resources.resources
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaOptuzba\obj\Debug\FormaOptuzba (Luka).csproj.GenerateResource.Cache
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaOptuzba\obj\Debug\FormaOptuzba.exe
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaOptuzba\obj\Debug\FormaOptuzba.pdb

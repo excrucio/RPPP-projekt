@@ -1,0 +1,16 @@
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaSpis\bin\Debug\FormaSpis.exe.config
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaSpis\bin\Debug\FormaSpis.exe
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaSpis\bin\Debug\FormaSpis.pdb
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaSpis\bin\Debug\bazaF.exe
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaSpis\bin\Debug\EntityFramework.dll
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaSpis\bin\Debug\EntityFramework.SqlServer.dll
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaSpis\bin\Debug\bazaF.pdb
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaSpis\bin\Debug\EntityFramework.xml
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaSpis\bin\Debug\EntityFramework.SqlServer.xml
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaSpis\obj\Debug\FormaSpis (Petra).csprojResolveAssemblyReference.cache
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaSpis\obj\Debug\FormaPresuda.PretrazivanjeSpisa.resources
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaSpis\obj\Debug\FormaSpis.UnosUSpis.resources
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaSpis\obj\Debug\FormaSpis.Properties.Resources.resources
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaSpis\obj\Debug\FormaSpis (Petra).csproj.GenerateResource.Cache
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaSpis\obj\Debug\FormaSpis.exe
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaSpis\obj\Debug\FormaSpis.pdb

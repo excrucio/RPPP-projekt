@@ -1,0 +1,60 @@
+﻿@model ManuelaKajkara.Models.Vijece_list
+
+@{
+    ViewBag.Title = "Sudska vijeća u Republici Hrvatskoj";
+}
+
+<head>
+    @Scripts.Render("~/bundles/jquery")
+</head>
+
+<h3>@ViewBag.Title</h3>
+
+<h5>@Html.ActionLink("Dodaj novi", "Create")</h5>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <p>ID vijeća</p>
+            </th>
+            <th>
+                <p>Ime</p>
+            </th>
+            <th>
+                <p>Prezime</p>
+            </th>
+            <th>
+                <p>Presjedavatelj</p>
+            </th>
+            <th>
+                <p>Proces</p>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.VijeceList)
+        {
+            <tr>
+                <td>@item.IDVijeca</td>
+                <td>@item.ime</td>
+                <td>@item.prezime</td>
+                <td>@{
+                    if (item.presjedavatelj) { <b>da</b>}
+                    else { <b>ne</b>}
+                    }    
+                </td>
+                <td>@item.nazivProcesa</td>
+
+                <td>
+                    @Html.ActionLink("  Ažuriraj  ", "Edit", new { id = item.IDSuca }) |
+                    @Html.ActionLink("  Detalji  ", "Details", new { id = item.IDSuca }) |
+                    @Html.ActionLink("  Obriši  ", "Delete", new { id = item.IDSuca })
+                </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+

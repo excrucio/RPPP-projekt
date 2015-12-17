@@ -1,0 +1,19 @@
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaKazna\obj\Debug\FormaKazna (Josip).csprojResolveAssemblyReference.cache
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaKazna\obj\Debug\FormaKazna.KaznaMaster.resources
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaKazna\obj\Debug\FormaKazna.Properties.Resources.resources
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaKazna\obj\Debug\FormaKazna (Josip).csproj.GenerateResource.Cache
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaKazna\bin\Debug\FormaKazna.exe.config
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaKazna\bin\Debug\FormaKazna.exe
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaKazna\bin\Debug\FormaKazna.pdb
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaKazna\bin\Debug\bazaF.exe
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaKazna\bin\Debug\EntityFramework.dll
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaKazna\bin\Debug\EntityFramework.SqlServer.dll
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaKazna\bin\Debug\bazaF.pdb
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaKazna\bin\Debug\EntityFramework.xml
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaKazna\bin\Debug\EntityFramework.SqlServer.xml
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaKazna\obj\Debug\FormaKazna.exe
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaKazna\obj\Debug\FormaKazna.pdb
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaKazna\bin\Debug\SifrarnikUlogaSudionika.cs
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaKazna\bin\Debug\SifrarnikUlogaSudionika.Designer.cs
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaKazna\bin\Debug\FormaOsobe.exe
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaKazna\bin\Debug\FormaOsobe.pdb

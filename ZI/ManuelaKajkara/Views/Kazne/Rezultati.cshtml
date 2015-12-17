@@ -1,0 +1,75 @@
+﻿@model ManuelaKajkara.Models.Nadeno_lista
+@{
+    ViewBag.Title = "Rezultati";
+}
+
+<h2>Rezultati pretrage</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Osoba
+        </th>
+        <th>
+            Vrsta kazne
+        </th>
+        <th>
+            Vrsta presude
+        </th>
+        <th>
+            Iznos
+        </th>
+        <th>
+            Opis
+        </th>
+        <th></th>
+    </tr>
+
+        @{
+            if (ViewBag.Nadjeni!="da")
+            {
+            <tr>
+                <td> --- </td>
+                <td> --- </td>
+                <td> --- </td>
+                <td> --- </td>
+                <td> --- </td>
+            </tr>
+            }
+            else
+            {
+                foreach (var item in Model.osobe)
+                {
+
+                    foreach (var i in item.kazne)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.osoba.ImePrezime)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => i.Naziv)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => i.Presuda)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => i.Iznos)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => i.Opis)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Uredi", "Edit", new { idKazne = i.IDKazne }) |
+                                @Html.ActionLink("Detalji", "Details", new { id = i.IDKazne }) |
+                                @Html.ActionLink("Obriši", "Delete", new { id = i.IDKazne }) |
+                                @Html.ActionLink("Uredi osobu i kazne", "Uredi", new { id = item.osoba.IDOsobe }) |
+                            </td>
+                        </tr>
+                    }
+
+                }
+            }
+        }
+    @Html.ActionLink("Nova pretraga", "Search" )
+    </table>

@@ -1,0 +1,33 @@
+﻿@model IEnumerable<DAL.EF.TipPresude>
+
+@{
+    ViewBag.Title = "Tipovi presuda";
+}
+
+<h2>Tipovi presuda</h2>
+
+<p>
+    @Html.ActionLink("Novi tip", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Naziv tipa
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NazivTipa)
+        </td>
+        <td>
+            @Html.ActionLink("Uredi", "Edit", new { id=item.SifraTipa }) |
+            @Html.ActionLink("Detalji", "Details", new { id=item.SifraTipa }) |
+            @Html.ActionLink("Obriši", "Delete", new { id=item.SifraTipa })
+        </td>
+    </tr>
+}
+
+</table>

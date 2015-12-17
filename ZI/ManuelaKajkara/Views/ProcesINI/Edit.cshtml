@@ -1,0 +1,69 @@
+﻿@model DAL.EF.Proces
+
+@{
+    ViewBag.Title = "Uređivanje";
+}
+
+<h2>Uređivanje</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Proces</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.IDProcesa)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Broj, "Ur. broj", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Broj)
+                @Html.ValidationMessageFor(model => model.Broj)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Klasa, "Klasa",new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Klasa)
+                @Html.ValidationMessageFor(model => model.Klasa)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Oznaka, "Vrsta procesa", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Oznaka", String.Empty)
+                @Html.ValidationMessageFor(model => model.Oznaka)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Naziv, "Naziv",new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Naziv)
+                @Html.ValidationMessageFor(model => model.Naziv)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Sud, "Sud na kojem se vodi", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Sud", String.Empty)
+                @Html.ValidationMessageFor(model => model.Sud)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Spremi" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Nazad", "Index")
+</div>

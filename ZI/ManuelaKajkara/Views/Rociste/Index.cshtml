@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Rociste>
+
+@{
+    ViewBag.Title = "Ročišta";
+}
+
+<h2>Ročišta</h2>
+
+<p>
+    @Html.ActionLink("Dodaj novo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+           Proces
+        </th>
+        <th>
+           Datum i vrijeme početka
+        </th>
+        <th>
+           Trajanje
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => new ProcesBLL().Fetch(item.IDProcesa).Naziv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Datum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Trajanje)
+        </td>
+        
+        <td>
+            @Html.ActionLink("Uredi", "Edit", new { id=item.IDRocista }) |
+            @Html.ActionLink("Detalji", "Details", new { id=item.IDRocista }) |
+            @Html.ActionLink("Obriši", "Delete", new { id=item.IDRocista })
+        </td>
+    </tr>
+}
+
+</table>

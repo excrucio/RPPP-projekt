@@ -1,0 +1,58 @@
+﻿@model DAL.EF.Kazna
+
+@{
+    ViewBag.Title = "Detalji";
+}
+
+<h2>Detalji</h2>
+
+<div>
+    <h4>Kazna</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Iznos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Iznos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Opis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Opis)
+        </dd>
+
+        <dt>
+            OIB kažnjene osobe
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Osoba.OIB)
+        </dd>
+
+        <dt>
+            Vrsta presude
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipPresude.NazivTipa)
+        </dd>
+
+        <dt>
+            Vrsta kazne
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VrstaKazne.NazivVrste)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Uredi", "Edit", new { id = Model.IDKazne }) |
+    @Html.ActionLink("Povratak", "Index")
+</p>

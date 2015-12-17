@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RPPP10ModelStoreContainer" CdmEntityContainer="RPPP10">
+    <EntitySetMapping Name="Branitelj">
+      <EntityTypeMapping TypeName="RPPP10Model.Branitelj">
+        <MappingFragment StoreEntitySet="Branitelj">
+          <ScalarProperty Name="IDBranitelja" ColumnName="IDBranitelja" />
+          <ScalarProperty Name="IDOsobe" ColumnName="IDOsobe" />
+          <ScalarProperty Name="IDOptuzenika" ColumnName="IDOptuzenika" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FizickaOsoba">
+      <EntityTypeMapping TypeName="RPPP10Model.FizickaOsoba">
+        <MappingFragment StoreEntitySet="FizickaOsoba">
+          <ScalarProperty Name="IDOsobe" ColumnName="IDOsobe" />
+          <ScalarProperty Name="Ime" ColumnName="Ime" />
+          <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+          <ScalarProperty Name="ImeOca" ColumnName="ImeOca" />
+          <ScalarProperty Name="DatumRod" ColumnName="DatumRod" />
+          <ScalarProperty Name="JMBG" ColumnName="JMBG" />
+          <ScalarProperty Name="Poslodavac" ColumnName="Poslodavac" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KategorijaSuda">
+      <EntityTypeMapping TypeName="RPPP10Model.KategorijaSuda">
+        <MappingFragment StoreEntitySet="KategorijaSuda">
+          <ScalarProperty Name="SifraKatSuda" ColumnName="SifraKatSuda" />
+          <ScalarProperty Name="NazivKatSuda" ColumnName="NazivKatSuda" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kazna">
+      <EntityTypeMapping TypeName="RPPP10Model.Kazna">
+        <MappingFragment StoreEntitySet="Kazna">
+          <ScalarProperty Name="IDKazne" ColumnName="IDKazne" />
+          <ScalarProperty Name="IDPresude" ColumnName="IDPresude" />
+          <ScalarProperty Name="IDOsobe" ColumnName="IDOsobe" />
+          <ScalarProperty Name="Vrsta" ColumnName="Vrsta" />
+          <ScalarProperty Name="Iznos" ColumnName="Iznos" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mjesto">
+      <EntityTypeMapping TypeName="RPPP10Model.Mjesto">
+        <MappingFragment StoreEntitySet="Mjesto">
+          <ScalarProperty Name="PBr" ColumnName="PBr" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Optuzba">
+      <EntityTypeMapping TypeName="RPPP10Model.Optuzba">
+        <MappingFragment StoreEntitySet="Optuzba">
+          <ScalarProperty Name="IDOptuzbe" ColumnName="IDOptuzbe" />
+          <ScalarProperty Name="IDOptuzenika" ColumnName="IDOptuzenika" />
+          <ScalarProperty Name="IDZakona" ColumnName="IDZakona" />
+          <ScalarProperty Name="IDPresude" ColumnName="IDPresude" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Optuzenik">
+      <EntityTypeMapping TypeName="RPPP10Model.Optuzenik">
+        <MappingFragment StoreEntitySet="Optuzenik">
+          <ScalarProperty Name="IDOptuzenika" ColumnName="IDOptuzenika" />
+          <ScalarProperty Name="IDOsobe" ColumnName="IDOsobe" />
+          <ScalarProperty Name="IDProces" ColumnName="IDProces" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Osoba">
+      <EntityTypeMapping TypeName="RPPP10Model.Osoba">
+        <MappingFragment StoreEntitySet="Osoba">
+          <ScalarProperty Name="IDOsobe" ColumnName="IDOsobe" />
+          <ScalarProperty Name="OIB" ColumnName="OIB" />
+          <ScalarProperty Name="UlicaIKucniBr" ColumnName="UlicaIKucniBr" />
+          <ScalarProperty Name="PBr" ColumnName="PBr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ostecenik">
+      <EntityTypeMapping TypeName="RPPP10Model.Ostecenik">
+        <MappingFragment StoreEntitySet="Ostecenik">
+          <ScalarProperty Name="IDOstecenika" ColumnName="IDOstecenika" />
+          <ScalarProperty Name="IDOsobe" ColumnName="IDOsobe" />
+          <ScalarProperty Name="IDProces" ColumnName="IDProces" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PravnaOsoba">
+      <EntityTypeMapping TypeName="RPPP10Model.PravnaOsoba">
+        <MappingFragment StoreEntitySet="PravnaOsoba">
+          <ScalarProperty Name="IDOsobe" ColumnName="IDOsobe" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="MB" ColumnName="MB" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Presuda">
+      <EntityTypeMapping TypeName="RPPP10Model.Presuda">
+        <MappingFragment StoreEntitySet="Presuda">
+          <ScalarProperty Name="IDStavke" ColumnName="IDStavke" />
+          <ScalarProperty Name="Dokument" ColumnName="Dokument" />
+          <ScalarProperty Name="TipPresude" ColumnName="TipPresude" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proces">
+      <EntityTypeMapping TypeName="RPPP10Model.Proces">
+        <MappingFragment StoreEntitySet="Proces">
+          <ScalarProperty Name="IDProcesa" ColumnName="IDProcesa" />
+          <ScalarProperty Name="Broj" ColumnName="Broj" />
+          <ScalarProperty Name="Klasa" ColumnName="Klasa" />
+          <ScalarProperty Name="Oznaka" ColumnName="Oznaka" />
+          <ScalarProperty Name="Optuznica" ColumnName="Optuznica" />
+          <ScalarProperty Name="Sud" ColumnName="Sud" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RazinaZakona">
+      <EntityTypeMapping TypeName="RPPP10Model.RazinaZakona">
+        <MappingFragment StoreEntitySet="RazinaZakona">
+          <ScalarProperty Name="SifraRazine" ColumnName="SifraRazine" />
+          <ScalarProperty Name="NazivRazine" ColumnName="NazivRazine" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rociste">
+      <EntityTypeMapping TypeName="RPPP10Model.Rociste">
+        <MappingFragment StoreEntitySet="Rociste">
+          <ScalarProperty Name="IDRocista" ColumnName="IDRocista" />
+          <ScalarProperty Name="IDProcesa" ColumnName="IDProcesa" />
+          <ScalarProperty Name="Datum" ColumnName="Datum" />
+          <ScalarProperty Name="Trajanje" ColumnName="Trajanje" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StavkaSpisa">
+      <EntityTypeMapping TypeName="RPPP10Model.StavkaSpisa">
+        <MappingFragment StoreEntitySet="StavkaSpisa">
+          <ScalarProperty Name="IDStavke" ColumnName="IDStavke" />
+          <ScalarProperty Name="NazivStavke" ColumnName="NazivStavke" />
+          <ScalarProperty Name="VrstaSpisa" ColumnName="VrstaSpisa" />
+          <ScalarProperty Name="IDProcesa" ColumnName="IDProcesa" />
+          <ScalarProperty Name="DatumUnosa" ColumnName="DatumUnosa" />
+          <ScalarProperty Name="Dokument" ColumnName="Dokument" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sud">
+      <EntityTypeMapping TypeName="RPPP10Model.Sud">
+        <MappingFragment StoreEntitySet="Sud">
+          <ScalarProperty Name="IDSuda" ColumnName="IDSuda" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="UlicaIKucniBr" ColumnName="UlicaIKucniBr" />
+          <ScalarProperty Name="PBr" ColumnName="PBr" />
+          <ScalarProperty Name="Kategorija" ColumnName="Kategorija" />
+          <ScalarProperty Name="Nadredeni" ColumnName="Nadredeni" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sudionik">
+      <EntityTypeMapping TypeName="RPPP10Model.Sudionik">
+        <MappingFragment StoreEntitySet="Sudionik">
+          <ScalarProperty Name="IDSudionika" ColumnName="IDSudionika" />
+          <ScalarProperty Name="IDOsobe" ColumnName="IDOsobe" />
+          <ScalarProperty Name="IDRocista" ColumnName="IDRocista" />
+          <ScalarProperty Name="Uloga" ColumnName="Uloga" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SudskoVijece">
+      <EntityTypeMapping TypeName="RPPP10Model.SudskoVijece">
+        <MappingFragment StoreEntitySet="SudskoVijece">
+          <ScalarProperty Name="IDSudskogVijeca" ColumnName="IDSudskogVijeca" />
+          <ScalarProperty Name="IDOsobe" ColumnName="IDOsobe" />
+          <ScalarProperty Name="IDProcesa" ColumnName="IDProcesa" />
+          <ScalarProperty Name="Predsjedavatelj" ColumnName="Predsjedavatelj" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Svjedok">
+      <EntityTypeMapping TypeName="RPPP10Model.Svjedok">
+        <MappingFragment StoreEntitySet="Svjedok">
+          <ScalarProperty Name="IDSvjedoka" ColumnName="IDSvjedoka" />
+          <ScalarProperty Name="IDOsobe" ColumnName="IDOsobe" />
+          <ScalarProperty Name="IDProces" ColumnName="IDProces" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipPresude">
+      <EntityTypeMapping TypeName="RPPP10Model.TipPresude">
+        <MappingFragment StoreEntitySet="TipPresude">
+          <ScalarProperty Name="SifraTipa" ColumnName="SifraTipa" />
+          <ScalarProperty Name="NazivTipa" ColumnName="NazivTipa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tuzitelj">
+      <EntityTypeMapping TypeName="RPPP10Model.Tuzitelj">
+        <MappingFragment StoreEntitySet="Tuzitelj">
+          <ScalarProperty Name="IDTuzitelja" ColumnName="IDTuzitelja" />
+          <ScalarProperty Name="IDOsobe" ColumnName="IDOsobe" />
+          <ScalarProperty Name="IDProcesa" ColumnName="IDProcesa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UlogaSudionika">
+      <EntityTypeMapping TypeName="RPPP10Model.UlogaSudionika">
+        <MappingFragment StoreEntitySet="UlogaSudionika">
+          <ScalarProperty Name="SifraUloge" ColumnName="SifraUloge" />
+          <ScalarProperty Name="NazivUloge" ColumnName="NazivUloge" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VrstaKazne">
+      <EntityTypeMapping TypeName="RPPP10Model.VrstaKazne">
+        <MappingFragment StoreEntitySet="VrstaKazne">
+          <ScalarProperty Name="SifraVrste" ColumnName="SifraVrste" />
+          <ScalarProperty Name="NazivVrste" ColumnName="NazivVrste" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VrstaSpisa">
+      <EntityTypeMapping TypeName="RPPP10Model.VrstaSpisa">
+        <MappingFragment StoreEntitySet="VrstaSpisa">
+          <ScalarProperty Name="SifraVrste" ColumnName="SifraVrste" />
+          <ScalarProperty Name="NazivVrste" ColumnName="NazivVrste" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zakon">
+      <EntityTypeMapping TypeName="RPPP10Model.Zakon">
+        <MappingFragment StoreEntitySet="Zakon">
+          <ScalarProperty Name="IDZakona" ColumnName="IDZakona" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Razina" ColumnName="Razina" />
+          <ScalarProperty Name="IDNadredenog" ColumnName="IDNadredenog" />
+          <ScalarProperty Name="Dokument" ColumnName="Dokument" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

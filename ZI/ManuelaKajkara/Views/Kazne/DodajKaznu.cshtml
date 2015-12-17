@@ -1,0 +1,79 @@
+﻿@model ManuelaKajkara.Kazna
+
+@{
+    
+ViewBag.Title="Dodavanje kazne za "+ViewBag.Title;
+
+}
+<h2>@ViewBag.Title</h2>
+
+<span class="error">@ViewData["Pogreska"]</span>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Kazna</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        @Html.HiddenFor(model => model.IDKazne, "IDKazne")
+
+        <div class="form-group" @*style="display:none;"*@>
+            @Html.LabelFor(model => model.IDPresude, "Presuda", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("IDPresude", String.Empty)
+                @Html.ValidationMessage("IDPresude", "IDPresude je obavezan!")
+            </div>
+        </div>
+        
+        <div class="form-group" style="display:none;">
+            @Html.LabelFor(model => model.IDOsobe, "Osoba", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("IDOsobe", String.Empty)
+                @Html.ValidationMessageFor(model => model.Osoba.IDOsobe)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Vrsta, "Vrsta", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Vrsta", String.Empty)
+                <li>@Html.ActionLink("Vrsta kazne", "Create", "KazneSifrarnik")</li>
+                @Html.ValidationMessage("Vrsta","Vrsta je obavezna!")
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Iznos, "Iznos", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Iznos)
+                @Html.ValidationMessage("Iznos", "Iznos je obavezan!")
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Opis, "Opis", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Opis)
+                @Html.ValidationMessage("Opis", "Opis je obavezan!")
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="DodajKaznu" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Povratak", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

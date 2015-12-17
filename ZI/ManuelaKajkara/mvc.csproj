@@ -1,0 +1,560 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6E4E0A51-ABFD-4DCD-8E5A-C65C4D26DF18}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ManuelaKajkara</RootNamespace>
+    <AssemblyName>ManuelaKajkara</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\ManuelaKajkara.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Firma.Framework, Version=1.0.5260.20392, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RPPP-primjeri\FirmaWin\Firma.Framework\obj\Debug\Firma.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.1\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Extensions\Controllers\" />
+    <Folder Include="Areas\Extensions\Models\" />
+    <Folder Include="Areas\Extensions\Views\Shared\" />
+    <Folder Include="DLL\" />
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Extensions\ExtensionsAreaRegistration.cs" />
+    <Compile Include="BLLProviders\FizickaOsobaBLL.cs" />
+    <Compile Include="BLLProviders\FizOsobaBLL.cs" />
+    <Compile Include="BLLProviders\KategorijaBLL.cs" />
+    <Compile Include="BLLProviders\KaznaBLL.cs" />
+    <Compile Include="BLLProviders\MjestoBLL.cs" />
+    <Compile Include="BLLProviders\OsobaBLL.cs" />
+    <Compile Include="BLLProviders\PravnaOsobaBLL.cs" />
+    <Compile Include="BLLProviders\PresudaBLL.cs" />
+    <Compile Include="BLLProviders\ProcesBLL.cs" />
+    <Compile Include="BLLProviders\RazinaZakonaBLL.cs" />
+    <Compile Include="BLLProviders\RocisteBLL.cs" />
+    <Compile Include="BLLProviders\SudacBLL.cs" />
+    <Compile Include="BLLProviders\SudBLL.cs" />
+    <Compile Include="BLLProviders\SudskoVijeceBLL.cs" />
+    <Compile Include="BLLProviders\VrKaBLL.cs" />
+    <Compile Include="BLLProviders\VrstaOznakeBLL.cs" />
+    <Compile Include="BLLProviders\ZakonBLL.cs" />
+    <Compile Include="BLLProviders\SudionikBLL.cs" />
+    <Compile Include="BLLProviders\UlogaBLL.cs" />
+    <Compile Include="Controllers\FizOsobeController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KategorijaController.cs" />
+    <Compile Include="Controllers\KazneMPController.cs" />
+    <Compile Include="Controllers\KazneSifrarnikController.cs" />
+    <Compile Include="Controllers\Kazne_WCFController.cs" />
+    <Compile Include="Controllers\MjestoController.cs" />
+    <Compile Include="Controllers\KazneController.cs" />
+    <Compile Include="Controllers\PravneOsobeController.cs" />
+    <Compile Include="Controllers\PresudeController.cs" />
+    <Compile Include="Controllers\ProcesINIController.cs" />
+    <Compile Include="Controllers\RocisteController.cs" />
+    <Compile Include="Controllers\RocisteSudioniciMDController.cs" />
+    <Compile Include="Controllers\SudoviController.cs" />
+    <Compile Include="Controllers\SudskoVijeceController.cs" />
+    <Compile Include="Controllers\Sud_MasterController.cs" />
+    <Compile Include="Controllers\Sud_WCFController.cs" />
+    <Compile Include="Controllers\TipPresudeController.cs" />
+    <Compile Include="Controllers\UlogeController.cs" />
+    <Compile Include="Controllers\VrstaOznakeController.cs" />
+    <Compile Include="Controllers\VrstaSpisaController.cs" />
+    <Compile Include="Controllers\ZakoniController.cs" />
+    <Compile Include="Controllers\ZakonVrstaController.cs" />
+    <Compile Include="DALSpecific\FizickaOsoba.cs" />
+    <Compile Include="DALSpecific\FizOsoba.cs" />
+    <Compile Include="DALSpecific\Kategorija.cs" />
+    <Compile Include="DALSpecific\Kazna.cs" />
+    <Compile Include="DALSpecific\Mjesto.cs" />
+    <Compile Include="DALSpecific\PravnaOsoba.cs" />
+    <Compile Include="DALSpecific\Presuda.cs" />
+    <Compile Include="DALSpecific\ProcesPD.cs" />
+    <Compile Include="DALSpecific\RazinaZakona.cs" />
+    <Compile Include="DALSpecific\Rociste.cs" />
+    <Compile Include="DALSpecific\Osoba.cs" />
+    <Compile Include="DALSpecific\Sud.cs" />
+    <Compile Include="DALSpecific\Sudac.cs" />
+    <Compile Include="DALSpecific\Sudionik.cs" />
+    <Compile Include="DALSpecific\SudskoVijece.cs" />
+    <Compile Include="DALSpecific\UlogaSudionika.cs" />
+    <Compile Include="DALSpecific\VrKa.cs" />
+    <Compile Include="DALSpecific\VrstaOznake.cs" />
+    <Compile Include="DALSpecific\Zakon.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="FizickaOsoba.cs" />
+    <Compile Include="FizOsoba.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HtmlHelpers\PagingHelpers.cs" />
+    <Compile Include="Kategorija.cs" />
+    <Compile Include="Kazna.cs" />
+    <Compile Include="Mjesto.cs" />
+    <Compile Include="Models\Edit_lista.cs" />
+    <Compile Include="Models\Kategorija_list.cs" />
+    <Compile Include="Models\Mjesto_list.cs" />
+    <Compile Include="Models\Nadeno_lista.cs" />
+    <Compile Include="Models\Osobe_lista.cs" />
+    <Compile Include="Models\PageRangeModel.cs" />
+    <Compile Include="Models\PagingInfo.cs" />
+    <Compile Include="Models\Proces_trazi.cs" />
+    <Compile Include="Models\ProNad_lista.cs" />
+    <Compile Include="Models\Rocista_lista.cs" />
+    <Compile Include="Models\SudMaster_list.cs" />
+    <Compile Include="Models\Sudovi_list.cs" />
+    <Compile Include="Models\Sudovi_listWCF.cs" />
+    <Compile Include="Models\Sudovi_Search.cs" />
+    <Compile Include="Models\Vijece.cs" />
+    <Compile Include="Models\Vijece_list.cs" />
+    <Compile Include="Models\Zakoni_lista.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Osoba.cs" />
+    <Compile Include="PravnaOsoba.cs" />
+    <Compile Include="Presuda.cs" />
+    <Compile Include="ProcesPD.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RazinaZakona.cs" />
+    <Compile Include="Rociste.cs" />
+    <Compile Include="Service References\ServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Sud.cs" />
+    <Compile Include="Sudac.cs" />
+    <Compile Include="Sudionik.cs" />
+    <Compile Include="SudskoVijece.cs" />
+    <Compile Include="UlogaSudionika.cs" />
+    <Compile Include="VrKa.cs" />
+    <Compile Include="VrstaOznake.cs" />
+    <Compile Include="Zakon.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\Antlr3.Runtime.pdb" />
+    <Content Include="bin\DAL.EF.dll" />
+    <Content Include="bin\DAL.EF.pdb" />
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.xml" />
+    <Content Include="bin\EntityFramework.xml" />
+    <Content Include="bin\Firma.Framework.dll" />
+    <Content Include="bin\ManuelaKajkara.dll" />
+    <Content Include="bin\ManuelaKajkara.pdb" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Newtonsoft.Json.xml" />
+    <Content Include="bin\PagedList.dll" />
+    <Content Include="bin\PagedList.Mvc.dll" />
+    <Content Include="bin\PagedList.Mvc.xml" />
+    <Content Include="bin\PagedList.xml" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Helpers.xml" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Mvc.xml" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Optimization.xml" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\System.Web.WebPages.Deployment.xml" />
+    <Content Include="bin\System.Web.WebPages.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.xml" />
+    <Content Include="bin\WebGrease.dll" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Firma.Framework.dll" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="obj\Debug\ManuelaKajkara.dll" />
+    <Content Include="obj\Debug\ManuelaKajkara.pdb" />
+    <Content Include="obj\Debug\mvc.csproj.FileListAbsolute.txt" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Extensions\Views\web.config" />
+    <Content Include="bin\ManuelaKajkara.dll.config" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\mvc.csprojResolveAssemblyReference.cache" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Service References\ServiceReference1\ManuelaKajkara.ServiceReference1.FizOsoba.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\ManuelaKajkara.ServiceReference1.Sud.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\ManuelaKajkara.ServiceReference1.Kategorija.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\ManuelaKajkara.ServiceReference1.Mjesto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\ManuelaKajkara.ServiceReference1.Kazna.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\ServiceReference1\Service1.disco" />
+    <None Include="Service References\ServiceReference1\configuration91.svcinfo" />
+    <None Include="Service References\ServiceReference1\configuration.svcinfo" />
+    <None Include="Service References\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Sudovi\Main.cshtml" />
+    <Content Include="Views\Shared\GoToPage.cshtml" />
+    <Content Include="Views\Sudovi\Edit.cshtml" />
+    <Content Include="Views\Sudovi\Create.cshtml" />
+    <Content Include="Views\Sudovi\Search.cshtml" />
+    <Content Include="Views\Zakoni\Main.cshtml" />
+    <Content Include="Views\Zakoni\DodajZakon.cshtml" />
+    <Content Include="Views\Zakoni\DodajClanak.cshtml" />
+    <Content Include="Views\Zakoni\UrediClanak.cshtml" />
+    <Content Include="Views\Uloge\Create.cshtml" />
+    <Content Include="Views\Uloge\Delete.cshtml" />
+    <Content Include="Views\Uloge\Details.cshtml" />
+    <Content Include="Views\Uloge\Edit.cshtml" />
+    <Content Include="Views\Uloge\Index.cshtml" />
+    <Content Include="Views\Zakoni\DodajStavak.cshtml" />
+    <Content Include="Views\Zakoni\UrediZakon.cshtml" />
+    <Content Include="Views\ZakonVrsta\Create.cshtml" />
+    <Content Include="Views\ZakonVrsta\Delete.cshtml" />
+    <Content Include="Views\ZakonVrsta\Details.cshtml" />
+    <Content Include="Views\ZakonVrsta\Edit.cshtml" />
+    <Content Include="Views\ZakonVrsta\Index.cshtml" />
+    <Content Include="Views\Kazne\DodajKaznu.cshtml" />
+    <Content Include="Views\Kazne\Uredi.cshtml" />
+    <Content Include="Views\Sud_Master\Edit_Sudac.cshtml" />
+    <Content Include="Views\Zakoni\UrediStavak.cshtml" />
+    <Content Include="Views\Zakoni\BrisiZakon.cshtml" />
+    <Content Include="Views\Zakoni\BrisiClanak.cshtml" />
+    <Content Include="Views\Zakoni\BrisiStavak.cshtml" />
+    <Content Include="Views\Mjesto\Create.cshtml" />
+    <Content Include="Views\Mjesto\Delete.cshtml" />
+    <Content Include="Views\Mjesto\Details.cshtml" />
+    <Content Include="Views\Mjesto\Edit.cshtml" />
+    <Content Include="Views\Mjesto\Index.cshtml" />
+    <Content Include="Views\Kategorija\Create.cshtml" />
+    <Content Include="Views\Kategorija\Delete.cshtml" />
+    <Content Include="Views\Kategorija\Details.cshtml" />
+    <Content Include="Views\Kategorija\Edit.cshtml" />
+    <Content Include="Views\Kategorija\Index.cshtml" />
+    <Content Include="Views\Sud_Master\Create.cshtml" />
+    <Content Include="Views\Sud_Master\Delete.cshtml" />
+    <Content Include="Views\Sud_Master\Delete_sudac.cshtml" />
+    <Content Include="Views\Sud_Master\Details.cshtml" />
+    <Content Include="Views\Sud_Master\Edit.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Sud_Master\Index.cshtml" />
+    <Content Include="Views\Kazne\Delete.cshtml" />
+    <Content Include="Views\Kazne\Details.cshtml" />
+    <Content Include="Views\Kazne\Edit.cshtml" />
+    <Content Include="Views\Kazne\Index.cshtml" />
+    <Content Include="Views\PravneOsobe\Create.cshtml" />
+    <Content Include="Views\PravneOsobe\Delete.cshtml" />
+    <Content Include="Views\PravneOsobe\Edit.cshtml" />
+    <Content Include="Views\PravneOsobe\Index.cshtml" />
+    <Content Include="Views\Sudovi\Details.cshtml" />
+    <Content Include="Views\Sudovi\Delete.cshtml" />
+    <Content Include="Views\KazneSifrarnik\Create.cshtml" />
+    <Content Include="Views\KazneSifrarnik\Delete.cshtml" />
+    <Content Include="Views\KazneSifrarnik\Details.cshtml" />
+    <Content Include="Views\KazneSifrarnik\Edit.cshtml" />
+    <Content Include="Views\KazneSifrarnik\Index.cshtml" />
+    <Content Include="Views\VrstaOznake\Create.cshtml" />
+    <Content Include="Views\VrstaOznake\Delete.cshtml" />
+    <Content Include="Views\VrstaOznake\Details.cshtml" />
+    <Content Include="Views\VrstaOznake\Edit.cshtml" />
+    <Content Include="Views\VrstaOznake\Index.cshtml" />
+    <Content Include="Views\FizOsobe\Create.cshtml" />
+    <Content Include="Views\FizOsobe\Delete.cshtml" />
+    <Content Include="Views\FizOsobe\Edit.cshtml" />
+    <Content Include="Views\FizOsobe\Index.cshtml" />
+    <None Include="Service References\ServiceReference1\Service1.wsdl" />
+    <None Include="Service References\ServiceReference1\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\Service11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\Service12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Views\PravneOsobe\Details.cshtml" />
+    <Content Include="Views\PravneOsobe\Main.cshtml" />
+    <Content Include="Views\Sud_WCF\Create.cshtml" />
+    <Content Include="Views\Sud_WCF\Delete.cshtml" />
+    <Content Include="Views\Sud_WCF\Details.cshtml" />
+    <Content Include="Views\Sud_WCF\Edit.cshtml" />
+    <Content Include="Views\Sud_WCF\Index.cshtml" />
+    <Content Include="Views\VrstaOznake\Create.cshtml" />
+    <Content Include="Views\VrstaOznake\Delete.cshtml" />
+    <Content Include="Views\VrstaOznake\Details.cshtml" />
+    <Content Include="Views\VrstaOznake\Edit.cshtml" />
+    <Content Include="Views\VrstaOznake\Index.cshtml" />
+    <Content Include="Views\Rociste\Create.cshtml" />
+    <Content Include="Views\Rociste\Delete.cshtml" />
+    <Content Include="Views\Rociste\Details.cshtml" />
+    <Content Include="Views\Rociste\Edit.cshtml" />
+    <Content Include="Views\Rociste\Index.cshtml" />
+    <Content Include="Views\RocisteSudioniciMD\Index.cshtml" />
+    <Content Include="Views\RocisteSudioniciMD\CreateMaster.cshtml" />
+    <Content Include="Views\RocisteSudioniciMD\CreateDetail.cshtml" />
+    <Content Include="Views\RocisteSudioniciMD\EditMaster.cshtml" />
+    <Content Include="Views\RocisteSudioniciMD\EditDetail.cshtml" />
+    <Content Include="Views\RocisteSudioniciMD\DeleteMaster.cshtml" />
+    <Content Include="Views\RocisteSudioniciMD\DeleteDetail.cshtml" />
+    <Content Include="Views\SudskoVijece\Create.cshtml" />
+    <Content Include="Views\SudskoVijece\Delete.cshtml" />
+    <Content Include="Views\SudskoVijece\Details.cshtml" />
+    <Content Include="Views\SudskoVijece\Edit.cshtml" />
+    <Content Include="Views\SudskoVijece\Index.cshtml" />
+    <Content Include="Views\Kazne\Search.cshtml" />
+    <Content Include="Views\Kazne\Rezultati.cshtml" />
+    <Content Include="Views\ProcesINI\Create.cshtml" />
+    <Content Include="Views\ProcesINI\Delete.cshtml" />
+    <Content Include="Views\ProcesINI\Details.cshtml" />
+    <Content Include="Views\ProcesINI\Edit.cshtml" />
+    <Content Include="Views\ProcesINI\Index.cshtml" />
+    <None Include="Service References\ServiceReference1\Service13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Views\KazneMP\Create.cshtml" />
+    <Content Include="Views\KazneMP\Delete.cshtml" />
+    <Content Include="Views\KazneMP\Details.cshtml" />
+    <Content Include="Views\KazneMP\Edit.cshtml" />
+    <Content Include="Views\KazneMP\Index.cshtml" />
+    <Content Include="Views\ProcesINI\Rezultati.cshtml" />
+    <Content Include="Views\ProcesINI\Search.cshtml" />
+    <Content Include="Views\TipPresude\Create.cshtml" />
+    <Content Include="Views\TipPresude\Delete.cshtml" />
+    <Content Include="Views\TipPresude\Details.cshtml" />
+    <Content Include="Views\TipPresude\Edit.cshtml" />
+    <Content Include="Views\TipPresude\Index.cshtml" />
+    <Content Include="Views\VrstaSpisa\Create.cshtml" />
+    <Content Include="Views\VrstaSpisa\Delete.cshtml" />
+    <Content Include="Views\VrstaSpisa\Details.cshtml" />
+    <Content Include="Views\VrstaSpisa\Edit.cshtml" />
+    <Content Include="Views\VrstaSpisa\Index.cshtml" />
+    <Content Include="Views\Kazne\Kazni.cshtml" />
+    <Content Include="Views\ProcesINI\Rezultati.cshtml" />
+    <Content Include="Views\ProcesINI\Search.cshtml" />
+    <Content Include="Views\Presude\Create.cshtml" />
+    <Content Include="Views\Presude\Delete.cshtml" />
+    <Content Include="Views\Presude\Details.cshtml" />
+    <Content Include="Views\Presude\Edit.cshtml" />
+    <Content Include="Views\Presude\Index.cshtml" />
+    <Content Include="Views\Kazne_WCF\Create.cshtml" />
+    <Content Include="Views\Kazne_WCF\Delete.cshtml" />
+    <Content Include="Views\Kazne_WCF\Details.cshtml" />
+    <Content Include="Views\Kazne_WCF\Edit.cshtml" />
+    <Content Include="Views\Kazne_WCF\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DZ2.1\DAL.EF\DAL.EF.csproj">
+      <Project>{b8caf4d6-b6fb-49e2-83ad-dbc33662ed76}</Project>
+      <Name>DAL.EF</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DZ2.1\DAL.EF\DAL.EF.csproj">
+      <Project>{b8caf4d6-b6fb-49e2-83ad-dbc33662ed76}</Project>
+      <Name>DAL.EF</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceReference1\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54674</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:54674/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

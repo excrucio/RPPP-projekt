@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ManuelaKajkara</name>
+    </assembly>
+    <members>
+        <member name="T:ManuelaKajkara.Controllers.PravneOsobeController">
+            <summary>
+            Ovo je kontroler koji radi sa pravnim osobama
+            </summary>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.PravneOsobeController.Index(System.String,System.String)">
+            <summary>
+            Ovom funkcijom se prikazuje glavna stranica i prihvaća dva operanda s kojima radi
+            </summary>
+            <param name="SortOrder">Ovaj operand označava vrstu sortiranja koja će se izvesti</param>
+            <param name="Pretraga">Ovaj operand je parametar za pretragu po nazivima</param>
+            <returns>Vraća listu osoba koju prosljeđuje View-u</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.PravneOsobeController.Create">
+            <summary>
+            Ovom funkcijom se poziva View za dodavanje osoba
+            </summary>
+            <returns>Vraća View za dodavanje osoba</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.PravneOsobeController.Create(ManuelaKajkara.PravnaOsoba)">
+            <summary>
+            Ovom funkcijom se dodaju osobe
+            </summary>
+            <param name="pravnaosoba">Ovaj prametar je osoba koja se dodaje tipa PravnaOsoba</param>
+            <returns>Vraća View na glavnu stranicu ili ne ide nikud u slučaju greške</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.PravneOsobeController.Edit(System.Nullable{System.Int32})">
+            <summary>
+            Ovo je funkcija za uređivanje osoba. traži osobu preko ID-a te ju šalje na View za uređivanje
+            </summary>
+            <param name="id">ID po kojem se traži osoba</param>
+            <returns>Vraća View za uređivanje osobe </returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.PravneOsobeController.Edit(ManuelaKajkara.PravnaOsoba)">
+            <summary>
+            Ovom funkcijom se dodaju osobe. Prima parametar tipa PravnaOsoba i sprema ga u bazu
+            </summary>
+            <param name="pravnaosoba">Parametar tipa PravnaOsoba koji se sprema</param>
+            <returns>Vraća View na početnu stranicu ili nazad na uređivanje ukoliko postoji greška</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.PravneOsobeController.Delete(System.Nullable{System.Int32})">
+            <summary>
+            Ovo je funkcija za traženje osobe za brisanje. Prima ID po kojem nađe osobu te ju postavi za brisanje.
+            </summary>
+            <param name="id">ID po kojem se traži osoba</param>
+            <returns>Vraća View na stranicu koja traži potvrdu za brisanje</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.PravneOsobeController.DeleteConfirmed(System.Int32)">
+            <summary>
+            Ovom funkcijom se briše osoba. Prima ID po kojem ju briše.
+            </summary>
+            <param name="id">ID osobe koja se briše</param>
+            <returns>Vraća View na Početnu stranicu ukoliko se potvrdilo da se osoba briše</returns>
+        </member>
+    </members>
+</doc>

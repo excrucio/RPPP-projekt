@@ -1,0 +1,10 @@
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaSuci\bin\Debug\FormaSuci.exe.config
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaSuci\bin\Debug\FormaSuci.exe
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaSuci\bin\Debug\FormaSuci.pdb
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaSuci\obj\Debug\FormaSuci.Pretrazivanje.resources
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaSuci\obj\Debug\FormaSuci.Properties.Resources.resources
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaSuci\obj\Debug\FormaSuci.Unos.resources
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaSuci\obj\Debug\FormaSuci (Manuela).csproj.GenerateResource.Cache
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaSuci\obj\Debug\FormaSuci.exe
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaSuci\obj\Debug\FormaSuci.pdb
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\MI\FirmaMedia\FormaSuci\obj\Debug\FormaSuci (Manuela).csprojResolveAssemblyReference.cache

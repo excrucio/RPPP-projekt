@@ -1,0 +1,159 @@
+﻿@model ManuelaKajkara.Models.Edit_lista
+
+@{
+    ViewBag.Title = "Uredi osobu i kaznu";
+}
+
+<h4>@Model.Ime @Model.Prezime</h4>
+
+<span class="error">@ViewData["Pogreska"]</span>
+<h6>@ViewData["Pogreska"]</h6>
+
+@using (Html.BeginForm())
+{
+    
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true)        
+
+        <div class="form-group">
+            <div class="col-md-10">
+
+                @Html.HiddenFor(model => model.IDOsobe, "IDOsobe")
+            </div>
+        </div>
+    
+    <div class="form-group">
+            <b class="control-label col-md-2">Ime</b>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Ime,"Ime")
+                @Html.ValidationMessage("Ime", "Nedozvoljen format unosa.")
+            </div>
+        </div>
+    
+    <div class="form-group">
+            <b class="control-label col-md-2">Prezime</b>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Prezime,"Prezime")
+                @Html.ValidationMessage("Prezime", "Nedozvoljen format unosa.")
+            </div>
+        </div>
+
+        <div class="form-group">
+            <b class="control-label col-md-2">Datum rođenja</b>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.datumRod,"datumRod")
+                @Html.ValidationMessage("Datum", "Nedozvoljen format unosa.")
+            </div>
+        </div>
+
+        <div class="form-group">
+            <b class="control-label col-md-2" >Adresa</b>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ulica,"Adresa")
+                @Html.ValidationMessage("Adresa", "Nedozvoljen format unosa.")
+            </div>
+        </div>
+
+        <div class="form-group">
+            <b class="control-label col-md-2">Mjesto</b>
+            <div class="col-md-10">
+                @Html.DropDownListFor(m => m.pbr, ((IEnumerable<Mjesto>)ViewBag.Mjesta).OrderBy(d => d.naziv).Select(d => new SelectListItem { Text = d.naziv, Value = d.pbr.ToString() }))
+                <li>@Html.ActionLink("Mjesto", "Index", "Mjesto")</li>
+                @Html.ValidationMessage("Mjesto", "Nedozvoljen format unosa.")
+            </div>
+        </div>
+
+        <div class="form-group">
+            <b class="control-label col-md-2">Ime oca</b>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ImeOca)
+                @Html.ValidationMessage("ImeOca", "Nedozvoljen format unosa.")
+            </div>
+        </div>
+    
+    <div class="form-group">
+            <b class="control-label col-md-2">JMBG</b>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.JMBG)
+                @Html.ValidationMessage("JMBG", "Nedozvoljen format unosa.")
+            </div>
+        </div>
+
+
+        <h4>Kazne</h4>
+<table class="table">
+    <tr>
+        <th>
+            <p>Vrsta kazne</p>
+        </th>
+        <th>
+            <p>Presuda</p>
+        </th>
+        <th>
+            <p>Iznos</p>
+        </th>
+        <th>
+            <p>Opis</p>
+        </th>
+    </tr>
+        
+        @for (int j = 0; j < Model.Kazne.Count(); j++)
+{
+    <tr>
+        <td>
+            @Html.HiddenFor(modelItem => modelItem.Kazne[j].IDOsobe)
+            @Html.DropDownListFor(m => m.Kazne[j].Vrsta, ((IEnumerable<VrKa>)ViewBag.VrstaKazne).OrderBy(d => d.Naziv).Select(d => new SelectListItem { Text = d.Naziv, Value = d.Sifra.ToString() }))
+
+            @Html.ValidationMessage("Vrsta", "Nedozvoljen format unosa.")
+            <li>@Html.ActionLink("Vrsta kazne", "Create", "KazneSifrarnik")</li>
+        </td>
+
+
+        <td>
+           @Html.DropDownListFor(m => m.Kazne[j].IDPresude, ((IEnumerable<Presuda>)ViewBag.Presude).OrderBy(d => d.IDPresude).Select(d => new SelectListItem { Text = d.IDPresude.ToString(), Value = d.IDPresude.ToString() }))
+
+            @Html.ValidationMessage("Presuda", "Presuda je neispravna!")
+        </td>
+        <td>
+            @Html.EditorFor(modelItem => modelItem.Kazne[j].Iznos)
+            @Html.ValidationMessage("Iznos", "Iznos je obavezan!")
+        </td>
+        <td>
+            @Html.EditorFor(modelItem => modelItem.Kazne[j].Opis)
+            @Html.ValidationMessage("Opis", "Opis je obavezan!")
+        </td>
+        
+        <td>
+            @Html.HiddenFor(model => model.Kazne[j].IDKazne, "IDKazne")
+        </td>
+
+        @*VIDI!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*@
+        <td>
+            @Html.HiddenFor(model => Model.IDOsobe, "IDOsobe")
+        </td>
+
+    </tr>
+
+}
+        <tr class="blank_row">
+            <td colspan="5"></td>
+        </tr>
+
+</table>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Spremi" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+<div>
+    @Html.ActionLink("Povratak na popis", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,52 @@
+﻿@model ManuelaKajkara.Models.Zakoni_lista
+@using ManuelaKajkara.HtmlHelpers
+
+@{
+    ViewBag.Title = "Pregled i uređivanje zakona";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Dodaj zakon", "DodajZakon") | @Html.ActionLink("Uredi", "UrediZakon", new { ID = @Model.zakon.IDZakona }) | @Html.ActionLink("Obriši", "BrisiZakon", new { ID = @Model.zakon.IDZakona })
+</p>
+
+<div class="pager">
+    @Html.PageLinks(Model.PagingInfoZakoni, (p, s) => Url.Action("Main", new { page = p }))
+</div>
+
+<h3>@Model.zakon.Naziv</h3>
+
+<p>
+    @Html.ActionLink("Dodaj novi članak", "DodajClanak", new { ID = @Model.zakon.IDZakona })
+</p>
+
+<table>
+    <tbody>
+        @foreach (var i in Model.clanci)
+        {
+            <tr>
+                <td>
+                    <b>Članak:</b> &nbsp @i.Naziv
+                </td>
+                <td>
+                    @Html.ActionLink("Uredi", "UrediClanak", new { id = i.IDZakona }) | @Html.ActionLink("Dodaj stavak", "DodajStavak", new { id = i.IDZakona }) | @Html.ActionLink("Obriši", "BrisiClanak", new { ID = i.IDZakona })
+                </td>
+            </tr>
+             foreach (var j in Model.stavci)
+                {
+                    if (j.IDNadredenog == i.IDZakona)
+                    {
+                        <tr>
+                            <td>&nbsp&nbsp&nbsp <b>Stavak:</b> &nbsp @j.Naziv
+                            <br> &nbsp&nbsp&nbsp @System.Text.Encoding.Unicode.GetString(j.Dokument)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Uredi", "UrediStavak", new { id = j.IDZakona }) | @Html.ActionLink("Obriši", "BrisiStavak", new { ID = j.IDZakona })
+                            </td>
+                        </tr>
+                    }
+                }
+        }
+    </tbody>
+</table>

@@ -1,0 +1,49 @@
+﻿@model ManuelaKajkara.Sud
+
+@{
+    ViewBag.Title = "Uredi: ";
+}
+
+<span class="error">@ViewData["Pogreska"]</span>
+
+@using (Html.BeginForm("Edit", "Sudovi", new { page = ViewBag.CurrentPage, sort = ViewBag.Sort }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="div_class">
+        @Html.HiddenFor(m => m.ID)
+        <table class="table">
+            <tr class="blank_row">
+                <td colspan="5"></td>
+            </tr>
+            <tr>
+                @*<td colspan="2">@Html.ValidationSummary()</td>*@
+            </tr>
+            <tr></tr>
+            <tr>
+                <td><b>Naziv</b></td>
+                <td>@Html.EditorFor(m => m.naziv)</td>
+                <td>@Html.ValidationMessage("Naziv", "Nedozvoljen format unosa!")</td>
+            </tr>
+            <tr>
+                <td><b>Adresa</b></td>
+                <td>@Html.EditorFor(m => m.adresa)</td>
+                <td>@Html.ValidationMessage("Adresa", "Nedozvoljen format unosa!")</td>
+            </tr>
+            <tr>
+                <td><b>Mjesto</b></td>
+                <td>@Html.DropDownListFor(m => m.pbr, ((IEnumerable<Mjesto>)ViewBag.Mjesta).OrderBy(d => d.naziv).Select(d => new SelectListItem { Text = d.naziv, Value = d.pbr.ToString()}))</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><b>Kategorija</b></td>
+                <td>@Html.DropDownListFor(n => n.kategorija, ((IEnumerable<Kategorija>)ViewBag.Kategorije).OrderBy(a => a.id).Select(a => new SelectListItem {Text=a.naziv, Value = a.id.ToString() }))</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Spremi" /></td>
+                <td>@Html.ActionLink("Odustani", "Main", new { page = ViewBag.CurrentPage, sort = ViewBag.Sort })</td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+}
+

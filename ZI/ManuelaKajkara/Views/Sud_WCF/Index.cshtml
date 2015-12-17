@@ -1,0 +1,61 @@
+﻿@model ManuelaKajkara.Models.Sudovi_listWCF
+@using ManuelaKajkara.HtmlHelpers
+
+@{
+    ViewBag.Title = "Slijedi popis svih sudova u Republici Hrvatskoj (prikazano korištenjem WCF servisa: ";
+}
+
+<head>
+    @Scripts.Render("~/bundles/jquery")
+</head>
+
+
+<div class="pager">
+    @Html.PageLinks(Model.PagingInfo, (p, s) => Url.Action("Index", new { page = p }))
+</div>
+
+<div>
+    @if (TempData["pogreskaBrisanja"] != null)
+    {
+        <div class="validation-summary-errors">@TempData["pogreskaBrisanja"]</div>
+    }
+</div>
+
+<h5>@Html.ActionLink("  Dodaj novi  ", "Create", new {page = Model.PagingInfo.CurrentPage})</h5>
+
+<h3>@ViewBag.Title</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th><b>ID</b></th>
+            <th><b>Naziv</b></th>
+            <th><b>Adresa</b></th>
+            <th><b>PBr</b></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.SudList)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.Naziv</td>
+                <td>@item.Adresa</td>
+                <td>@item.PBr</td>
+                <td>
+                    @Html.ActionLink("  Ažuriraj  ", "Edit", new { id = item.ID, page = Model.PagingInfo.CurrentPage }) |
+                    @Html.ActionLink("  Detalji  ", "Details", new { id = item.ID, page = Model.PagingInfo.CurrentPage }) |
+                    @Html.ActionLink("  Obriši  ", "Delete", new { id = item.ID, page = Model.PagingInfo.CurrentPage })
+                </td>
+            @*<td>
+                        @using (Html.BeginForm("Delete", "Mjesto", new { id = item.IdMjesta, page = Model.PagingInfo.CurrentPage, sort = Model.PagingInfo.Sort }))
+                        {
+                            <input type="submit" value="Obriši" class="delete" />
+                        }
+                </td>*@
+        </tr>
+        }
+    </tbody>
+</table>
+

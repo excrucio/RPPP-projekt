@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Kazna>
+
+@{
+    ViewBag.Title = "Kazne (uz WCF)";
+}
+
+<h2>Kazne (uz WCF)</h2>
+
+<p>
+    @Html.ActionLink("Nova", "Create")
+</p>
+@using (Html.BeginForm("Index", "Kazne_WCF", FormMethod.Get))
+    {
+<p>
+    Pretraga po prezimenu osobe: @Html.TextBox("Pretraga") <input type="submit" value="Pretraži" />
+</p>
+    }
+
+@Html.ActionLink("Prikaži sve", "Index")
+<table class="table">
+    <tr>
+        <th>
+            Iznos
+        </th>
+        <th>
+            Opis
+        </th>
+        <th>
+            Osoba (@Html.ActionLink("Ime", "Index", new { Sort = ViewBag.ImeSort }) i @Html.ActionLink("prezime", "Index", new { Sort = ViewBag.PrezimeSort }))
+        </th>
+        <th>
+            Presuda
+        </th>
+        <th>
+            Vrsta kazne
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Iznos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Opis)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Osoba.ImePrezime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Presuda)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Naziv)
+        </td>
+        <td>
+            @Html.ActionLink("Uredi", "Edit", new { id=item.IDKazne }) <br>
+            @Html.ActionLink("Obriši", "Delete", new { id=item.IDKazne })
+        </td>
+    </tr>
+}
+
+</table>

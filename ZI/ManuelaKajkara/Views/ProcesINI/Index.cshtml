@@ -1,0 +1,57 @@
+﻿@model IEnumerable<DAL.EF.Proces>
+
+@{
+    ViewBag.Title = "Procesi";
+}
+
+<h2>Procesi</h2>
+
+<p>
+    @Html.ActionLink("Novi", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Ur. broj
+        </th>
+        <th>
+            Klasa
+        </th>
+        <th>
+            Naziv
+        </th>
+        <th>
+            Vrsta procesa
+        </th>
+        <th>
+            Sud na kojem se vodi
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Broj)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Klasa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Naziv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VrstaOznake.OpisOznake)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sud1.Naziv)
+        </td>
+        <td>
+            @Html.ActionLink("Uredi", "Edit", new { id=item.IDProcesa }) |
+            @Html.ActionLink("Detalji", "Details", new { id=item.IDProcesa }) |
+            @Html.ActionLink("Obriši", "Delete", new { id=item.IDProcesa })
+        </td>
+    </tr>
+}
+
+</table>

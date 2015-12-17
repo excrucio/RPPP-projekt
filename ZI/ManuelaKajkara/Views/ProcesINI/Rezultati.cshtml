@@ -1,0 +1,56 @@
+﻿@model ManuelaKajkara.Models.ProNad_lista
+@{
+    ViewBag.Title = "Rezultati";
+}
+
+<h2>Rezultati pretrage procesa</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Naziv
+        </th>
+        <th>
+            Vrsta
+        </th>
+        <th>
+            Sud
+        </th>
+        <th></th>
+    </tr>
+
+    @{
+        if (ViewBag.Nadjeni != "da")
+        {
+            <tr>
+                <td> --- </td>
+                <td> --- </td>
+                <td> --- </td>
+            </tr>
+        }
+        else
+        {
+            foreach (var item in Model.Procesi)
+            {
+                <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Naziv)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.VrstaProcesa)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NazivSuda)
+                        </td>
+                        <td>
+             @* PRIPAZI NA OVO ISPOD!!!!!!!!!!!!!!! *@
+                            @Html.ActionLink("Uredi", "Edit", new { id = item.IDProcesa }) |
+                            @Html.ActionLink("Detalji", "Details", new { id = item.IDProcesa }) |
+                            @Html.ActionLink("Obriši", "Delete", new { id = item.IDProcesa })
+                        </td>
+                </tr>
+            }
+        }
+    }
+    @Html.ActionLink("Nova pretraga", "Search")
+</table>

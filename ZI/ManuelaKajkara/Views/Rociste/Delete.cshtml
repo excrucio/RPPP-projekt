@@ -1,0 +1,49 @@
+﻿@model Rociste
+
+@{
+    ViewBag.Title = "Brisanje ročišta";
+}
+
+<h2>Obriši</h2>
+
+<h3>Jeste li sigurni da želite obrisati podatak?</h3>
+<div>
+    <h4>Ročište</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+           Proces
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => new ProcesBLL().Fetch(model.IDProcesa).Naziv)
+        </dd>
+
+        <dt>
+            Datum i vrijeme početka
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Datum)
+        </dd>
+
+        <dt>
+           Trajanje (h)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Trajanje)
+        </dd>
+
+        
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Obriši" class="btn btn-default" /> |
+            @Html.ActionLink("Povratak na listu", "Index")
+        </div>
+    }
+</div>

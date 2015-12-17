@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Firma Media", "Index", "Home", null, new { @class = "navbar-brand" })
+                @*@Html.ActionLink("Firma Media", "Home", "Naslovna")*@
+            </div>
+            <div class="navbar-collapse collapse">
+                @*<ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Sudovi", "Main", "Sudovi")</li>
+                 </ul>*@
+                <ul id="nav">
+                    <li class="sub">
+                        <a href="#">Matični podaci</a>
+                            <ul>
+                                <li>@Html.ActionLink("Sudovi (Manuela Kajkara)", "Main", "Sudovi")</li>
+                                <li>@Html.ActionLink("Pravne osobe (Ivan Fabijanić)", "Index", "PravneOsobe")</li>
+                                <li>@Html.ActionLink("Ročišta (Petra Domitrović)", "Index", "Rociste")</li>
+                                <li>@Html.ActionLink("Kazne (Josip Vinković)", "Index", "KazneMP")</li>
+                        </ul>
+                    </li>
+
+                    <li class="sub">
+                        <a href="#">Master detail</a>
+                        <ul>
+                            <li>@Html.ActionLink("Sudovi (Manuela Kajkara)", "Index", "Sud_Master")</li>
+                            <li>@Html.ActionLink("Zakoni (Ivan Fabijanić)", "Main", "Zakoni")</li>
+                            <li>@Html.ActionLink("Kazne (Josip Vinković)", "Index", "Kazne")</li>
+                            <li>@Html.ActionLink("Ročista i sudionici (Petra Domitrović)", "Index", "RocisteSudioniciMD")</li>
+                        </ul>
+                    </li>
+
+                    <li class="sub">
+                        <a href="#">Ostale forme</a>
+                        <ul>
+                            <li>@Html.ActionLink("Procesi (Josip Vinković)", "Index", "ProcesINI")</li>
+                        </ul>
+                    </li>
+
+                    <li class="sub">
+                        <a href="#">Pretraga</a>
+                        <ul>
+                            <li>@Html.ActionLink("Sudovi", "Search", "Sudovi")</li>
+                            <li>@Html.ActionLink("Procesi", "Search", "ProcesINI")</li>
+                            <li>@Html.ActionLink("Kazne", "Search", "Kazne")</li>
+                        </ul>
+                    </li>
+
+                    <li class="sub">
+                        <a href="#">Šifrarnici</a>
+                        <ul>
+                            <li>@Html.ActionLink("Mjesto (M.K.)", "Index", "Mjesto")</li>
+                            <li>@Html.ActionLink("Uloga sudionika (P.D.)", "Index", "Uloge")</li>
+                            <li>@Html.ActionLink("Razine zakona (I.F.)", "Index", "ZakonVrsta")</li>
+                            <li>@Html.ActionLink("Kategorija suda (M.K.)", "Index", "Kategorija")</li>
+                            <li>@Html.ActionLink("Tip presude (J.V.)", "Index", "TipPresude")</li>
+                            <li>@Html.ActionLink("Vrsta kazne (J.V.)", "Index", "KazneSifrarnik")</li>
+                            <li>@Html.ActionLink("Vrsta spisa (J.V.)", "Index", "VrstaSpisa")</li>
+                            <li>@Html.ActionLink("Vrsta oznake (I.F.)", "Index", "VrstaOznake")</li>
+                        </ul>
+                    </li>
+
+                    <li class="sub">
+                        <a href="#">WCF Servis</a>
+                        <ul>
+                            <li>@Html.ActionLink("Fizičke osobe (Ivan Fabijanić)", "Index", "FizOsobe")</li>
+                            <li>@Html.ActionLink("Sudovi (Manuela Kajkara)", "Index", "Sud_WCF")</li>
+                            <li>@Html.ActionLink("Kazne (Josip Vinković)", "Index", "Kazne_WCF")</li>
+                        </ul>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

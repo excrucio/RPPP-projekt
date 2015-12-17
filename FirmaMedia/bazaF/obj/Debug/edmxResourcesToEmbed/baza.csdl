@@ -1,0 +1,1024 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RPPP10Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Branitelj">
+    <Key>
+      <PropertyRef Name="IDBranitelja" />
+    </Key>
+    <Property Name="IDBranitelja" Type="Int32" Nullable="false" />
+    <Property Name="IDOsobe" Type="Int32" />
+    <Property Name="IDOptuzenika" Type="Int32" />
+    <NavigationProperty Name="Optuzenik" Relationship="Self.FK__Branitelj__IDOpt__22751F6C" FromRole="Branitelj" ToRole="Optuzenik" />
+    <NavigationProperty Name="FizickaOsoba" Relationship="Self.FK__Branitelj__IDOso__2180FB33" FromRole="Branitelj" ToRole="FizickaOsoba" />
+  </EntityType>
+  <EntityType Name="FizickaOsoba">
+    <Key>
+      <PropertyRef Name="IDOsobe" />
+    </Key>
+    <Property Name="IDOsobe" Type="Int32" Nullable="false" />
+    <Property Name="Ime" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Prezime" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ImeOca" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DatumRod" Type="DateTime" Precision="0" />
+    <Property Name="JMBG" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="Poslodavac" Type="Int32" />
+    <Property Name="Odvjetnik" Type="Boolean" />
+    <Property Name="Sudac" Type="Boolean" />
+    <NavigationProperty Name="Branitelj" Relationship="Self.FK__Branitelj__IDOso__2180FB33" FromRole="FizickaOsoba" ToRole="Branitelj" />
+    <NavigationProperty Name="Osoba" Relationship="Self.FK__FizickaOs__IDOso__236943A5" FromRole="FizickaOsoba" ToRole="Osoba" />
+    <NavigationProperty Name="PravnaOsoba" Relationship="Self.FK__FizickaOs__Poslo__25518C17" FromRole="FizickaOsoba" ToRole="PravnaOsoba" />
+    <NavigationProperty Name="Sudionik" Relationship="Self.FK__Sudionik__IDOsob__5D95E53A" FromRole="FizickaOsoba" ToRole="Sudionik" />
+    <NavigationProperty Name="Svjedok" Relationship="Self.FK__Svjedok__IDOsobe__5E8A0973" FromRole="FizickaOsoba" ToRole="Svjedok" />
+    <NavigationProperty Name="Tuzitelj" Relationship="Self.FK__Tuzitelj__IDOsob__5535A963" FromRole="FizickaOsoba" ToRole="Tuzitelj" />
+  </EntityType>
+  <EntityType Name="KategorijaSuda">
+    <Key>
+      <PropertyRef Name="SifraKatSuda" />
+    </Key>
+    <Property Name="SifraKatSuda" Type="Int32" Nullable="false" />
+    <Property Name="NazivKatSuda" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Sud" Relationship="Self.FK__Sud__Kategorija__49C3F6B7" FromRole="KategorijaSuda" ToRole="Sud" />
+  </EntityType>
+  <EntityType Name="Kazna">
+    <Key>
+      <PropertyRef Name="IDKazne" />
+    </Key>
+    <Property Name="IDKazne" Type="Int32" Nullable="false" />
+    <Property Name="IDPresude" Type="Int32" />
+    <Property Name="IDOsobe" Type="Int32" />
+    <Property Name="Vrsta" Type="Int32" />
+    <Property Name="Iznos" Type="Decimal" Precision="11" Scale="2" />
+    <Property Name="Opis" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Osoba" Relationship="Self.FK__Kazna__IDOsobe__412EB0B6" FromRole="Kazna" ToRole="Osoba" />
+    <NavigationProperty Name="TipPresude" Relationship="Self.FK__Kazna__IDPresude__403A8C7D" FromRole="Kazna" ToRole="TipPresude" />
+    <NavigationProperty Name="VrstaKazne" Relationship="Self.FK__Kazna__Vrsta__4222D4EF" FromRole="Kazna" ToRole="VrstaKazne" />
+  </EntityType>
+  <EntityType Name="Mjesto">
+    <Key>
+      <PropertyRef Name="PBr" />
+    </Key>
+    <Property Name="PBr" Type="Int32" Nullable="false" />
+    <Property Name="Naziv" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Osoba" Relationship="Self.FK__Osoba__PBr__4D5F7D71" FromRole="Mjesto" ToRole="Osoba" />
+    <NavigationProperty Name="Sud" Relationship="Self.FK__Sud__PBr__48CFD27E" FromRole="Mjesto" ToRole="Sud" />
+  </EntityType>
+  <EntityType Name="Optuzba">
+    <Key>
+      <PropertyRef Name="IDOptuzbe" />
+    </Key>
+    <Property Name="IDOptuzbe" Type="Int32" Nullable="false" />
+    <Property Name="IDOptuzenika" Type="Int32" />
+    <Property Name="IDZakona" Type="Int32" />
+    <Property Name="IDPresude" Type="Int32" />
+    <NavigationProperty Name="Optuzenik" Relationship="Self.FK__Optuzba__IDOptuz__2645B050" FromRole="Optuzba" ToRole="Optuzenik" />
+    <NavigationProperty Name="Presuda" Relationship="Self.FK__Optuzba__IDPresu__10566F31" FromRole="Optuzba" ToRole="Presuda" />
+    <NavigationProperty Name="Zakon" Relationship="Self.FK__Optuzba__IDZakon__59C55456" FromRole="Optuzba" ToRole="Zakon" />
+  </EntityType>
+  <EntityType Name="Optuzenik">
+    <Key>
+      <PropertyRef Name="IDOptuzenika" />
+    </Key>
+    <Property Name="IDOptuzenika" Type="Int32" Nullable="false" />
+    <Property Name="IDOsobe" Type="Int32" />
+    <Property Name="IDProces" Type="Int32" />
+    <NavigationProperty Name="Branitelj" Relationship="Self.FK__Branitelj__IDOpt__22751F6C" FromRole="Optuzenik" ToRole="Branitelj" />
+    <NavigationProperty Name="Optuzba" Relationship="Self.FK__Optuzba__IDOptuz__2645B050" FromRole="Optuzenik" ToRole="Optuzba" />
+    <NavigationProperty Name="Osoba" Relationship="Self.FK__Optuzenik__IDOso__5BAD9CC8" FromRole="Optuzenik" ToRole="Osoba" />
+    <NavigationProperty Name="Proces" Relationship="Self.FK__Optuzenik__IDPro__2B0A656D" FromRole="Optuzenik" ToRole="Proces" />
+    <NavigationProperty Name="TekstOptuzbe" Relationship="Self.FK__TekstOptu__IDOpt__3A4CA8FD" FromRole="Optuzenik" ToRole="TekstOptuzbe" />
+  </EntityType>
+  <EntityType Name="Osoba">
+    <Key>
+      <PropertyRef Name="IDOsobe" />
+    </Key>
+    <Property Name="IDOsobe" Type="Int32" Nullable="false" />
+    <Property Name="OIB" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="UlicaIKucniBr" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="PBr" Type="Int32" />
+    <NavigationProperty Name="FizickaOsoba" Relationship="Self.FK__FizickaOs__IDOso__236943A5" FromRole="Osoba" ToRole="FizickaOsoba" />
+    <NavigationProperty Name="Kazna" Relationship="Self.FK__Kazna__IDOsobe__412EB0B6" FromRole="Osoba" ToRole="Kazna" />
+    <NavigationProperty Name="Mjesto" Relationship="Self.FK__Osoba__PBr__4D5F7D71" FromRole="Osoba" ToRole="Mjesto" />
+    <NavigationProperty Name="Optuzenik" Relationship="Self.FK__Optuzenik__IDOso__5BAD9CC8" FromRole="Osoba" ToRole="Optuzenik" />
+    <NavigationProperty Name="Ostecenik" Relationship="Self.FK__Ostecenik__IDOso__5CA1C101" FromRole="Osoba" ToRole="Ostecenik" />
+    <NavigationProperty Name="PravnaOsoba" Relationship="Self.FK__PravnaOso__IDOso__2D27B809" FromRole="Osoba" ToRole="PravnaOsoba" />
+    <NavigationProperty Name="Sudac" Relationship="Self.FK__Sudac__IDOsobe__55009F39" FromRole="Osoba" ToRole="Sudac" />
+  </EntityType>
+  <EntityType Name="Ostecenik">
+    <Key>
+      <PropertyRef Name="IDOstecenika" />
+    </Key>
+    <Property Name="IDOstecenika" Type="Int32" Nullable="false" />
+    <Property Name="IDOsobe" Type="Int32" />
+    <Property Name="IDProces" Type="Int32" />
+    <NavigationProperty Name="Osoba" Relationship="Self.FK__Ostecenik__IDOso__5CA1C101" FromRole="Ostecenik" ToRole="Osoba" />
+    <NavigationProperty Name="Proces" Relationship="Self.FK__Ostecenik__IDPro__2A164134" FromRole="Ostecenik" ToRole="Proces" />
+  </EntityType>
+  <EntityType Name="PravnaOsoba">
+    <Key>
+      <PropertyRef Name="IDOsobe" />
+    </Key>
+    <Property Name="IDOsobe" Type="Int32" Nullable="false" />
+    <Property Name="Naziv" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="MB" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="FizickaOsoba" Relationship="Self.FK__FizickaOs__Poslo__25518C17" FromRole="PravnaOsoba" ToRole="FizickaOsoba" />
+    <NavigationProperty Name="Osoba" Relationship="Self.FK__PravnaOso__IDOso__2D27B809" FromRole="PravnaOsoba" ToRole="Osoba" />
+  </EntityType>
+  <EntityType Name="Presuda">
+    <Key>
+      <PropertyRef Name="IDStavke" />
+    </Key>
+    <Property Name="IDStavke" Type="Int32" Nullable="false" />
+    <Property Name="Dokument" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="TipPresude" Type="Int32" />
+    <NavigationProperty Name="Optuzba" Relationship="Self.FK__Optuzba__IDPresu__10566F31" FromRole="Presuda" ToRole="Optuzba" />
+    <NavigationProperty Name="TipPresude1" Relationship="Self.FK__Presuda__TipPres__3D5E1FD2" FromRole="Presuda" ToRole="TipPresude" />
+  </EntityType>
+  <EntityType Name="Proces">
+    <Key>
+      <PropertyRef Name="IDProcesa" />
+    </Key>
+    <Property Name="IDProcesa" Type="Int32" Nullable="false" />
+    <Property Name="Broj" Type="Int32" Nullable="false" />
+    <Property Name="Klasa" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Oznaka" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Naziv" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Sud" Type="Int32" />
+    <NavigationProperty Name="Optuzenik" Relationship="Self.FK__Optuzenik__IDPro__2B0A656D" FromRole="Proces" ToRole="Optuzenik" />
+    <NavigationProperty Name="Ostecenik" Relationship="Self.FK__Ostecenik__IDPro__2A164134" FromRole="Proces" ToRole="Ostecenik" />
+    <NavigationProperty Name="VrstaOznake" Relationship="Self.FK__Proces__Oznaka__37703C52" FromRole="Proces" ToRole="VrstaOznake" />
+    <NavigationProperty Name="Sud1" Relationship="Self.FK__Proces__Sud__19DFD96B" FromRole="Proces" ToRole="Sud" />
+    <NavigationProperty Name="Rociste" Relationship="Self.FK__Rociste__IDProce__29221CFB" FromRole="Proces" ToRole="Rociste" />
+    <NavigationProperty Name="StavkaSpisa" Relationship="Self.FK__StavkaSpi__IDPro__282DF8C2" FromRole="Proces" ToRole="StavkaSpisa" />
+    <NavigationProperty Name="SudskoVijece" Relationship="Self.FK__SudskoVij__IDPro__2FCF1A8A" FromRole="Proces" ToRole="SudskoVijece" />
+    <NavigationProperty Name="Svjedok" Relationship="Self.FK__Svjedok__IDProce__2EDAF651" FromRole="Proces" ToRole="Svjedok" />
+    <NavigationProperty Name="TekstOptuzbe" Relationship="Self.FK__TekstOptu__IDPro__3B40CD36" FromRole="Proces" ToRole="TekstOptuzbe" />
+    <NavigationProperty Name="Tuzitelj" Relationship="Self.FK__Tuzitelj__IDProc__2DE6D218" FromRole="Proces" ToRole="Tuzitelj" />
+  </EntityType>
+  <EntityType Name="RazinaZakona">
+    <Key>
+      <PropertyRef Name="SifraRazine" />
+    </Key>
+    <Property Name="SifraRazine" Type="Int32" Nullable="false" />
+    <Property Name="NazivRazine" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Zakon" Relationship="Self.FK__Zakon__Razina__0A9D95DB" FromRole="RazinaZakona" ToRole="Zakon" />
+  </EntityType>
+  <EntityType Name="Rociste">
+    <Key>
+      <PropertyRef Name="IDRocista" />
+    </Key>
+    <Property Name="IDRocista" Type="Int32" Nullable="false" />
+    <Property Name="IDProcesa" Type="Int32" />
+    <Property Name="Datum" Type="DateTime" Precision="0" />
+    <Property Name="Trajanje" Type="Decimal" Precision="18" Scale="4" />
+    <NavigationProperty Name="Proces" Relationship="Self.FK__Rociste__IDProce__29221CFB" FromRole="Rociste" ToRole="Proces" />
+    <NavigationProperty Name="Sudionik" Relationship="Self.FK__Sudionik__IDRoci__31B762FC" FromRole="Rociste" ToRole="Sudionik" />
+  </EntityType>
+  <EntityType Name="StavkaSpisa">
+    <Key>
+      <PropertyRef Name="IDStavke" />
+    </Key>
+    <Property Name="IDStavke" Type="Int32" Nullable="false" />
+    <Property Name="NazivStavke" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="VrstaSpisa" Type="Int32" />
+    <Property Name="IDProcesa" Type="Int32" />
+    <Property Name="DatumUnosa" Type="DateTime" Precision="0" />
+    <Property Name="Dokument" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Proces" Relationship="Self.FK__StavkaSpi__IDPro__282DF8C2" FromRole="StavkaSpisa" ToRole="Proces" />
+    <NavigationProperty Name="VrstaSpisa1" Relationship="Self.FK__StavkaSpi__Vrsta__73BA3083" FromRole="StavkaSpisa" ToRole="VrstaSpisa" />
+  </EntityType>
+  <EntityType Name="Sud">
+    <Key>
+      <PropertyRef Name="IDSuda" />
+    </Key>
+    <Property Name="IDSuda" Type="Int32" Nullable="false" />
+    <Property Name="Naziv" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="UlicaIKucniBr" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="PBr" Type="Int32" />
+    <Property Name="Kategorija" Type="Int32" />
+    <Property Name="Nadredeni" Type="Int32" />
+    <NavigationProperty Name="KategorijaSuda" Relationship="Self.FK__Sud__Kategorija__49C3F6B7" FromRole="Sud" ToRole="KategorijaSuda" />
+    <NavigationProperty Name="Mjesto" Relationship="Self.FK__Sud__PBr__48CFD27E" FromRole="Sud" ToRole="Mjesto" />
+    <NavigationProperty Name="Proces" Relationship="Self.FK__Proces__Sud__19DFD96B" FromRole="Sud" ToRole="Proces" />
+    <NavigationProperty Name="Sud1" Relationship="Self.FK__Sud__Nadredeni__5F7E2DAC" FromRole="Sud" ToRole="Sud1" />
+    <NavigationProperty Name="Sud2" Relationship="Self.FK__Sud__Nadredeni__5F7E2DAC" FromRole="Sud1" ToRole="Sud" />
+    <NavigationProperty Name="Sudac" Relationship="Self.FK__Sudac__IDSuda__55F4C372" FromRole="Sud" ToRole="Sudac" />
+  </EntityType>
+  <EntityType Name="Sudac">
+    <Key>
+      <PropertyRef Name="IDOsobe" />
+    </Key>
+    <Property Name="IDOsobe" Type="Int32" Nullable="false" />
+    <Property Name="IDSuda" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Osoba" Relationship="Self.FK__Sudac__IDOsobe__55009F39" FromRole="Sudac" ToRole="Osoba" />
+    <NavigationProperty Name="Sud" Relationship="Self.FK__Sudac__IDSuda__55F4C372" FromRole="Sudac" ToRole="Sud" />
+    <NavigationProperty Name="SudskoVijece" Relationship="Self.FK__SudskoVij__IDSuc__57DD0BE4" FromRole="Sudac" ToRole="SudskoVijece" />
+  </EntityType>
+  <EntityType Name="Sudionik">
+    <Key>
+      <PropertyRef Name="IDSudionika" />
+    </Key>
+    <Property Name="IDSudionika" Type="Int32" Nullable="false" />
+    <Property Name="IDOsobe" Type="Int32" Nullable="false" />
+    <Property Name="IDRocista" Type="Int32" Nullable="false" />
+    <Property Name="Uloga" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="FizickaOsoba" Relationship="Self.FK__Sudionik__IDOsob__5D95E53A" FromRole="Sudionik" ToRole="FizickaOsoba" />
+    <NavigationProperty Name="Rociste" Relationship="Self.FK__Sudionik__IDRoci__31B762FC" FromRole="Sudionik" ToRole="Rociste" />
+    <NavigationProperty Name="UlogaSudionika" Relationship="Self.FK__Sudionik__Uloga__32AB8735" FromRole="Sudionik" ToRole="UlogaSudionika" />
+  </EntityType>
+  <EntityType Name="SudskoVijece">
+    <Key>
+      <PropertyRef Name="IDSudskogVijeca" />
+    </Key>
+    <Property Name="IDSudskogVijeca" Type="Int32" Nullable="false" />
+    <Property Name="IDSuca" Type="Int32" />
+    <Property Name="IDProcesa" Type="Int32" />
+    <Property Name="Predsjedavatelj" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Proces" Relationship="Self.FK__SudskoVij__IDPro__2FCF1A8A" FromRole="SudskoVijece" ToRole="Proces" />
+    <NavigationProperty Name="Sudac" Relationship="Self.FK__SudskoVij__IDSuc__57DD0BE4" FromRole="SudskoVijece" ToRole="Sudac" />
+  </EntityType>
+  <EntityType Name="Svjedok">
+    <Key>
+      <PropertyRef Name="IDSvjedoka" />
+    </Key>
+    <Property Name="IDSvjedoka" Type="Int32" Nullable="false" />
+    <Property Name="IDOsobe" Type="Int32" />
+    <Property Name="IDProces" Type="Int32" />
+    <NavigationProperty Name="FizickaOsoba" Relationship="Self.FK__Svjedok__IDOsobe__5E8A0973" FromRole="Svjedok" ToRole="FizickaOsoba" />
+    <NavigationProperty Name="Proces" Relationship="Self.FK__Svjedok__IDProce__2EDAF651" FromRole="Svjedok" ToRole="Proces" />
+  </EntityType>
+  <EntityType Name="TekstOptuzbe">
+    <Key>
+      <PropertyRef Name="IDOptuzbe" />
+    </Key>
+    <Property Name="IDOptuzbe" Type="Int32" Nullable="false" />
+    <Property Name="Tekst" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IDOptuzenika" Type="Int32" Nullable="false" />
+    <Property Name="IDProcesa" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Optuzenik" Relationship="Self.FK__TekstOptu__IDOpt__3A4CA8FD" FromRole="TekstOptuzbe" ToRole="Optuzenik" />
+    <NavigationProperty Name="Proces" Relationship="Self.FK__TekstOptu__IDPro__3B40CD36" FromRole="TekstOptuzbe" ToRole="Proces" />
+  </EntityType>
+  <EntityType Name="TipPresude">
+    <Key>
+      <PropertyRef Name="SifraTipa" />
+    </Key>
+    <Property Name="SifraTipa" Type="Int32" Nullable="false" />
+    <Property Name="NazivTipa" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Kazna" Relationship="Self.FK__Kazna__IDPresude__403A8C7D" FromRole="TipPresude" ToRole="Kazna" />
+    <NavigationProperty Name="Presuda" Relationship="Self.FK__Presuda__TipPres__3D5E1FD2" FromRole="TipPresude" ToRole="Presuda" />
+  </EntityType>
+  <EntityType Name="Tuzitelj">
+    <Key>
+      <PropertyRef Name="IDTuzitelja" />
+    </Key>
+    <Property Name="IDTuzitelja" Type="Int32" Nullable="false" />
+    <Property Name="IDOsobe" Type="Int32" />
+    <Property Name="IDProcesa" Type="Int32" />
+    <NavigationProperty Name="FizickaOsoba" Relationship="Self.FK__Tuzitelj__IDOsob__5535A963" FromRole="Tuzitelj" ToRole="FizickaOsoba" />
+    <NavigationProperty Name="Proces" Relationship="Self.FK__Tuzitelj__IDProc__2DE6D218" FromRole="Tuzitelj" ToRole="Proces" />
+  </EntityType>
+  <EntityType Name="UlogaSudionika">
+    <Key>
+      <PropertyRef Name="SifraUloge" />
+    </Key>
+    <Property Name="SifraUloge" Type="Int32" Nullable="false" />
+    <Property Name="NazivUloge" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Sudionik" Relationship="Self.FK__Sudionik__Uloga__32AB8735" FromRole="UlogaSudionika" ToRole="Sudionik" />
+  </EntityType>
+  <EntityType Name="VrstaKazne">
+    <Key>
+      <PropertyRef Name="SifraVrste" />
+    </Key>
+    <Property Name="SifraVrste" Type="Int32" Nullable="false" />
+    <Property Name="NazivVrste" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Kazna" Relationship="Self.FK__Kazna__Vrsta__4222D4EF" FromRole="VrstaKazne" ToRole="Kazna" />
+  </EntityType>
+  <EntityType Name="VrstaOznake">
+    <Key>
+      <PropertyRef Name="SifraOznake" />
+    </Key>
+    <Property Name="SifraOznake" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="OpisOznake" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Proces" Relationship="Self.FK__Proces__Oznaka__37703C52" FromRole="VrstaOznake" ToRole="Proces" />
+  </EntityType>
+  <EntityType Name="VrstaSpisa">
+    <Key>
+      <PropertyRef Name="SifraVrste" />
+    </Key>
+    <Property Name="SifraVrste" Type="Int32" Nullable="false" />
+    <Property Name="NazivVrste" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="StavkaSpisa" Relationship="Self.FK__StavkaSpi__Vrsta__73BA3083" FromRole="VrstaSpisa" ToRole="StavkaSpisa" />
+  </EntityType>
+  <EntityType Name="Zakon">
+    <Key>
+      <PropertyRef Name="IDZakona" />
+    </Key>
+    <Property Name="IDZakona" Type="Int32" Nullable="false" />
+    <Property Name="Naziv" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Razina" Type="Int32" />
+    <Property Name="IDNadredenog" Type="Int32" />
+    <Property Name="Dokument" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Optuzba" Relationship="Self.FK__Optuzba__IDZakon__59C55456" FromRole="Zakon" ToRole="Optuzba" />
+    <NavigationProperty Name="RazinaZakona" Relationship="Self.FK__Zakon__Razina__0A9D95DB" FromRole="Zakon" ToRole="RazinaZakona" />
+    <NavigationProperty Name="Zakon1" Relationship="Self.FK__Zakon__IDNadrede__0B91BA14" FromRole="Zakon" ToRole="Zakon1" />
+    <NavigationProperty Name="Zakon2" Relationship="Self.FK__Zakon__IDNadrede__0B91BA14" FromRole="Zakon1" ToRole="Zakon" />
+  </EntityType>
+  <Association Name="FK__Branitelj__IDOpt__22751F6C">
+    <End Role="Optuzenik" Type="Self.Optuzenik" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Branitelj" Type="Self.Branitelj" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Optuzenik">
+        <PropertyRef Name="IDOptuzenika" />
+      </Principal>
+      <Dependent Role="Branitelj">
+        <PropertyRef Name="IDOptuzenika" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Branitelj__IDOso__2180FB33">
+    <End Role="FizickaOsoba" Type="Self.FizickaOsoba" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Branitelj" Type="Self.Branitelj" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FizickaOsoba">
+        <PropertyRef Name="IDOsobe" />
+      </Principal>
+      <Dependent Role="Branitelj">
+        <PropertyRef Name="IDOsobe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FizickaOs__IDOso__236943A5">
+    <End Role="Osoba" Type="Self.Osoba" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="FizickaOsoba" Type="Self.FizickaOsoba" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Osoba">
+        <PropertyRef Name="IDOsobe" />
+      </Principal>
+      <Dependent Role="FizickaOsoba">
+        <PropertyRef Name="IDOsobe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FizickaOs__Poslo__25518C17">
+    <End Role="PravnaOsoba" Type="Self.PravnaOsoba" Multiplicity="0..1" />
+    <End Role="FizickaOsoba" Type="Self.FizickaOsoba" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PravnaOsoba">
+        <PropertyRef Name="IDOsobe" />
+      </Principal>
+      <Dependent Role="FizickaOsoba">
+        <PropertyRef Name="Poslodavac" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Sudionik__IDOsob__5D95E53A">
+    <End Role="FizickaOsoba" Type="Self.FizickaOsoba" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Sudionik" Type="Self.Sudionik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FizickaOsoba">
+        <PropertyRef Name="IDOsobe" />
+      </Principal>
+      <Dependent Role="Sudionik">
+        <PropertyRef Name="IDOsobe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Svjedok__IDOsobe__5E8A0973">
+    <End Role="FizickaOsoba" Type="Self.FizickaOsoba" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Svjedok" Type="Self.Svjedok" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FizickaOsoba">
+        <PropertyRef Name="IDOsobe" />
+      </Principal>
+      <Dependent Role="Svjedok">
+        <PropertyRef Name="IDOsobe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tuzitelj__IDOsob__5535A963">
+    <End Role="FizickaOsoba" Type="Self.FizickaOsoba" Multiplicity="0..1" />
+    <End Role="Tuzitelj" Type="Self.Tuzitelj" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FizickaOsoba">
+        <PropertyRef Name="IDOsobe" />
+      </Principal>
+      <Dependent Role="Tuzitelj">
+        <PropertyRef Name="IDOsobe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Sud__Kategorija__49C3F6B7">
+    <End Role="KategorijaSuda" Type="Self.KategorijaSuda" Multiplicity="0..1" />
+    <End Role="Sud" Type="Self.Sud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KategorijaSuda">
+        <PropertyRef Name="SifraKatSuda" />
+      </Principal>
+      <Dependent Role="Sud">
+        <PropertyRef Name="Kategorija" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Kazna__IDOsobe__412EB0B6">
+    <End Role="Osoba" Type="Self.Osoba" Multiplicity="0..1" />
+    <End Role="Kazna" Type="Self.Kazna" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Osoba">
+        <PropertyRef Name="IDOsobe" />
+      </Principal>
+      <Dependent Role="Kazna">
+        <PropertyRef Name="IDOsobe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Kazna__IDPresude__403A8C7D">
+    <End Role="TipPresude" Type="Self.TipPresude" Multiplicity="0..1" />
+    <End Role="Kazna" Type="Self.Kazna" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipPresude">
+        <PropertyRef Name="SifraTipa" />
+      </Principal>
+      <Dependent Role="Kazna">
+        <PropertyRef Name="IDPresude" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Kazna__Vrsta__4222D4EF">
+    <End Role="VrstaKazne" Type="Self.VrstaKazne" Multiplicity="0..1" />
+    <End Role="Kazna" Type="Self.Kazna" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VrstaKazne">
+        <PropertyRef Name="SifraVrste" />
+      </Principal>
+      <Dependent Role="Kazna">
+        <PropertyRef Name="Vrsta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Osoba__PBr__4D5F7D71">
+    <End Role="Mjesto" Type="Self.Mjesto" Multiplicity="0..1" />
+    <End Role="Osoba" Type="Self.Osoba" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mjesto">
+        <PropertyRef Name="PBr" />
+      </Principal>
+      <Dependent Role="Osoba">
+        <PropertyRef Name="PBr" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Sud__PBr__48CFD27E">
+    <End Role="Mjesto" Type="Self.Mjesto" Multiplicity="0..1" />
+    <End Role="Sud" Type="Self.Sud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mjesto">
+        <PropertyRef Name="PBr" />
+      </Principal>
+      <Dependent Role="Sud">
+        <PropertyRef Name="PBr" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Optuzba__IDOptuz__2645B050">
+    <End Role="Optuzenik" Type="Self.Optuzenik" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Optuzba" Type="Self.Optuzba" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Optuzenik">
+        <PropertyRef Name="IDOptuzenika" />
+      </Principal>
+      <Dependent Role="Optuzba">
+        <PropertyRef Name="IDOptuzenika" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Optuzba__IDPresu__10566F31">
+    <End Role="Presuda" Type="Self.Presuda" Multiplicity="0..1" />
+    <End Role="Optuzba" Type="Self.Optuzba" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Presuda">
+        <PropertyRef Name="IDStavke" />
+      </Principal>
+      <Dependent Role="Optuzba">
+        <PropertyRef Name="IDPresude" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Optuzba__IDZakon__59C55456">
+    <End Role="Zakon" Type="Self.Zakon" Multiplicity="0..1" />
+    <End Role="Optuzba" Type="Self.Optuzba" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Zakon">
+        <PropertyRef Name="IDZakona" />
+      </Principal>
+      <Dependent Role="Optuzba">
+        <PropertyRef Name="IDZakona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Optuzenik__IDOso__5BAD9CC8">
+    <End Role="Osoba" Type="Self.Osoba" Multiplicity="0..1" />
+    <End Role="Optuzenik" Type="Self.Optuzenik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Osoba">
+        <PropertyRef Name="IDOsobe" />
+      </Principal>
+      <Dependent Role="Optuzenik">
+        <PropertyRef Name="IDOsobe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Optuzenik__IDPro__2B0A656D">
+    <End Role="Proces" Type="Self.Proces" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Optuzenik" Type="Self.Optuzenik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proces">
+        <PropertyRef Name="IDProcesa" />
+      </Principal>
+      <Dependent Role="Optuzenik">
+        <PropertyRef Name="IDProces" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TekstOptu__IDOpt__3A4CA8FD">
+    <End Role="Optuzenik" Type="Self.Optuzenik" Multiplicity="1" />
+    <End Role="TekstOptuzbe" Type="Self.TekstOptuzbe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Optuzenik">
+        <PropertyRef Name="IDOptuzenika" />
+      </Principal>
+      <Dependent Role="TekstOptuzbe">
+        <PropertyRef Name="IDOptuzenika" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ostecenik__IDOso__5CA1C101">
+    <End Role="Osoba" Type="Self.Osoba" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Ostecenik" Type="Self.Ostecenik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Osoba">
+        <PropertyRef Name="IDOsobe" />
+      </Principal>
+      <Dependent Role="Ostecenik">
+        <PropertyRef Name="IDOsobe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PravnaOso__IDOso__2D27B809">
+    <End Role="Osoba" Type="Self.Osoba" Multiplicity="1" />
+    <End Role="PravnaOsoba" Type="Self.PravnaOsoba" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Osoba">
+        <PropertyRef Name="IDOsobe" />
+      </Principal>
+      <Dependent Role="PravnaOsoba">
+        <PropertyRef Name="IDOsobe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Sudac__IDOsobe__55009F39">
+    <End Role="Osoba" Type="Self.Osoba" Multiplicity="1" />
+    <End Role="Sudac" Type="Self.Sudac" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Osoba">
+        <PropertyRef Name="IDOsobe" />
+      </Principal>
+      <Dependent Role="Sudac">
+        <PropertyRef Name="IDOsobe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ostecenik__IDPro__2A164134">
+    <End Role="Proces" Type="Self.Proces" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Ostecenik" Type="Self.Ostecenik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proces">
+        <PropertyRef Name="IDProcesa" />
+      </Principal>
+      <Dependent Role="Ostecenik">
+        <PropertyRef Name="IDProces" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Presuda__TipPres__3D5E1FD2">
+    <End Role="TipPresude" Type="Self.TipPresude" Multiplicity="0..1" />
+    <End Role="Presuda" Type="Self.Presuda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipPresude">
+        <PropertyRef Name="SifraTipa" />
+      </Principal>
+      <Dependent Role="Presuda">
+        <PropertyRef Name="TipPresude" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Proces__Oznaka__37703C52">
+    <End Role="VrstaOznake" Type="Self.VrstaOznake" Multiplicity="1" />
+    <End Role="Proces" Type="Self.Proces" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VrstaOznake">
+        <PropertyRef Name="SifraOznake" />
+      </Principal>
+      <Dependent Role="Proces">
+        <PropertyRef Name="Oznaka" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Proces__Sud__19DFD96B">
+    <End Role="Sud" Type="Self.Sud" Multiplicity="0..1" />
+    <End Role="Proces" Type="Self.Proces" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sud">
+        <PropertyRef Name="IDSuda" />
+      </Principal>
+      <Dependent Role="Proces">
+        <PropertyRef Name="Sud" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Rociste__IDProce__29221CFB">
+    <End Role="Proces" Type="Self.Proces" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Rociste" Type="Self.Rociste" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proces">
+        <PropertyRef Name="IDProcesa" />
+      </Principal>
+      <Dependent Role="Rociste">
+        <PropertyRef Name="IDProcesa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__StavkaSpi__IDPro__282DF8C2">
+    <End Role="Proces" Type="Self.Proces" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="StavkaSpisa" Type="Self.StavkaSpisa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proces">
+        <PropertyRef Name="IDProcesa" />
+      </Principal>
+      <Dependent Role="StavkaSpisa">
+        <PropertyRef Name="IDProcesa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SudskoVij__IDPro__2FCF1A8A">
+    <End Role="Proces" Type="Self.Proces" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SudskoVijece" Type="Self.SudskoVijece" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proces">
+        <PropertyRef Name="IDProcesa" />
+      </Principal>
+      <Dependent Role="SudskoVijece">
+        <PropertyRef Name="IDProcesa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Svjedok__IDProce__2EDAF651">
+    <End Role="Proces" Type="Self.Proces" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Svjedok" Type="Self.Svjedok" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proces">
+        <PropertyRef Name="IDProcesa" />
+      </Principal>
+      <Dependent Role="Svjedok">
+        <PropertyRef Name="IDProces" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TekstOptu__IDPro__3B40CD36">
+    <End Role="Proces" Type="Self.Proces" Multiplicity="1" />
+    <End Role="TekstOptuzbe" Type="Self.TekstOptuzbe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proces">
+        <PropertyRef Name="IDProcesa" />
+      </Principal>
+      <Dependent Role="TekstOptuzbe">
+        <PropertyRef Name="IDProcesa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tuzitelj__IDProc__2DE6D218">
+    <End Role="Proces" Type="Self.Proces" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Tuzitelj" Type="Self.Tuzitelj" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proces">
+        <PropertyRef Name="IDProcesa" />
+      </Principal>
+      <Dependent Role="Tuzitelj">
+        <PropertyRef Name="IDProcesa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Zakon__Razina__0A9D95DB">
+    <End Role="RazinaZakona" Type="Self.RazinaZakona" Multiplicity="0..1" />
+    <End Role="Zakon" Type="Self.Zakon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RazinaZakona">
+        <PropertyRef Name="SifraRazine" />
+      </Principal>
+      <Dependent Role="Zakon">
+        <PropertyRef Name="Razina" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Sudionik__IDRoci__31B762FC">
+    <End Role="Rociste" Type="Self.Rociste" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Sudionik" Type="Self.Sudionik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rociste">
+        <PropertyRef Name="IDRocista" />
+      </Principal>
+      <Dependent Role="Sudionik">
+        <PropertyRef Name="IDRocista" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__StavkaSpi__Vrsta__73BA3083">
+    <End Role="VrstaSpisa" Type="Self.VrstaSpisa" Multiplicity="0..1" />
+    <End Role="StavkaSpisa" Type="Self.StavkaSpisa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VrstaSpisa">
+        <PropertyRef Name="SifraVrste" />
+      </Principal>
+      <Dependent Role="StavkaSpisa">
+        <PropertyRef Name="VrstaSpisa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Sud__Nadredeni__5F7E2DAC">
+    <End Role="Sud" Type="Self.Sud" Multiplicity="0..1" />
+    <End Role="Sud1" Type="Self.Sud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sud">
+        <PropertyRef Name="IDSuda" />
+      </Principal>
+      <Dependent Role="Sud1">
+        <PropertyRef Name="Nadredeni" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Sudac__IDSuda__55F4C372">
+    <End Role="Sud" Type="Self.Sud" Multiplicity="1" />
+    <End Role="Sudac" Type="Self.Sudac" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sud">
+        <PropertyRef Name="IDSuda" />
+      </Principal>
+      <Dependent Role="Sudac">
+        <PropertyRef Name="IDSuda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SudskoVij__IDSuc__57DD0BE4">
+    <End Role="Sudac" Type="Self.Sudac" Multiplicity="0..1" />
+    <End Role="SudskoVijece" Type="Self.SudskoVijece" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sudac">
+        <PropertyRef Name="IDOsobe" />
+      </Principal>
+      <Dependent Role="SudskoVijece">
+        <PropertyRef Name="IDSuca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Sudionik__Uloga__32AB8735">
+    <End Role="UlogaSudionika" Type="Self.UlogaSudionika" Multiplicity="1" />
+    <End Role="Sudionik" Type="Self.Sudionik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UlogaSudionika">
+        <PropertyRef Name="SifraUloge" />
+      </Principal>
+      <Dependent Role="Sudionik">
+        <PropertyRef Name="Uloga" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Zakon__IDNadrede__0B91BA14">
+    <End Role="Zakon" Type="Self.Zakon" Multiplicity="0..1" />
+    <End Role="Zakon1" Type="Self.Zakon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Zakon">
+        <PropertyRef Name="IDZakona" />
+      </Principal>
+      <Dependent Role="Zakon1">
+        <PropertyRef Name="IDNadredenog" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RPPP10" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Branitelj" EntityType="Self.Branitelj" />
+    <EntitySet Name="FizickaOsoba" EntityType="Self.FizickaOsoba" />
+    <EntitySet Name="KategorijaSuda" EntityType="Self.KategorijaSuda" />
+    <EntitySet Name="Kazna" EntityType="Self.Kazna" />
+    <EntitySet Name="Mjesto" EntityType="Self.Mjesto" />
+    <EntitySet Name="Optuzba" EntityType="Self.Optuzba" />
+    <EntitySet Name="Optuzenik" EntityType="Self.Optuzenik" />
+    <EntitySet Name="Osoba" EntityType="Self.Osoba" />
+    <EntitySet Name="Ostecenik" EntityType="Self.Ostecenik" />
+    <EntitySet Name="PravnaOsoba" EntityType="Self.PravnaOsoba" />
+    <EntitySet Name="Presuda" EntityType="Self.Presuda" />
+    <EntitySet Name="Proces" EntityType="Self.Proces" />
+    <EntitySet Name="RazinaZakona" EntityType="Self.RazinaZakona" />
+    <EntitySet Name="Rociste" EntityType="Self.Rociste" />
+    <EntitySet Name="StavkaSpisa" EntityType="Self.StavkaSpisa" />
+    <EntitySet Name="Sud" EntityType="Self.Sud" />
+    <EntitySet Name="Sudac" EntityType="Self.Sudac" />
+    <EntitySet Name="Sudionik" EntityType="Self.Sudionik" />
+    <EntitySet Name="SudskoVijece" EntityType="Self.SudskoVijece" />
+    <EntitySet Name="Svjedok" EntityType="Self.Svjedok" />
+    <EntitySet Name="TekstOptuzbe" EntityType="Self.TekstOptuzbe" />
+    <EntitySet Name="TipPresude" EntityType="Self.TipPresude" />
+    <EntitySet Name="Tuzitelj" EntityType="Self.Tuzitelj" />
+    <EntitySet Name="UlogaSudionika" EntityType="Self.UlogaSudionika" />
+    <EntitySet Name="VrstaKazne" EntityType="Self.VrstaKazne" />
+    <EntitySet Name="VrstaOznake" EntityType="Self.VrstaOznake" />
+    <EntitySet Name="VrstaSpisa" EntityType="Self.VrstaSpisa" />
+    <EntitySet Name="Zakon" EntityType="Self.Zakon" />
+    <AssociationSet Name="FK__Branitelj__IDOpt__22751F6C" Association="Self.FK__Branitelj__IDOpt__22751F6C">
+      <End Role="Optuzenik" EntitySet="Optuzenik" />
+      <End Role="Branitelj" EntitySet="Branitelj" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Branitelj__IDOso__2180FB33" Association="Self.FK__Branitelj__IDOso__2180FB33">
+      <End Role="FizickaOsoba" EntitySet="FizickaOsoba" />
+      <End Role="Branitelj" EntitySet="Branitelj" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FizickaOs__IDOso__236943A5" Association="Self.FK__FizickaOs__IDOso__236943A5">
+      <End Role="Osoba" EntitySet="Osoba" />
+      <End Role="FizickaOsoba" EntitySet="FizickaOsoba" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FizickaOs__Poslo__25518C17" Association="Self.FK__FizickaOs__Poslo__25518C17">
+      <End Role="PravnaOsoba" EntitySet="PravnaOsoba" />
+      <End Role="FizickaOsoba" EntitySet="FizickaOsoba" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Sudionik__IDOsob__5D95E53A" Association="Self.FK__Sudionik__IDOsob__5D95E53A">
+      <End Role="FizickaOsoba" EntitySet="FizickaOsoba" />
+      <End Role="Sudionik" EntitySet="Sudionik" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Svjedok__IDOsobe__5E8A0973" Association="Self.FK__Svjedok__IDOsobe__5E8A0973">
+      <End Role="FizickaOsoba" EntitySet="FizickaOsoba" />
+      <End Role="Svjedok" EntitySet="Svjedok" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tuzitelj__IDOsob__5535A963" Association="Self.FK__Tuzitelj__IDOsob__5535A963">
+      <End Role="FizickaOsoba" EntitySet="FizickaOsoba" />
+      <End Role="Tuzitelj" EntitySet="Tuzitelj" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Sud__Kategorija__49C3F6B7" Association="Self.FK__Sud__Kategorija__49C3F6B7">
+      <End Role="KategorijaSuda" EntitySet="KategorijaSuda" />
+      <End Role="Sud" EntitySet="Sud" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Kazna__IDOsobe__412EB0B6" Association="Self.FK__Kazna__IDOsobe__412EB0B6">
+      <End Role="Osoba" EntitySet="Osoba" />
+      <End Role="Kazna" EntitySet="Kazna" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Kazna__IDPresude__403A8C7D" Association="Self.FK__Kazna__IDPresude__403A8C7D">
+      <End Role="TipPresude" EntitySet="TipPresude" />
+      <End Role="Kazna" EntitySet="Kazna" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Kazna__Vrsta__4222D4EF" Association="Self.FK__Kazna__Vrsta__4222D4EF">
+      <End Role="VrstaKazne" EntitySet="VrstaKazne" />
+      <End Role="Kazna" EntitySet="Kazna" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Osoba__PBr__4D5F7D71" Association="Self.FK__Osoba__PBr__4D5F7D71">
+      <End Role="Mjesto" EntitySet="Mjesto" />
+      <End Role="Osoba" EntitySet="Osoba" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Sud__PBr__48CFD27E" Association="Self.FK__Sud__PBr__48CFD27E">
+      <End Role="Mjesto" EntitySet="Mjesto" />
+      <End Role="Sud" EntitySet="Sud" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Optuzba__IDOptuz__2645B050" Association="Self.FK__Optuzba__IDOptuz__2645B050">
+      <End Role="Optuzenik" EntitySet="Optuzenik" />
+      <End Role="Optuzba" EntitySet="Optuzba" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Optuzba__IDPresu__10566F31" Association="Self.FK__Optuzba__IDPresu__10566F31">
+      <End Role="Presuda" EntitySet="Presuda" />
+      <End Role="Optuzba" EntitySet="Optuzba" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Optuzba__IDZakon__59C55456" Association="Self.FK__Optuzba__IDZakon__59C55456">
+      <End Role="Zakon" EntitySet="Zakon" />
+      <End Role="Optuzba" EntitySet="Optuzba" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Optuzenik__IDOso__5BAD9CC8" Association="Self.FK__Optuzenik__IDOso__5BAD9CC8">
+      <End Role="Osoba" EntitySet="Osoba" />
+      <End Role="Optuzenik" EntitySet="Optuzenik" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Optuzenik__IDPro__2B0A656D" Association="Self.FK__Optuzenik__IDPro__2B0A656D">
+      <End Role="Proces" EntitySet="Proces" />
+      <End Role="Optuzenik" EntitySet="Optuzenik" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TekstOptu__IDOpt__3A4CA8FD" Association="Self.FK__TekstOptu__IDOpt__3A4CA8FD">
+      <End Role="Optuzenik" EntitySet="Optuzenik" />
+      <End Role="TekstOptuzbe" EntitySet="TekstOptuzbe" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ostecenik__IDOso__5CA1C101" Association="Self.FK__Ostecenik__IDOso__5CA1C101">
+      <End Role="Osoba" EntitySet="Osoba" />
+      <End Role="Ostecenik" EntitySet="Ostecenik" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PravnaOso__IDOso__2D27B809" Association="Self.FK__PravnaOso__IDOso__2D27B809">
+      <End Role="Osoba" EntitySet="Osoba" />
+      <End Role="PravnaOsoba" EntitySet="PravnaOsoba" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Sudac__IDOsobe__55009F39" Association="Self.FK__Sudac__IDOsobe__55009F39">
+      <End Role="Osoba" EntitySet="Osoba" />
+      <End Role="Sudac" EntitySet="Sudac" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ostecenik__IDPro__2A164134" Association="Self.FK__Ostecenik__IDPro__2A164134">
+      <End Role="Proces" EntitySet="Proces" />
+      <End Role="Ostecenik" EntitySet="Ostecenik" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Presuda__TipPres__3D5E1FD2" Association="Self.FK__Presuda__TipPres__3D5E1FD2">
+      <End Role="TipPresude" EntitySet="TipPresude" />
+      <End Role="Presuda" EntitySet="Presuda" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Proces__Oznaka__37703C52" Association="Self.FK__Proces__Oznaka__37703C52">
+      <End Role="VrstaOznake" EntitySet="VrstaOznake" />
+      <End Role="Proces" EntitySet="Proces" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Proces__Sud__19DFD96B" Association="Self.FK__Proces__Sud__19DFD96B">
+      <End Role="Sud" EntitySet="Sud" />
+      <End Role="Proces" EntitySet="Proces" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Rociste__IDProce__29221CFB" Association="Self.FK__Rociste__IDProce__29221CFB">
+      <End Role="Proces" EntitySet="Proces" />
+      <End Role="Rociste" EntitySet="Rociste" />
+    </AssociationSet>
+    <AssociationSet Name="FK__StavkaSpi__IDPro__282DF8C2" Association="Self.FK__StavkaSpi__IDPro__282DF8C2">
+      <End Role="Proces" EntitySet="Proces" />
+      <End Role="StavkaSpisa" EntitySet="StavkaSpisa" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SudskoVij__IDPro__2FCF1A8A" Association="Self.FK__SudskoVij__IDPro__2FCF1A8A">
+      <End Role="Proces" EntitySet="Proces" />
+      <End Role="SudskoVijece" EntitySet="SudskoVijece" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Svjedok__IDProce__2EDAF651" Association="Self.FK__Svjedok__IDProce__2EDAF651">
+      <End Role="Proces" EntitySet="Proces" />
+      <End Role="Svjedok" EntitySet="Svjedok" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TekstOptu__IDPro__3B40CD36" Association="Self.FK__TekstOptu__IDPro__3B40CD36">
+      <End Role="Proces" EntitySet="Proces" />
+      <End Role="TekstOptuzbe" EntitySet="TekstOptuzbe" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tuzitelj__IDProc__2DE6D218" Association="Self.FK__Tuzitelj__IDProc__2DE6D218">
+      <End Role="Proces" EntitySet="Proces" />
+      <End Role="Tuzitelj" EntitySet="Tuzitelj" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Zakon__Razina__0A9D95DB" Association="Self.FK__Zakon__Razina__0A9D95DB">
+      <End Role="RazinaZakona" EntitySet="RazinaZakona" />
+      <End Role="Zakon" EntitySet="Zakon" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Sudionik__IDRoci__31B762FC" Association="Self.FK__Sudionik__IDRoci__31B762FC">
+      <End Role="Rociste" EntitySet="Rociste" />
+      <End Role="Sudionik" EntitySet="Sudionik" />
+    </AssociationSet>
+    <AssociationSet Name="FK__StavkaSpi__Vrsta__73BA3083" Association="Self.FK__StavkaSpi__Vrsta__73BA3083">
+      <End Role="VrstaSpisa" EntitySet="VrstaSpisa" />
+      <End Role="StavkaSpisa" EntitySet="StavkaSpisa" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Sud__Nadredeni__5F7E2DAC" Association="Self.FK__Sud__Nadredeni__5F7E2DAC">
+      <End Role="Sud" EntitySet="Sud" />
+      <End Role="Sud1" EntitySet="Sud" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Sudac__IDSuda__55F4C372" Association="Self.FK__Sudac__IDSuda__55F4C372">
+      <End Role="Sud" EntitySet="Sud" />
+      <End Role="Sudac" EntitySet="Sudac" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SudskoVij__IDSuc__57DD0BE4" Association="Self.FK__SudskoVij__IDSuc__57DD0BE4">
+      <End Role="Sudac" EntitySet="Sudac" />
+      <End Role="SudskoVijece" EntitySet="SudskoVijece" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Sudionik__Uloga__32AB8735" Association="Self.FK__Sudionik__Uloga__32AB8735">
+      <End Role="UlogaSudionika" EntitySet="UlogaSudionika" />
+      <End Role="Sudionik" EntitySet="Sudionik" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Zakon__IDNadrede__0B91BA14" Association="Self.FK__Zakon__IDNadrede__0B91BA14">
+      <End Role="Zakon" EntitySet="Zakon" />
+      <End Role="Zakon1" EntitySet="Zakon" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

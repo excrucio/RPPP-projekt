@@ -1,0 +1,58 @@
+﻿@model ManuelaKajkara.ServiceReference1.Sud
+
+@{
+    ViewBag.Title = "Uredi: ";
+}
+
+<span class="error">@ViewData["Pogreska"]</span>
+
+@using (Html.BeginForm("Edit", "Sud_WCF", new { page = ViewBag.CurrentPage, sort = ViewBag.Sort }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="div_class">
+        @Html.HiddenFor(m => m.ID)
+        <table class="table">
+            <tr class="blank_row">
+                <td colspan="5"></td>
+            </tr>
+            <tr>
+                @*<td colspan="2">@Html.ValidationSummary()</td>*@
+            </tr>
+            <tr></tr>
+            <tr>
+                <td><b>Naziv</b></td>
+                <td>@Html.EditorFor(m => m.Naziv)</td>
+                <td>@Html.ValidationMessage("Naziv", "Nedozvoljen format unosa!")</td>
+            </tr>
+                @if (TempData["PogreskaNaziv"] != null)
+                {
+                    <tr class="validation-summary-errors">@ViewData["PogreskaNaziv"]</tr>
+                }
+
+            <tr>
+                <td><b>Adresa</b></td>
+                <td>@Html.EditorFor(m => m.Adresa)</td>
+                <td>@Html.ValidationMessage("Adresa", "Nedozvoljen format unosa!")</td>
+                @if (TempData["PogreskaNaziv"] != null)
+                {
+                <tr class="validation-summary-errors">@ViewData["PogreskaAdresa"]</tr>
+                }
+            </tr>
+            <tr>
+                <td><b>Mjesto</b></td>
+                <td>@Html.DropDownListFor(m => m.PBr, ((IEnumerable<ManuelaKajkara.ServiceReference1.Mjesto>)ViewBag.Mjesta).OrderBy(d => d.naziv).Select(d => new SelectListItem { Text = d.naziv, Value = d.pbr.ToString() }))</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><b>Kategorija</b></td>
+                <td>@Html.DropDownListFor(n => n.kategorija, ((IEnumerable<ManuelaKajkara.ServiceReference1.Kategorija>)ViewBag.Kategorije).OrderBy(a => a.id).Select(a => new SelectListItem { Text = a.naziv, Value = a.id.ToString() }))</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Spremi" /></td>
+                <td>@Html.ActionLink("Odustani", "Index", new { page = ViewBag.CurrentPage, sort = ViewBag.Sort })</td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+}
+

@@ -1,0 +1,57 @@
+﻿@model IEnumerable<DAL.EF.Kazna>
+
+@{
+    ViewBag.Title = "Popis svih kazni";
+}
+
+<h2>Popis svih kazni</h2>
+
+<p>
+    @Html.ActionLink("Nova", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Iznos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Opis)
+        </th>
+        <th>
+            OIB kažnjene osobe
+        </th>
+        <th>
+            Vrsta presude
+        </th>
+        <th>
+            Vrsta kazne
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Iznos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Opis)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Osoba.OIB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipPresude.NazivTipa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VrstaKazne.NazivVrste)
+        </td>
+        <td>
+            @Html.ActionLink("Uredi", "Edit", new { id=item.IDKazne }) |
+            @Html.ActionLink("Detalji", "Details", new { id=item.IDKazne }) |
+            @Html.ActionLink("Obriši", "Delete", new { id=item.IDKazne })
+        </td>
+    </tr>
+}
+
+</table>

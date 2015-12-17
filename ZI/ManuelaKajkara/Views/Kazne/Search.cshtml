@@ -1,0 +1,39 @@
+﻿@model ManuelaKajkara.Models.Osobe_lista
+@{
+    ViewBag.Title = "Pretraga kazni";
+}
+
+<h2>Pretraga kazni</h2>
+
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td colspan="2">@*@Html.ValidationSummary()*@</td>
+        </tr>
+        <tr>
+            <td>Ime:</td>
+            <td>@Html.EditorFor(m => m.osoba.Ime)</td>
+        </tr>
+        <tr>
+            <td>Prezime:</td>
+            <td>@Html.EditorFor(m => m.osoba.Prezime)</td>
+        </tr>
+        <tr>
+            <td>Vrsta kazne:</td>
+            <td>
+                @Html.DropDownListFor(m => m.VrstaKazne, ((IEnumerable<VrKa>)ViewBag.VrstaKazne).OrderBy(d => d.Naziv).Select(d => new SelectListItem { Text = d.Naziv, Value = d.Sifra.ToString() }))
+            </td>
+        </tr>
+    </table>
+    <h5><input type="submit" value="Pretraži" /></h5>
+}
+
+
+<div>
+    @Html.ActionLink("Nova pretraga", "Search")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

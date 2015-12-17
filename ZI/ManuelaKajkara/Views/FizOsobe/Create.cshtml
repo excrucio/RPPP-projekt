@@ -1,0 +1,116 @@
+﻿@model FizOsoba
+
+@{
+    ViewBag.Title = "Dodavanje fizičke osobe";
+}
+
+<h2>Dodavanje fizičke osobe</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Ime, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Ime)
+                @Html.ValidationMessageFor(model => model.Ime)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Prezime, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Prezime)
+                @Html.ValidationMessageFor(model => model.Prezime)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ImeOca, "Ime oca", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ImeOca)
+                @Html.ValidationMessageFor(model => model.ImeOca)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Datum, "Datum dd/mm/yyyy", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Datum)
+                @Html.ValidationMessageFor(model => model.Datum)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.JMBG, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.JMBG)
+                @Html.ValidationMessageFor(model => model.JMBG)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Poslodavac, "Poslodavac", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Poslodavac", String.Empty)
+                @Html.ValidationMessageFor(model => model.Poslodavac)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Odvjetnik, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Odvjetnik)
+                @Html.ValidationMessageFor(model => model.Odvjetnik)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Sudac, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Sudac)
+                @Html.ValidationMessageFor(model => model.Sudac)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OIB, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.OIB)
+                @Html.ValidationMessageFor(model => model.OIB)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Adresa, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Adresa)
+                @Html.ValidationMessageFor(model => model.Adresa)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Mjesto, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Mjesto, new SelectList(new MjestoBLL().DajSvaImena()))
+                @Html.ValidationMessageFor(model => model.Mjesto)
+                @Html.ActionLink("Uredi mjesta", "../Mjesto/Index")
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Unesi" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Povratak", "Index")
+</div>

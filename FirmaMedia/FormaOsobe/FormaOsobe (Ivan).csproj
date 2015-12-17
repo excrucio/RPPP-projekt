@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{64FF4302-82DC-4AF2-9102-C571D0A95030}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FormaOsobe</RootNamespace>
+    <AssemblyName>FormaOsobe</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="OsobeForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OsobeForma.Designer.cs">
+      <DependentUpon>OsobeForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SifrarnikKategorijaSuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SifrarnikKategorijaSuda.Designer.cs">
+      <DependentUpon>SifrarnikKategorijaSuda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SifrarnikMjesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SifrarnikMjesto.Designer.cs">
+      <DependentUpon>SifrarnikMjesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SifrarnikUlogaSudionika.cs">
+      <SubType>Form</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="SifrarnikUlogaSudionika.Designer.cs">
+      <DependentUpon>SifrarnikUlogaSudionika.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="SifrarnikVrstaKazne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SifrarnikVrstaKazne.Designer.cs">
+      <DependentUpon>SifrarnikVrstaKazne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SifrarnikVrstaOznake.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SifrarnikVrstaOznake.Designer.cs">
+      <DependentUpon>SifrarnikVrstaOznake.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SifrarnikVrstaPresude.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SifrarnikVrstaPresude.Designer.cs">
+      <DependentUpon>SifrarnikVrstaPresude.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SifrarnikVrstaSpisa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SifrarnikVrstaSpisa.Designer.cs">
+      <DependentUpon>SifrarnikVrstaSpisa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StavciForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StavciForma.Designer.cs">
+      <DependentUpon>StavciForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZakoniForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZakoniForma.Designer.cs">
+      <DependentUpon>ZakoniForma.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="OsobeForma.resx">
+      <DependentUpon>OsobeForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="SifrarnikKategorijaSuda.resx">
+      <DependentUpon>SifrarnikKategorijaSuda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SifrarnikMjesto.resx">
+      <DependentUpon>SifrarnikMjesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SifrarnikUlogaSudionika.resx">
+      <DependentUpon>SifrarnikUlogaSudionika.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SifrarnikVrstaKazne.resx">
+      <DependentUpon>SifrarnikVrstaKazne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SifrarnikVrstaOznake.resx">
+      <DependentUpon>SifrarnikVrstaOznake.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SifrarnikVrstaPresude.resx">
+      <DependentUpon>SifrarnikVrstaPresude.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SifrarnikVrstaSpisa.resx">
+      <DependentUpon>SifrarnikVrstaSpisa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StavciForma.resx">
+      <DependentUpon>StavciForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZakoniForma.resx">
+      <DependentUpon>ZakoniForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\bazaF.Branitelj.datasource" />
+    <None Include="Properties\DataSources\bazaF.FizickaOsoba.datasource" />
+    <None Include="Properties\DataSources\bazaF.KategorijaSuda.datasource" />
+    <None Include="Properties\DataSources\bazaF.Kazna.datasource" />
+    <None Include="Properties\DataSources\bazaF.Mjesto.datasource" />
+    <None Include="Properties\DataSources\bazaF.Optuzba.datasource" />
+    <None Include="Properties\DataSources\bazaF.Optuzenik.datasource" />
+    <None Include="Properties\DataSources\bazaF.Osoba.datasource" />
+    <None Include="Properties\DataSources\bazaF.Ostecenik.datasource" />
+    <None Include="Properties\DataSources\bazaF.PravnaOsoba.datasource" />
+    <None Include="Properties\DataSources\bazaF.Presuda.datasource" />
+    <None Include="Properties\DataSources\bazaF.Proces.datasource" />
+    <None Include="Properties\DataSources\bazaF.RazinaZakona.datasource" />
+    <None Include="Properties\DataSources\bazaF.Rociste.datasource" />
+    <None Include="Properties\DataSources\bazaF.RPPP10.datasource" />
+    <None Include="Properties\DataSources\bazaF.StavkaSpisa.datasource" />
+    <None Include="Properties\DataSources\bazaF.Sud.datasource" />
+    <None Include="Properties\DataSources\bazaF.Sudionik.datasource" />
+    <None Include="Properties\DataSources\bazaF.SudskoVijece.datasource" />
+    <None Include="Properties\DataSources\bazaF.Svjedok.datasource" />
+    <None Include="Properties\DataSources\bazaF.TekstOptuzbe.datasource" />
+    <None Include="Properties\DataSources\bazaF.TipPresude.datasource" />
+    <None Include="Properties\DataSources\bazaF.Tuzitelj.datasource" />
+    <None Include="Properties\DataSources\bazaF.UlogaSudionika.datasource" />
+    <None Include="Properties\DataSources\bazaF.VrstaKazne.datasource" />
+    <None Include="Properties\DataSources\bazaF.VrstaOznake.datasource" />
+    <None Include="Properties\DataSources\bazaF.VrstaSpisa.datasource" />
+    <None Include="Properties\DataSources\bazaF.Zakon.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\bazaF\bazaF %28Josip%29.csproj">
+      <Project>{93eaa15a-8847-4464-80bc-e1ae2750771b}</Project>
+      <Name>bazaF %28Josip%29</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

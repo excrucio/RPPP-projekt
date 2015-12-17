@@ -1,0 +1,38 @@
+﻿@model VrstaOznake
+
+@{
+    ViewBag.Title = "Brisanje";
+}
+
+<h2>Brisanje</h2>
+
+<h3>Želite li sigurno obrisati ovu vrstu oznake?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SifraOznake)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SifraOznake)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Opis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Opis)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Povratak", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,43 @@
+﻿@model Rociste
+
+@{
+    ViewBag.Title = "Detalji ročišta";
+}
+
+<h2>Detalji</h2>
+
+<div>
+    <h4>Ročište</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Proces
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => new ProcesBLL().Fetch(model.IDProcesa).Naziv)
+        </dd>
+
+        <dt>
+           Datum i vrijeme početka
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Datum)
+        </dd>
+
+        <dt>
+            Trajanje
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Trajanje)
+        </dd>
+
+        
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Uredi", "Edit", new { id = Model.IDRocista }) |
+    @Html.ActionLink("Povratak na listu", "Index")
+</p>

@@ -1,0 +1,40 @@
+﻿@model ManuelaKajkara.Kazna
+
+
+<h2>@ViewBag.Title</h2>
+
+<div>
+    <h4>Kazna</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Iznos
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Iznos)
+        </dd>
+
+        <dt>
+            Opis
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Opis)
+        </dd>
+
+        <dt>
+            Vrsta kazne
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Naziv)
+        </dd>
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Uredi", "Edit", new { idKazne = Model.IDKazne }) |
+    @Html.ActionLink("Povratak", "Index")
+</p>

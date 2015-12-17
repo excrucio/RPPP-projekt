@@ -1,0 +1,41 @@
+﻿@model ManuelaKajkara.Models.Proces_trazi
+@{
+    ViewBag.Title = "Pretraga procesa";
+}
+
+<h2>Pretraga procesa</h2>
+
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td colspan="2">@*@Html.ValidationSummary()*@</td>
+        </tr>
+        <tr>
+            <td>Naziv procesa:</td>
+            <td>@Html.EditorFor(m => m.Naziv,"")</td>
+        </tr>
+        <tr>
+            <td>Vrsta:</td>
+            <td>
+                @Html.DropDownListFor(m => m.Vrsta, ((IEnumerable<VrstaOznake>)ViewBag.VrstaOznake).OrderBy(d => d.Opis).Select(d => new SelectListItem { Text = d.Opis, Value = d.SifraOznake }),"Odaberi","Odaberi")
+            </td>
+        </tr>
+        <tr>
+            <td>Sud:</td>
+            <td>
+                @Html.DropDownListFor(m => m.Sud, ((IEnumerable<Sud>)ViewBag.Sudovi).OrderBy(d => d.naziv).Select(d => new SelectListItem { Text = d.naziv, Value = d.ID.ToString() }),"Odaberi",-777)
+            </td>
+        </tr>
+    </table>
+    <h5><input type="submit" value="Pretraži" /></h5>
+}
+
+<br>
+<div>
+    @Html.ActionLink("Procesi", "ProcesINI")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

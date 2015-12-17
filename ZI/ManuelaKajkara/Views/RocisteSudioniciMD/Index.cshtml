@@ -1,0 +1,102 @@
+﻿@model ManuelaKajkara.Models.Rocista_lista
+@using ManuelaKajkara.HtmlHelpers
+
+@{
+    ViewBag.Title = "Ročišta i sudionici";
+}
+
+<head>
+    @Scripts.Render("~/bundles/jquery")
+</head>
+
+<h2>Ročišta i sudionici</h2>
+
+<div class="pager">
+    @Html.PageLinks(Model.pagingInfoRocista, (p, s) => Url.Action("Index", new { page = p }))
+</div>
+
+<div>
+    @Html.ActionLink("Dodaj novo", "CreateMaster") |
+    @Html.ActionLink("Uredi", "EditMaster", new { id = Model.rociste.IDRocista }) |
+    @Html.ActionLink("Obriši", "DeleteMaster", new { id = Model.rociste.IDRocista })
+</div>
+
+<div class="validation-summary-errors">@ViewBag.Error_save</div>
+
+<table class="table">
+    <tr>
+        <td><p>Proces</p></td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.proces.Naziv)
+        </td>
+    </tr>
+
+    <tr>
+        <td><p>Datum i vrijeme početka</p></td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.rociste.Datum)
+        </td>
+    </tr>
+
+    <tr>
+        <td><p>Trajanje</p></td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.rociste.Trajanje),
+        </td>
+    </tr>
+
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+</table>
+
+
+<table class="table">
+    <tr>
+        <th>
+            <p>@Html.ActionLink("Uloga", "Index", new { sort = 1, page = Model.pagingInfoRocista.CurrentPage })</p>
+        </th>
+        <th>
+            <p>@Html.ActionLink("Ime", "Index", new { sort = 2, page = Model.pagingInfoRocista.CurrentPage })</p>
+        </th>
+        <th>
+            <p>@Html.ActionLink("Prezime", "Index", new { sort = 2, page = Model.pagingInfoRocista.CurrentPage })</p>
+        </th>
+    </tr>
+
+    @foreach (var sudionik in Model.sudionici)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => new UlogaBLL().Fetch(sudionik.Uloga).NazivUloge)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => new OsobaBLL().Fetch(sudionik.IDOsobe).Ime)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => new OsobaBLL().Fetch(sudionik.IDOsobe).Prezime)
+            </td>
+            <td>
+                @Html.ActionLink("Uredi", "EditDetail", new { ID = sudionik.IDSudionika }) |
+                @Html.ActionLink("Obriši", "DeleteDetail", new { ID = sudionik.IDSudionika })
+            </td>
+        </tr>
+    }
+
+   
+        <tr class="blank_row">
+            <td colspan="4"></td>
+        </tr>
+        <tr>
+            <td>@Html.ActionLink("Dodaj novog sudionika", "CreateDetail", new { ID = @Model.rociste.IDRocista })</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+       
+</table>

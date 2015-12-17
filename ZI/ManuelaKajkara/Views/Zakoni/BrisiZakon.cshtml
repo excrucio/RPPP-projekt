@@ -1,0 +1,32 @@
+﻿@model Zakon
+
+@{
+    ViewBag.Title = "Brisanje zakona";
+}
+
+<h2>Brisanje zakona</h2>
+
+<h3>Jeste li sigurni da želite obrisati ovaj zakon?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.LabelForModel("Zakon", new { @class = "control-label col-md-2" })
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Naziv)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Obriši" class="btn btn-default" /> |
+            @Html.ActionLink("Povratak", "Main")
+        </div>
+    }
+</div>

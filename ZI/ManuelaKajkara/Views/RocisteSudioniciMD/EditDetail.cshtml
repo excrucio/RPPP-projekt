@@ -1,0 +1,49 @@
+﻿@model Sudionik
+
+@{
+    ViewBag.Title = "Uredi sudionika";
+}
+
+<h2>Uredi</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Sudionik</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        
+        <div class="form-group">
+            @Html.LabelForModel("Uloga", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Uloga, new SelectList(new UlogaBLL().FetchAll(), "SifraUloge", "NazivUloge"))
+                @Html.ValidationMessageFor(model => model.Uloga)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelForModel("Ime i prezime", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.IDOsobe, new SelectList(new OsobaBLL().FetchAll(), "IDOsobe", "ImePrezime"))
+                @Html.ValidationMessageFor(model => model.IDOsobe)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Spremi" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Povratak na listu", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,428 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ManuelaKajkara</name>
+    </assembly>
+    <members>
+        <member name="T:ManuelaKajkara.KaznaBLL">
+            <summary>
+            Razred koji pruža objekte BLL sloja.
+            </summary>
+        </member>
+        <member name="F:ManuelaKajkara.KaznaBLL.dal">
+            <summary>
+            Pružatelj funkcionalnosti DAL sloja
+            </summary>
+        </member>
+        <member name="M:ManuelaKajkara.KaznaBLL.Fetch(System.Int32)">
+            <summary>
+            Postupak za dohvat kazni neke osobe
+            </summary>
+            <param name="sifOsoba">ID osobe čije kazne se dohvaćaju</param>
+            <returns>Rezultat je lista kazni</returns>
+        </member>
+        <member name="M:ManuelaKajkara.KaznaBLL.FetchAll">
+            <summary>
+            Postupak za dohvat svih kazni 
+            </summary>
+            <returns>Rezultat je lista svih dohvaćenih kazni</returns>
+        </member>
+        <member name="M:ManuelaKajkara.KaznaBLL.vrstaKazne(System.Int32)">
+            <summary>
+            Postupak za dohvat vrste kazne
+            </summary>
+            <param name="id">ID kazne čija se vrsta dohvaća</param>
+            <returns>Rezultat je vrsta kazne</returns>
+        </member>
+        <member name="M:ManuelaKajkara.KaznaBLL.vrstaPresude(System.Int32)">
+            <summary>
+            Postupak za dohvat vrste presude
+            </summary>
+            <param name="id">ID presude čija se vrsta dohvaća</param>
+            <returns>Rezultat je vrsta presude</returns>
+        </member>
+        <member name="M:ManuelaKajkara.KaznaBLL.Insert(ManuelaKajkara.Kazna)">
+            <summary>
+            Postupak za dodavanje kazne u bazu
+            </summary>
+            <param name="a">Kazna koja se dodaje u bazu</param>
+        </member>
+        <member name="M:ManuelaKajkara.KaznaBLL.Delete(System.Int32)">
+            <summary>
+            Postupak za brisanje kazne iz baze
+            </summary>
+            <param name="id">ID kazne koja se briše</param>
+        </member>
+        <member name="M:ManuelaKajkara.KaznaBLL.Update(ManuelaKajkara.Kazna)">
+            <summary>
+            Postupak za spremanje izmjenjene kazne u bazu
+            </summary>
+            <param name="a">izmjenejna kazna koja se sprema u bazu</param>
+        </member>
+        <member name="M:ManuelaKajkara.KaznaBLL.DajKaznu(System.Int32)">
+            <summary>
+            Postupak za dohvat jedne kazne
+            </summary>
+            <param name="id">ID kazne koja se dohvaća</param>
+            <returns>Rezultat je dohvaćena kazna</returns>
+        </member>
+        <member name="M:ManuelaKajkara.KaznaBLL.FetchK(System.Int32)">
+            <summary>
+            Postupak za dohvat jedne kazne
+            </summary>
+            <param name="id">ID kazne koja se dohvaća</param>
+            <returns>Rezultat je dohvaćena kazna</returns>
+        </member>
+        <member name="T:ManuelaKajkara.NamespaceDoc">
+            <summary>
+            Razred koji se koriste u BLL sloju.
+            </summary>
+        </member>
+        <member name="T:ManuelaKajkara.SudBLL">
+            <summary>
+            Razred koji pruža objekte BLL sloja.
+            </summary>
+        </member>
+        <member name="F:ManuelaKajkara.SudBLL.dal">
+            <summary>
+            Pružatelj funkcionalnosti DAL sloja
+            </summary>
+        </member>
+        <member name="M:ManuelaKajkara.SudBLL.FetchAll">
+            <summary>
+            Postupak za dohvat svih sudova.
+            </summary>
+            <returns>Rezultat je lista svih dohvaćenih sudova.</returns>
+        </member>
+        <member name="M:ManuelaKajkara.SudBLL.Fetch(System.Int32)">
+            <summary>
+            Postupak za dohvat jednog suda.
+            </summary>
+            <param name="id">ID suda koji se dohvaća.</param>
+            <returns>Rezultat je traženi sud.</returns>
+        </member>
+        <member name="M:ManuelaKajkara.SudBLL.FetchPbr(System.Int32)">
+            <summary>
+            Postupak za dohvat liste sudova.
+            </summary>
+            <param name="pbr">PBr je poštanski broj mjesta prema kojem se dohvaćaju sudovi.</param>
+            <returns>Rezultat je lista sudova.</returns>
+        </member>
+        <member name="M:ManuelaKajkara.SudBLL.FetchAdr(System.String)">
+            <summary>
+            Postupak za dohvaćanje liste sudova.
+            </summary>
+            <param name="adr">Adr je adresa prema kojoj se dohvaćaju sudovi.</param>
+            <returns>Rezultat je lista sudova.</returns>
+        </member>
+        <member name="M:ManuelaKajkara.SudBLL.FetchNaziv(System.String)">
+            <summary>
+            Postupak za dohvaćanje liste sudova.
+            </summary>
+            <param name="naziv">naziv je naziv prema kojem se dohvaćaju sudovi.</param>
+            <returns>Rezultat je lista sudova ili null ako nema takvih.</returns>
+        </member>
+        <member name="M:ManuelaKajkara.SudBLL.Fetch(System.String)">
+            <summary>
+            Postupak za dohvat jednog suda.
+            </summary>
+            <param name="naziv"> naziv je naziv prema koje se dohvaća sud.</param>
+            <returns>Rezultat vraća pronađeni sud.</returns>
+        </member>
+        <member name="M:ManuelaKajkara.SudBLL.FetchFromPosition(System.Int32,System.Int32)">
+            <summary>
+            Postupak za dohvat liste sudova od zadane pozicije i sa zadanim brojem sudova.
+            </summary>
+            <param name="position">Position je indeks od kojeg dohvaćamo sudove.</param>
+            <param name="count">Count je broj sudova koji dohvaćamo.</param>
+            <returns>Rezultat je lista sudova.</returns>
+        </member>
+        <member name="M:ManuelaKajkara.SudBLL.FetchOneFromPosition(System.Int32)">
+            <summary>
+            Postupak za dohvat jednog suda prema zadanom indeksu.
+            </summary>
+            <param name="position">Postion je indeks s kojeg dohvaćamo sud.</param>
+            <returns>Rezultat je pronađeni sud.</returns>
+        </member>
+        <member name="M:ManuelaKajkara.SudBLL.Insert(ManuelaKajkara.Sud)">
+            <summary>
+            Postupak za dodavanje suda.
+            </summary>
+            <param name="a">a je sud koji dodajemo.</param>
+        </member>
+        <member name="M:ManuelaKajkara.SudBLL.Delete(ManuelaKajkara.Sud)">
+            <summary>
+            Postupak za brisanje suda.
+            </summary>
+            <param name="a">a je sud koji brišemo.</param>
+        </member>
+        <member name="M:ManuelaKajkara.SudBLL.Update(ManuelaKajkara.Sud)">
+            <summary>
+            Postupak za pohranu izmjena nad sudom.
+            </summary>
+            <param name="a">a je sud čije podatke mijenjamo.</param>
+        </member>
+        <member name="M:ManuelaKajkara.SudBLL.RefreshArtikl(System.Object,System.Int32,System.Object)">
+            <summary>
+            Postupak za osvježavanje podataka
+            </summary>
+            <param name="datasource">Lista objekata nad kojim se vrši osvježavanje mijenja.</param>
+            <param name="position">Position označava indeks u listi.</param>
+            <param name="current">Current označava trenutni objekt.</param>
+        </member>
+        <member name="T:ManuelaKajkara.Controllers.KazneController">
+            <summary>
+            Razred za postavljanje pogleda oblika zaglavlje-detalji kazni
+            </summary>
+        </member>
+        <member name="F:ManuelaKajkara.Controllers.KazneController.db">
+            <summary>
+            db je baza podataka
+            </summary>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.KazneController.Search">
+            <summary>
+            Ovom funkcijom se prikazuje stranica za pretragu kazni
+            </summary>
+            <returns>Vraća View na stranicu za pretraživanje kazni</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.KazneController.Rezultati(ManuelaKajkara.Models.Osobe_lista)">
+            <summary>
+            Ovo je funkcija za pretraživanje kazni. Traži kazne preko Imena i/ili prezimena kažnjene osobe i/ili vrste kazne te rezultat šalje na View za prikaz rezultata
+            </summary>
+            <param name="trazi">Parametar tipa Osobe_lista s listom osoba i podacima (ime, prezime, vrsta kazne) po kojem se traže kazne</param>
+            <returns>Vraća View za pregled rezultata pretrage</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.KazneController.Index(System.Int32)">
+            <summary>
+            Ovom funkcijom se prikazuje glavna stranica (Index) i prihvaća jedan operand
+            </summary>
+            <param name="Page">Ovaj operand označava stranicu koju treba prikazati</param>
+            <returns>Vraća listu osoba koju prosljeđuje View-u</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.KazneController.Details(System.Int32)">
+            <summary>
+            Ovo je funkcija za prikaz detalja kazne. Traži kaznu preko ID-a te ju šalje na View za detalje
+            </summary>
+            <param name="id">ID kazne koja se traži</param>
+            <returns>Vraća View na stranicu za prikaz detalja kazne</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.KazneController.DodajKaznu(System.Int32)">
+            <summary>
+            Ovom funkcijom se poziva View za dodavanje kazne osobi i prihvaća jedan operand
+            </summary>
+            <param name="id">Ovaj operand označava osobu kojoj treba dodati kaznu</param>
+            <returns>Vraća View za dodavanje kazne osobi</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.KazneController.DodajKaznu(ManuelaKajkara.Kazna)">
+            <summary>
+            Ovom funkcijom se dodaje kazna nekoj osobi 
+            </summary>
+            <param name="kazna">Ovaj prametar je kazna koja se dodaje osobi, tipa je Kazna</param>
+            <returns>Vraća View na glavnu stranicu ili ne ide nikud u slučaju greške</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.KazneController.Edit(System.Nullable{System.Int32})">
+            <summary>
+            Ovo je funkcija za uređivanje kazne. Traži kaznu preko ID-a te ju šalje na View za uređivanje
+            </summary>
+            <param name="idkazne">ID po kojem se traži kazna za uređivanje</param>
+            <returns>Vraća View za uređivanje kazne </returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.KazneController.Edit(ManuelaKajkara.Kazna)">
+            <summary>
+            Ovom funkcijom se sprema izmjenjena kazna. Prima parametar tipa Kazna i sprema ga u bazu
+            </summary>
+            <param name="kazna">Parametar tipa Kazna koji se sprema u bazu. Izmjenjena kazna</param>
+            <returns>Vraća View na početnu stranicu ili nazad na uređivanje ukoliko postoji greška</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.KazneController.Delete(System.Int32)">
+            <summary>
+            Ovo je funkcija za traženje kazne za brisanje. Prima ID po kojem nađe kaznu te ju postavi za brisanje.
+            </summary>
+            <param name="id">ID po kojem se traži kazna za brisanje</param>
+            <returns>Vraća View na stranicu koja traži potvrdu za brisanje kazne</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.KazneController.DeleteConfirmed(System.Int32)">
+            <summary>
+            Ovom funkcijom se briše kazna. Prima ID po kojem ju briše.
+            </summary>
+            <param name="id">ID kazne koja se briše</param>
+            <returns>Vraća View na Početnu stranicu i briše osobu ukoliko se potvrdilo da se osoba briše ili samo vraća Početnu stranicu u slučaju odustajanja</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.KazneController.Dispose(System.Boolean)">
+            <summary>
+            Ovom funkcijom se sprema uređena osoba i njene uređene kazne. Prima jedan operand
+            </summary>
+            <param name="podaci">Operand tipa Edit_lista u kojem je osoba i njene kazne koje treba spremiti u bazu</param>
+            <returns>Vraća View na početnu stranicu ili nazad an uređivanje ako postoje greške</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.KazneController.Uredi(System.Int32)">
+            <summary>
+            Ovom funkcijom se prikazujee stranica za uređivanje osobe i njenih kazni- Prihvaća jedan operand
+            </summary>
+            <param name="id">ID po kojem se traži osoba koju zajedno s njeim kaznama treba urediti</param>
+            <returns>Vraća View na stranicu za uređivanje osobe i njenih kazni</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.KazneController.Kazni">
+            <summary>
+            Ova funkcija prikazuje straicu za dodvanje kazne nekoj osobi u bazi
+            </summary>
+            <returns>Vraća View na stranicu za kažnjavanje osoba</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.KazneController.Kazni(ManuelaKajkara.Kazna)">
+            <summary>
+            Ovom funkcijom se dodaje kazna nekoj osobi
+            </summary>
+            <param name="kazna">Parametar tipa Kazna koji se dodaje nekoj osobi u bazi</param>
+            <returns>Vraća View na početnu stranicu</returns>
+        </member>
+        <member name="T:ManuelaKajkara.Controllers.PravneOsobeController">
+            <summary>
+            Ovo je kontroler koji radi sa pravnim osobama
+            </summary>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.PravneOsobeController.Index(System.String,System.String)">
+            <summary>
+            Ovom funkcijom se prikazuje glavna stranica i prihvaća dva operanda s kojima radi
+            </summary>
+            <param name="SortOrder">Ovaj operand označava vrstu sortiranja koja će se izvesti</param>
+            <param name="Pretraga">Ovaj operand je parametar za pretragu po nazivima</param>
+            <returns>Vraća listu osoba koju prosljeđuje View-u</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.PravneOsobeController.Create">
+            <summary>
+            Ovom funkcijom se poziva View za dodavanje osoba
+            </summary>
+            <returns>Vraća View za dodavanje osoba</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.PravneOsobeController.Create(ManuelaKajkara.PravnaOsoba)">
+            <summary>
+            Ovom funkcijom se dodaju osobe
+            </summary>
+            <param name="pravnaosoba">Ovaj prametar je osoba koja se dodaje tipa PravnaOsoba</param>
+            <returns>Vraća View na glavnu stranicu ili ne ide nikud u slučaju greške</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.PravneOsobeController.Edit(System.Nullable{System.Int32})">
+            <summary>
+            Ovo je funkcija za uređivanje osoba. traži osobu preko ID-a te ju šalje na View za uređivanje
+            </summary>
+            <param name="id">ID po kojem se traži osoba</param>
+            <returns>Vraća View za uređivanje osobe </returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.PravneOsobeController.Edit(ManuelaKajkara.PravnaOsoba)">
+            <summary>
+            Ovom funkcijom se dodaju osobe. Prima parametar tipa PravnaOsoba i sprema ga u bazu
+            </summary>
+            <param name="pravnaosoba">Parametar tipa PravnaOsoba koji se sprema</param>
+            <returns>Vraća View na početnu stranicu ili nazad na uređivanje ukoliko postoji greška</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.PravneOsobeController.Delete(System.Nullable{System.Int32})">
+            <summary>
+            Ovo je funkcija za traženje osobe za brisanje. Prima ID po kojem nađe osobu te ju postavi za brisanje.
+            </summary>
+            <param name="id">ID po kojem se traži osoba</param>
+            <returns>Vraća View na stranicu koja traži potvrdu za brisanje</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.PravneOsobeController.DeleteConfirmed(System.Int32)">
+            <summary>
+            Ovom funkcijom se briše osoba. Prima ID po kojem ju briše.
+            </summary>
+            <param name="id">ID osobe koja se briše</param>
+            <returns>Vraća View na Početnu stranicu ukoliko se potvrdilo da se osoba briše</returns>
+        </member>
+        <member name="T:ManuelaKajkara.Controllers.NamespaceDoc">
+            <summary>
+            Razred koji se koriste u BLL sloju.
+            </summary>
+        </member>
+        <member name="T:ManuelaKajkara.Controllers.Sud_MasterController">
+            <summary>
+            Razred za postavljanje pogleda oblika zaglavlje-detalji sudova i sudaca
+            </summary>
+        </member>
+        <member name="F:ManuelaKajkara.Controllers.Sud_MasterController.pageSize">
+            <summary>
+            pageSize označava broj sudova koji će se nalaziti na jednoj stranici.
+            </summary>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.Sud_MasterController.Index(System.Int32)">
+            <summary>
+            Postupak za prikaz početne stranice. Dohvaća popis svih sudova s pripadajućim sucima, postavlja straničenje i predaje model pogledu.
+            </summary>
+            <param name="page">Broj stranice.</param>
+            <returns>Rezultat akcije upravljača prikazuje pogled Index.</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.Sud_MasterController.Create(System.Int32)">
+            <summary>
+            GET Postupak za dodavanje novog suda.
+            </summary>
+            <param name="page">Broj stranice.</param>
+            <returns>Rezultat akcije upravljača prikazuje pogled Create.</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.Sud_MasterController.Create(ManuelaKajkara.Sud,System.Int32)">
+            <summary>
+            POST Postupak za potvrdu dodavanja novog suda.
+            </summary>
+            <param name="sud">Novi sud koji se dodaje</param>
+            <param name="page">Broj stranice.</param>
+            <returns>Rezultat akcije upravljača prikazuje pogled Create ili Index.</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.Sud_MasterController.InsertSudac(System.Nullable{System.Int32},System.Int32,System.Int32)">
+            <summary>
+            POST Postupak za pridruživanje novog suca sudu.
+            </summary>
+            <param name="idOsobe">ID osobe koja se dodaje.</param>
+            <param name="id">ID suda kojem se sudac dodaje.</param>
+            <param name="page">Broj stranice.</param>
+            <returns>Rezultat akcije upravljača vraća pogled Index.</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.Sud_MasterController.Edit(System.Int32,System.Int32)">
+            <summary>
+            GET Postupak za prikaz stranice za uređivanje.
+            </summary>
+            <param name="id">ID suda koji se uređuje.</param>
+            <param name="page">Broj stranice.</param>
+            <returns>Rezultat akcije vraća pogled na upravljač Edit.</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.Sud_MasterController.Edit(System.Int32,ManuelaKajkara.Models.SudMaster_list,System.Collections.Generic.List{System.Boolean},System.Int32)">
+            <summary>
+            POST Postupak za spremanje izmjena nad sudom.
+            </summary>
+            <param name="id">ID suda čiji podaci se mijenjaju.</param>
+            <param name="lista"></param>
+            <param name="BrisiSuca">Lista kojom se određuje koji se suci uklanjaju s popisa suda</param>
+            <param name="page">Broj stranice</param>
+            <returns>Rezultat akcije vraća pogled na upravljač Edit ili Index</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.Sud_MasterController.Delete_sudac(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            GET Postupak za prikaz podataka o sucu koji se briše.
+            </summary>
+            <param name="id">ID suca koji se briše.</param>
+            <param name="page">Broj stranice.</param>
+            <returns>Rezultat akcije upravljača vraća pogled Delete_sudac</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.Sud_MasterController.DeleteConfirmed(System.Int32,System.Int32)">
+            <summary>
+            POST Postupak za brisanje suca.
+            </summary>
+            <param name="id">ID suca koji se briše</param>
+            <param name="page">Broj stranice.</param>
+            <returns>Rezultat akcije upravljača prikazuje pogled Delete_sudac ili Index</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.Sud_MasterController.Delete(System.Int32)">
+            <summary>
+            GET postupak za prikaz podataka o sudu koji se briše.
+            </summary>
+            <param name="id">ID suda koji se briše.</param>
+            <returns>Rezultat akcije upravljača vraća pogled Delete.</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.Sud_MasterController.DeleteConfirmed1(System.Int32)">
+            <summary>
+            POST postupak za brisanje suda.
+            </summary>
+            <param name="id">ID suda koji se briše.</param>
+            <returns>Rezultat akcije upravljača vraća pogled Delete ili Index.</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,44 @@
+﻿@model ManuelaKajkara.Models.Kategorija_list
+
+@{
+    ViewBag.Title = "Kategorija suda";
+}
+
+<h2>Kategorija suda</h2>
+
+
+<p>
+    @Html.ActionLink("Dodaj novu", "Create")
+</p>
+
+
+<div>
+    @if (TempData["pogreskaBrisanja"] != null)
+{
+    <div class="validation-summary-errors">@TempData["pogreskaBrisanja"]</div>
+}
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.NazivKatSuda)*@
+            Naziv kategorije suda
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.KategorijaList) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.naziv)
+        </td>
+        <td>
+            @Html.ActionLink("Uredi", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Detalji", "Details", new { id = item.id }) |
+            @Html.ActionLink("Obriši", "Delete", new { id = item.id })
+        </td>
+    </tr>
+}
+
+</table>

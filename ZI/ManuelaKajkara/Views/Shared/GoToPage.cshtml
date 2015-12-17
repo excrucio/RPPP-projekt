@@ -1,0 +1,41 @@
+﻿@model ManuelaKajkara.Models.PageRangeModel
+
+
+<input type="text" id="pageBox" data-min="@Model.Min" data-max="@Model.Max" data-url="@Model.Url" />
+<input type="button" id="goto" value="Go" />
+
+<script type="text/javascript">
+    $(function () {
+        $('#goto').click(function () {
+            var pageBox = $("#pageBox");
+            if (validRange($(pageBox).val(), $(pageBox).data("min"), $(pageBox).data("max"))) {
+                var link = $(pageBox).data('url');
+                link = link.replace('-7777', $(pageBox).val());
+                window.location = link;
+            }
+        });
+    });
+
+    $(function () {
+        $('#pageBox').bind('keypress', function (e) {
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            if (keycode == 13) {
+                $('#goto').click();
+            }
+        });
+    });
+
+    function validRange(str, min, max) {
+        var intRegex = /^\d+$/;
+        if (intRegex.test(str)) {//da li je upisan broj?
+            var num = parseInt(str);
+            if (num >= min && num <= max)
+                return true;
+            else
+                return false;
+        }
+        else {
+            return false;
+        }
+    }
+</script>

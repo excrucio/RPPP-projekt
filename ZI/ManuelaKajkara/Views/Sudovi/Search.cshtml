@@ -1,0 +1,78 @@
+﻿@model ManuelaKajkara.Sud
+@{
+    ViewBag.Title = "Pretraži: ";
+}
+
+<h3>Pretraži: </h3>
+
+@using (Html.BeginForm()) { 
+<table>
+    <tr>
+        <td colspan="2">@*@Html.ValidationSummary()*@</td>
+    </tr>
+        <tr>
+            <td>Naziv:</td>
+            <td>@Html.EditorFor(m=>m.naziv)</td>
+        </tr>
+        <tr>
+            <td>Adresa:</td>
+            <td>@Html.EditorFor(m => m.adresa)</td>
+            @*@Html.TextBox("Search")*@
+        </tr>
+        <tr>
+            <td>PBr</td>
+            <td>@Html.DropDownListFor(m => m.pbr, ((IEnumerable<Mjesto>)ViewBag.Mjesta).OrderBy(d => d.naziv).Select(d => new SelectListItem { Text = d.naziv, Value = d.pbr.ToString() }), "--- Odaberi ---")</td>
+        </tr>
+</table>
+<h4>@*@Html.ActionLink("  Pretraži  ", "Search_")*@</h4>
+<h5><input type="submit" value="Pretraži" /></h5>
+}
+
+<h3>Pronađen je: </h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Naziv</th>
+            <th>Adresa</th>
+            <th>PBr</th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (!ViewBag.SudNew)
+        {
+            <tr>
+                <td> --- </td>
+                <td> --- </td>
+                <td> --- </td>
+                <td> --- </td>
+                <td> --- </td>
+            </tr>
+        }
+        else
+        {
+            foreach (var item in (IEnumerable<Sud>)ViewBag.popis)
+            {
+                <tr>
+                    <td>@item.ID</td>
+                    <td>@item.naziv</td>
+                    <td>@item.adresa</td>
+                    <td>@item.pbr</td>
+                    @*<td>
+                        @using (Html.BeginForm("Delete", "Mjesto", new { id = item.IdMjesta, page = Model.PagingInfo.CurrentPage, sort = Model.PagingInfo.Sort }))
+                        {
+                            <input type="submit" value="Obriši" class="delete" />
+                        }
+                </td>*@
+            </tr>
+            }
+        
+        }
+        
+    </tbody>
+</table>
+
+

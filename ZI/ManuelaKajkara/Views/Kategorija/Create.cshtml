@@ -1,0 +1,48 @@
+﻿@model Kategorija
+
+@{
+    ViewBag.Title = "Dodaj novu kategoriju";
+}
+
+<h2>Dodaj novu kategoriju</h2>
+
+<span class="error">@ViewData["Pogreska"]</span>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Kategorija suda</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.SifraKatSuda, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SifraKatSuda)
+                @Html.ValidationMessageFor(model => model.SifraKatSuda)
+            </div>
+        </div>*@
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.NazivKatSuda, new { @class = "control-label col-md-2" })*@
+            <p> Naziv kategorije suda</p>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.naziv)
+                @*@Html.ValidationMessageFor(model => model.naziv)*@
+                <td>@Html.ValidationMessage("Naziv", "Nedozvoljen format unosa.")</td>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Dodaj" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Nazad na popis", "Index")
+</div>

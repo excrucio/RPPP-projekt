@@ -1,0 +1,199 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ManuelaKajkara</name>
+    </assembly>
+    <members>
+		<member name="T:ManuelaKajkara.NamespaceDoc">
+            <summary>
+            Koristi se u BLL sloju.
+            </summary>
+        </member>
+        <member name="T:ManuelaKajkara.SudBLL">
+            <summary>
+            Razred koji pruža objekte BLL sloja.
+            </summary>
+        </member>
+        <member name="F:ManuelaKajkara.SudBLL.dal">
+            <summary>
+            Pružatelj funkcionalnosti DAL sloja
+            </summary>
+        </member>
+        <member name="M:ManuelaKajkara.SudBLL.FetchAll">
+            <summary>
+            Postupak za dohvat svih sudova.
+            </summary>
+            <returns>Rezultat je lista svih dohvaćenih sudova.</returns>
+        </member>
+        <member name="M:ManuelaKajkara.SudBLL.Fetch(System.Int32)">
+            <summary>
+            Postupak za dohvat jednog suda.
+            </summary>
+            <param name="id">ID suda koji se dohvaća.</param>
+            <returns>Rezultat je traženi sud.</returns>
+        </member>
+        <member name="M:ManuelaKajkara.SudBLL.FetchPbr(System.Int32)">
+            <summary>
+            Postupak za dohvat liste sudova.
+            </summary>
+            <param name="pbr">PBr je poštanski broj mjesta prema kojem se dohvaćaju sudovi.</param>
+            <returns>Rezultat je lista sudova.</returns>
+        </member>
+        <member name="M:ManuelaKajkara.SudBLL.FetchAdr(System.String)">
+            <summary>
+            Postupak za dohvaćanje liste sudova.
+            </summary>
+            <param name="adr">Adr je adresa prema kojoj se dohvaćaju sudovi.</param>
+            <returns>Rezultat je lista sudova.</returns>
+        </member>
+        <member name="M:ManuelaKajkara.SudBLL.FetchNaziv(System.String)">
+            <summary>
+            Postupak za dohvaćanje liste sudova.
+            </summary>
+            <param name="naziv">naziv je naziv prema kojem se dohvaćaju sudovi.</param>
+            <returns>Rezultat je lista sudova ili null ako nema takvih.</returns>
+        </member>
+        <member name="M:ManuelaKajkara.SudBLL.Fetch(System.String)">
+            <summary>
+            Postupak za dohvat jednog suda.
+            </summary>
+            <param name="naziv"> naziv je naziv prema koje se dohvaća sud.</param>
+            <returns>Rezultat vraća pronađeni sud.</returns>
+        </member>
+        <member name="M:ManuelaKajkara.SudBLL.FetchFromPosition(System.Int32,System.Int32)">
+            <summary>
+            Postupak za dohvat liste sudova od zadane pozicije i sa zadanim brojem sudova.
+            </summary>
+            <param name="position">Position je indeks od kojeg dohvaćamo sudove.</param>
+            <param name="count">Count je broj sudova koji dohvaćamo.</param>
+            <returns>Rezultat je lista sudova.</returns>
+        </member>
+        <member name="M:ManuelaKajkara.SudBLL.FetchOneFromPosition(System.Int32)">
+            <summary>
+            Postupak za dohvat jednog suda prema zadanom indeksu.
+            </summary>
+            <param name="position">Postion je indeks s kojeg dohvaćamo sud.</param>
+            <returns>Rezultat je pronađeni sud.</returns>
+        </member>
+        <member name="M:ManuelaKajkara.SudBLL.Insert(ManuelaKajkara.Sud)">
+            <summary>
+            Postupak za dodavanje suda.
+            </summary>
+            <param name="a">a je sud koji dodajemo.</param>
+        </member>
+        <member name="M:ManuelaKajkara.SudBLL.Delete(ManuelaKajkara.Sud)">
+            <summary>
+            Postupak za brisanje suda.
+            </summary>
+            <param name="a">a je sud koji brišemo.</param>
+        </member>
+        <member name="M:ManuelaKajkara.SudBLL.Update(ManuelaKajkara.Sud)">
+            <summary>
+            Postupak za pohranu izmjena nad sudom.
+            </summary>
+            <param name="a">a je sud čije podatke mijenjamo.</param>
+        </member>
+        <member name="M:ManuelaKajkara.SudBLL.RefreshArtikl(System.Object,System.Int32,System.Object)">
+            <summary>
+            Postupak za osvježavanje podataka
+            </summary>
+            <param name="datasource">Lista objekata nad kojim se vrši osvježavanje mijenja.</param>
+            <param name="position">Position označava indeks u listi.</param>
+            <param name="current">Current označava trenutni objekt.</param>
+        </member>
+		<member name="T:ManuelaKajkara.Controllers.NamespaceDoc">
+            <summary>
+            Upravljači za web aplikaciju.
+            </summary>
+        </member>
+        <member name="T:ManuelaKajkara.Controllers.Sud_MasterController">
+            <summary>
+            Razred za postavljanje pogleda oblika zaglavlje-detalji sudova i sudaca
+            </summary>
+        </member>
+        <member name="F:ManuelaKajkara.Controllers.Sud_MasterController.pageSize">
+            <summary>
+            pageSize označava broj sudova koji će se nalaziti na jednoj stranici.
+            </summary>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.Sud_MasterController.Index(System.Int32)">
+            <summary>
+            Postupak za prikaz početne stranice. Dohvaća popis svih sudova s pripadajućim sucima, postavlja straničenje i predaje model pogledu.
+            </summary>
+            <param name="page">Broj stranice.</param>
+            <returns>Rezultat akcije upravljača prikazuje pogled Index.</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.Sud_MasterController.Create(System.Int32)">
+            <summary>
+            GET Postupak za dodavanje novog suda.
+            </summary>
+            <param name="page">Broj stranice.</param>
+            <returns>Rezultat akcije upravljača prikazuje pogled Create.</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.Sud_MasterController.Create(ManuelaKajkara.Sud,System.Int32)">
+            <summary>
+            POST Postupak za potvrdu dodavanja novog suda.
+            </summary>
+            <param name="sud">Novi sud koji se dodaje</param>
+            <param name="page">Broj stranice.</param>
+            <returns>Rezultat akcije upravljača prikazuje pogled Create ili Index.</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.Sud_MasterController.InsertSudac(System.Nullable{System.Int32},System.Int32,System.Int32)">
+            <summary>
+            POST Postupak za pridruživanje novog suca sudu.
+            </summary>
+            <param name="idOsobe">ID osobe koja se dodaje.</param>
+            <param name="id">ID suda kojem se sudac dodaje.</param>
+            <param name="page">Broj stranice.</param>
+            <returns>Rezultat akcije upravljača vraća pogled Index.</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.Sud_MasterController.Edit(System.Int32,System.Int32)">
+            <summary>
+            GET Postupak za prikaz stranice za uređivanje.
+            </summary>
+            <param name="id">ID suda koji se uređuje.</param>
+            <param name="page">Broj stranice.</param>
+            <returns>Rezultat akcije vraća pogled na upravljač Edit.</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.Sud_MasterController.Edit(System.Int32,ManuelaKajkara.Models.SudMaster_list,System.Collections.Generic.List{System.Boolean},System.Int32)">
+            <summary>
+            POST Postupak za spremanje izmjena nad sudom.
+            </summary>
+            <param name="id">ID suda čiji podaci se mijenjaju.</param>
+            <param name="lista"></param>
+            <param name="BrisiSuca">Lista kojom se određuje koji se suci uklanjaju s popisa suda</param>
+            <param name="page">Broj stranice</param>
+            <returns>Rezultat akcije vraća pogled na upravljač Edit ili Index</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.Sud_MasterController.Delete_sudac(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            GET Postupak za prikaz podataka o sucu koji se briše.
+            </summary>
+            <param name="id">ID suca koji se briše.</param>
+            <param name="page">Broj stranice.</param>
+            <returns>Rezultat akcije upravljača vraća pogled Delete_sudac</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.Sud_MasterController.DeleteConfirmed(System.Int32,System.Int32)">
+            <summary>
+            POST Postupak za brisanje suca.
+            </summary>
+            <param name="id">ID suca koji se briše</param>
+            <param name="page">Broj stranice.</param>
+            <returns>Rezultat akcije upravljača prikazuje pogled Delete_sudac ili Index</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.Sud_MasterController.Delete(System.Int32)">
+            <summary>
+            GET postupak za prikaz podataka o sudu koji se briše.
+            </summary>
+            <param name="id">ID suda koji se briše.</param>
+            <returns>Rezultat akcije upravljača vraća pogled Delete.</returns>
+        </member>
+        <member name="M:ManuelaKajkara.Controllers.Sud_MasterController.DeleteConfirmed1(System.Int32)">
+            <summary>
+            POST postupak za brisanje suda.
+            </summary>
+            <param name="id">ID suda koji se briše.</param>
+            <returns>Rezultat akcije upravljača vraća pogled Delete ili Index.</returns>
+        </member>
+    </members>
+</doc>

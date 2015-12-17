@@ -1,0 +1,58 @@
+﻿@model DAL.EF.Proces
+
+@{
+    ViewBag.Title = "Detalji";
+}
+
+<h2>Detalji procesa</h2>
+
+<div>
+    <h4>Proces</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Ur. broj
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Broj)
+        </dd>
+
+        <dt>
+            Klasa
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Klasa)
+        </dd>
+
+        <dt>
+            Naziv
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Naziv)
+        </dd>
+
+        <dt>
+            Vrsta procesa
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VrstaOznake.OpisOznake)
+        </dd>
+
+        <dt>
+            Sud na kojem se vodi
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sud1.Naziv)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Uredi", "Edit", new { id = Model.IDProcesa }) |
+    @Html.ActionLink("Nazad", "Index")
+</p>

@@ -1,0 +1,66 @@
+C:\Users\Ivan\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\ManuelaKajkara.dll.config
+C:\Users\Ivan\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\ManuelaKajkara.dll
+C:\Users\Ivan\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\ManuelaKajkara.pdb
+C:\Users\Ivan\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\DAL.EF.dll
+C:\Users\Ivan\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\DAL.EF.pdb
+C:\Users\Ivan\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\obj\Debug\mvc.csprojResolveAssemblyReference.cache
+C:\Users\Ivan\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\obj\Debug\ManuelaKajkara.dll
+C:\Users\Ivan\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\obj\Debug\ManuelaKajkara.pdb
+C:\Users\Korisnik\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\ManuelaKajkara.dll.config
+C:\Users\Korisnik\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\ManuelaKajkara.dll
+C:\Users\Korisnik\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\ManuelaKajkara.pdb
+C:\Users\Korisnik\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\DAL.EF.dll
+C:\Users\Korisnik\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\DAL.EF.pdb
+C:\Users\Korisnik\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\EntityFramework.xml
+C:\Users\Korisnik\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\EntityFramework.SqlServer.xml
+C:\Users\Korisnik\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\PagedList.xml
+C:\Users\Korisnik\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\PagedList.Mvc.xml
+C:\Users\Korisnik\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\System.Web.Helpers.xml
+C:\Users\Korisnik\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\System.Web.Mvc.xml
+C:\Users\Korisnik\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\System.Web.Optimization.xml
+C:\Users\Korisnik\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\System.Web.Razor.xml
+C:\Users\Korisnik\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\System.Web.WebPages.xml
+C:\Users\Korisnik\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Korisnik\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\System.Web.WebPages.Razor.xml
+C:\Users\Korisnik\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\Newtonsoft.Json.xml
+C:\Users\Korisnik\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\Antlr3.Runtime.pdb
+C:\Users\Korisnik\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\obj\Debug\mvc.csprojResolveAssemblyReference.cache
+C:\Users\Korisnik\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\obj\Debug\ManuelaKajkara.dll
+C:\Users\Korisnik\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\obj\Debug\ManuelaKajkara.pdb
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\ManuelaKajkara.dll.config
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\ManuelaKajkara.dll
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\ManuelaKajkara.pdb
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\DAL.EF.dll
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\DAL.EF.pdb
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\ZI\ManuelaKajkara\obj\Debug\mvc.csprojResolveAssemblyReference.cache
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\ZI\ManuelaKajkara\obj\Debug\ManuelaKajkara.dll
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\ZI\ManuelaKajkara\obj\Debug\ManuelaKajkara.pdb
+C:\Users\Ivan\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\EntityFramework.xml
+C:\Users\Ivan\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\EntityFramework.SqlServer.xml
+C:\Users\Ivan\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\PagedList.xml
+C:\Users\Ivan\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\PagedList.Mvc.xml
+C:\Users\Ivan\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\System.Web.Helpers.xml
+C:\Users\Ivan\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\System.Web.Mvc.xml
+C:\Users\Ivan\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\System.Web.Optimization.xml
+C:\Users\Ivan\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\System.Web.Razor.xml
+C:\Users\Ivan\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\System.Web.WebPages.xml
+C:\Users\Ivan\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Ivan\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\System.Web.WebPages.Razor.xml
+C:\Users\Ivan\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\Newtonsoft.Json.xml
+C:\Users\Ivan\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\Antlr3.Runtime.pdb
+C:\Users\Ivan\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\ManuelaKajkara.XML
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\System.Web.Mvc.xml
+C:\Users\Korisnik\Documents\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\ManuelaKajkara.XML
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\ManuelaKajkara.XML
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\EntityFramework.xml
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\EntityFramework.SqlServer.xml
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\PagedList.xml
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\PagedList.Mvc.xml
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\System.Web.Helpers.xml
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\System.Web.Optimization.xml
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\System.Web.Razor.xml
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\System.Web.WebPages.xml
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\System.Web.WebPages.Deployment.xml
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\System.Web.WebPages.Razor.xml
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\Newtonsoft.Json.xml
+D:\Josip\FER\6. semestar\Razvoj primijenjene programske potpore\Projekt\RPPP\RPPP-10\ZI\ManuelaKajkara\bin\Antlr3.Runtime.pdb

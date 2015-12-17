@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ManuelaKajkara" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ManuelaKajkara" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfFizOsoba">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FizOsoba" nillable="true" type="tns:FizOsoba" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFizOsoba" nillable="true" type="tns:ArrayOfFizOsoba" />
+  <xs:complexType name="FizOsoba">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Adresa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Datum" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IDOsobe" type="xs:int" />
+      <xs:element minOccurs="0" name="Ime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImeOca" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JMBG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mjesto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OIB" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Odvjetnik" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Poslodavac" type="xs:int" />
+      <xs:element minOccurs="0" name="Prezime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sudac" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FizOsoba" nillable="true" type="tns:FizOsoba" />
+  <xs:complexType name="ArrayOfKazna">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Kazna" nillable="true" type="tns:Kazna" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKazna" nillable="true" type="tns:ArrayOfKazna" />
+  <xs:complexType name="Kazna">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IDKazne" type="xs:int" />
+      <xs:element minOccurs="0" name="IDOsobe" type="xs:int" />
+      <xs:element minOccurs="0" name="IDPresude" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Iznos" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Naziv" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Opis" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Osoba" nillable="true" type="tns:FizickaOsoba" />
+      <xs:element minOccurs="0" name="Presuda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Vrsta" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Kazna" nillable="true" type="tns:Kazna" />
+  <xs:complexType name="FizickaOsoba">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Adresa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DatumRod" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IDOsobe" type="xs:int" />
+      <xs:element minOccurs="0" name="Ime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImeOca" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImePrezime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JMBG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Prezime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pbr" type="xs:int" />
+      <xs:element minOccurs="0" name="ulica" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FizickaOsoba" nillable="true" type="tns:FizickaOsoba" />
+</xs:schema>

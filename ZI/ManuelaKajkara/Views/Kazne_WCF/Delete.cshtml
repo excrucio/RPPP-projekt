@@ -1,0 +1,64 @@
+﻿@model ManuelaKajkara.Kazna
+
+@{
+    ViewBag.Title = "Brisanje";
+}
+
+<h2>Brisanje</h2>
+
+<h3>Sigurni ste?</h3>
+<div>
+    <h4>Kazna</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Iznos
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Iznos)
+        </dd>
+
+        <dt>
+            Opis
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Opis)
+        </dd>
+
+        <dt>
+            Osoba
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Osoba.ImePrezime)
+        </dd>
+
+        <dt>
+            Vrsta presude
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Presuda)
+        </dd>
+
+        <dt>
+            Vrsta kazne
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Naziv)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Obriši" class="btn btn-default" /> |
+            @Html.ActionLink("Nazad", "Index")
+        </div>
+    }
+</div>

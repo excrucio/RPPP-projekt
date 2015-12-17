@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{38D89286-74C1-45D0-BBC5-411F0D043E18}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RPPP</RootNamespace>
+    <AssemblyName>RPPP</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\..\..\RPPP\RPPP-10\DZ1.2\FirmaMedia\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\..\..\RPPP\RPPP-10\DZ1.2\FirmaMedia\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Branitelj.cs">
+      <DependentUpon>Podaci.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FizickaOsoba.cs">
+      <DependentUpon>Podaci.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KategorijaSuda.cs">
+      <DependentUpon>Podaci.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Kazna.cs">
+      <DependentUpon>Podaci.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mjesto.cs">
+      <DependentUpon>Podaci.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Optuzba.cs">
+      <DependentUpon>Podaci.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Optuzenik.cs">
+      <DependentUpon>Podaci.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Osoba.cs">
+      <DependentUpon>Podaci.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ostecenik.cs">
+      <DependentUpon>Podaci.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Podaci.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Podaci.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Podaci.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Podaci.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Podaci.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Podaci.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="PravnaOsoba.cs">
+      <DependentUpon>Podaci.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Presuda.cs">
+      <DependentUpon>Podaci.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Proces.cs">
+      <DependentUpon>Podaci.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RazinaZakona.cs">
+      <DependentUpon>Podaci.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Rociste.cs">
+      <DependentUpon>Podaci.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StavkaSpisa.cs">
+      <DependentUpon>Podaci.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sud.cs">
+      <DependentUpon>Podaci.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sudionik.cs">
+      <DependentUpon>Podaci.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SudskoVijece.cs">
+      <DependentUpon>Podaci.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Svjedok.cs">
+      <DependentUpon>Podaci.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TipPresude.cs">
+      <DependentUpon>Podaci.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tuzitelj.cs">
+      <DependentUpon>Podaci.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UlogaSudionika.cs">
+      <DependentUpon>Podaci.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UnosZakona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnosZakona.Designer.cs">
+      <DependentUpon>UnosZakona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VrstaKazne.cs">
+      <DependentUpon>Podaci.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VrstaSpisa.cs">
+      <DependentUpon>Podaci.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Zakon.cs">
+      <DependentUpon>Podaci.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Zakoni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zakoni.Designer.cs">
+      <DependentUpon>Zakoni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="UnosZakona.resx">
+      <DependentUpon>UnosZakona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zakoni.resx">
+      <DependentUpon>Zakoni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EntityDeploy Include="Podaci.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Podaci.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <None Include="Podaci.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Podaci.edmx</DependentUpon>
+      <LastGenOutput>Podaci.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Podaci.edmx.diagram">
+      <DependentUpon>Podaci.edmx</DependentUpon>
+    </None>
+    <None Include="Podaci.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Podaci.edmx</DependentUpon>
+      <LastGenOutput>Podaci.cs</LastGenOutput>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

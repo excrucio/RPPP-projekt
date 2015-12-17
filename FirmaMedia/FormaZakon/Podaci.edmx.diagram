@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="80236160183c4ebd91e5ac30cb488307" Name="Diagram1">
+        <EntityTypeShape EntityType="RPPP10Model.Branitelj" Width="1.5" PointX="10.5" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPPP10Model.FizickaOsoba" Width="1.5" PointX="7.5" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPPP10Model.KategorijaSuda" Width="1.5" PointX="0.75" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPPP10Model.Kazna" Width="1.5" PointX="5.25" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPPP10Model.Mjesto" Width="1.5" PointX="0.75" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPPP10Model.Optuzba" Width="1.5" PointX="10.5" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPPP10Model.Optuzenik" Width="1.5" PointX="8.25" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPPP10Model.Osoba" Width="1.5" PointX="3" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPPP10Model.Ostecenik" Width="1.5" PointX="8.25" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPPP10Model.PravnaOsoba" Width="1.5" PointX="5.25" PointY="30.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPPP10Model.Presuda" Width="1.5" PointX="8.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPPP10Model.Proces" Width="1.5" PointX="5.25" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPPP10Model.RazinaZakona" Width="1.5" PointX="6" PointY="34.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPPP10Model.Rociste" Width="1.5" PointX="7.5" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPPP10Model.StavkaSpisa" Width="1.5" PointX="10.5" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPPP10Model.Sud" Width="1.5" PointX="3" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPPP10Model.Sudionik" Width="1.5" PointX="5.25" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPPP10Model.SudskoVijece" Width="1.5" PointX="10.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPPP10Model.Svjedok" Width="1.5" PointX="12.75" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPPP10Model.TipPresude" Width="1.5" PointX="3" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPPP10Model.Tuzitelj" Width="1.5" PointX="12.75" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPPP10Model.UlogaSudionika" Width="1.5" PointX="3" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPPP10Model.VrstaKazne" Width="1.5" PointX="3" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPPP10Model.VrstaSpisa" Width="1.5" PointX="8.25" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPPP10Model.Zakon" Width="1.5" PointX="8.25" PointY="34.25" IsExpanded="true" />
+        <AssociationConnector Association="RPPP10Model.FK__Branitelj__IDOpt__6C190EBB" ManuallyRouted="false" />
+        <AssociationConnector Association="RPPP10Model.FK__Branitelj__IDOso__6B24EA82" ManuallyRouted="false" />
+        <AssociationConnector Association="RPPP10Model.FK__FizickaOs__IDOso__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="RPPP10Model.FK__FizickaOs__Poslo__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="RPPP10Model.FK__SudskoVij__IDOso__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="RPPP10Model.FK__Svjedok__IDOsobe__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="RPPP10Model.FK__Tuzitelj__IDOsob__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="RPPP10Model.FK__Sud__Kategorija__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="RPPP10Model.FK__Kazna__IDOsobe__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="RPPP10Model.FK__Kazna__IDPresude__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="RPPP10Model.FK__Kazna__Vrsta__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="RPPP10Model.FK__Osoba__PBr__1920BF5C" ManuallyRouted="false" />
+        <AssociationConnector Association="RPPP10Model.FK__Sud__PBr__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="RPPP10Model.FK__Optuzba__IDOptuz__0E6E26BF" ManuallyRouted="false" />
+        <AssociationConnector Association="RPPP10Model.FK__Optuzba__IDPresu__10566F31" ManuallyRouted="false" />
+        <AssociationConnector Association="RPPP10Model.FK__Optuzba__IDZakon__0F624AF8" ManuallyRouted="false" />
+        <AssociationConnector Association="RPPP10Model.FK__Optuzenik__IDOso__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="RPPP10Model.FK__Optuzenik__IDPro__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="RPPP10Model.FK__Ostecenik__IDOso__6477ECF3" ManuallyRouted="false" />
+        <AssociationConnector Association="RPPP10Model.FK__PravnaOso__IDOso__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="RPPP10Model.FK__Sudionik__IDOsob__6EF57B66" ManuallyRouted="false" />
+        <AssociationConnector Association="RPPP10Model.FK__Ostecenik__IDPro__656C112C" ManuallyRouted="false" />
+        <AssociationConnector Association="RPPP10Model.FK__Presuda__TipPres__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="RPPP10Model.FK__Proces__Sud__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="RPPP10Model.FK__Rociste__IDProce__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="RPPP10Model.FK__StavkaSpi__IDPro__74AE54BC" ManuallyRouted="false" />
+        <AssociationConnector Association="RPPP10Model.FK__SudskoVij__IDPro__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="RPPP10Model.FK__Svjedok__IDProce__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="RPPP10Model.FK__Tuzitelj__IDProc__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="RPPP10Model.FK__Zakon__Razina__0A9D95DB" ManuallyRouted="false" />
+        <AssociationConnector Association="RPPP10Model.FK__Sudionik__IDRoci__6FE99F9F" ManuallyRouted="false" />
+        <AssociationConnector Association="RPPP10Model.FK__StavkaSpi__Vrsta__73BA3083" ManuallyRouted="false" />
+        <AssociationConnector Association="RPPP10Model.FK__Sud__Nadredeni__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="RPPP10Model.FK__Sudionik__Uloga__70DDC3D8" ManuallyRouted="false" />
+        <AssociationConnector Association="RPPP10Model.FK__Zakon__IDNadrede__0B91BA14" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
